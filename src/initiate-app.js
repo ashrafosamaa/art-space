@@ -34,13 +34,8 @@ export const initiateApp = (app, express)=> {
 
     app.use(globalResponse, rollbackUploadedFiles, rollbackSavedDocument)
 
-<<<<<<< HEAD
     const server = app.listen(port, ()=> console.log(`server is running on host`))
     const io = generateIO(server)
     io.on('connection', (socket) => {})
-=======
-
-    app.listen(port, ()=> console.log(`server is running on host`))
->>>>>>> 5041c892cd0f58aa48d86873c0f0bec19466ade3
 
 }
