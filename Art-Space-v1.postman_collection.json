@@ -1,0 +1,3421 @@
+{
+	"info": {
+		"_postman_id": "c329aa05-a1a1-40ee-9537-9dbf32be2ed9",
+		"name": "Art-Space-v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30814973"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "create-admin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNjU0NzMwLCJleHAiOjE3MTk0MzA3MzB9.C9UxHEFCI7OXah9JxFKwPX6VRS9VkTRF23Whnh67dPI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nId",
+									"value": "30204091701377",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Mohammed",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "mohammed22",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Mohammed@1234",
+									"type": "text"
+								},
+								{
+									"key": "passwordConfirm",
+									"value": "Mohammed@1234",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "01153152004",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "tracker",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "profileImg",
+									"type": "file",
+									"src": "/C:/Users/ashra/OneDrive/Desktop/Picsart_23-02-02_23-35-34-405.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/admins",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"JWT\", pm.response.json().data.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"mohammed22\",\r\n    \"password\": \"Mohammed@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admins/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admins",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-admins (ceo)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNDc2OTM4LCJleHAiOjE3MTE1NjMzMzh9.keNfGghDEZbODRimGV16ZLrRwSRzvxvYLp1BFHq1moI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/admins/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admins",
+								"all"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "name desc",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "name asc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-admin (ceo)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNDc2OTM4LCJleHAiOjE3MTE1NjMzMzh9.keNfGghDEZbODRimGV16ZLrRwSRzvxvYLp1BFHq1moI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/admins/single/660308a0ea2356a25cb15f45",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admins",
+								"single",
+								"660308a0ea2356a25cb15f45"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-admin (ceo)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNDc2OTM4LCJleHAiOjE3MTE1NjMzMzh9.keNfGghDEZbODRimGV16ZLrRwSRzvxvYLp1BFHq1moI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mohammed Osama\",\r\n    \"phoneNumber\": \"01153152002\",\r\n    \"gender\": \"male\",\r\n    \"role\": \"it\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admins/update/660308a0ea2356a25cb15f45",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admins",
+								"update",
+								"660308a0ea2356a25cb15f45"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-admin (ceo)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNDc2OTM4LCJleHAiOjE3MTE1NjMzMzh9.keNfGghDEZbODRimGV16ZLrRwSRzvxvYLp1BFHq1moI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/admins/account/6603111f5a4773dd0f3bef3b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admins",
+								"account",
+								"6603111f5a4773dd0f3bef3b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search (ceo)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNDc2OTM4LCJleHAiOjE3MTE1NjMzMzh9.keNfGghDEZbODRimGV16ZLrRwSRzvxvYLp1BFHq1moI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/admins/search?page=1&size=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admins",
+								"search"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sortBy",
+									"value": "name desc",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "name asc",
+									"disabled": true
+								},
+								{
+									"key": "userName",
+									"value": "as",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "phoneNumber",
+									"value": "2002",
+									"disabled": true
+								},
+								{
+									"key": "nId",
+									"value": "70",
+									"disabled": true
+								},
+								{
+									"key": "gender",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "role",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-profile",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwOGEwZWEyMzU2YTI1Y2IxNWY0NSIsInVzZXJOYW1lIjoibW9oYW1tZWQyMiIsInJvbGUiOiJpdCIsImlhdCI6MTcxMTQ5MDA5NCwiZXhwIjoxNzExNTc2NDk0fQ.44fb0WNTad0PiBmclbhDRQAjeZ7XAUVBjyNDGfFLvkM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/admins/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admins",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-profile",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwOGEwZWEyMzU2YTI1Y2IxNWY0NSIsInVzZXJOYW1lIjoibW9oYW1tZWQyMiIsInJvbGUiOiJpdCIsImlhdCI6MTcxMTQ5MDA5NCwiZXhwIjoxNzExNTc2NDk0fQ.44fb0WNTad0PiBmclbhDRQAjeZ7XAUVBjyNDGfFLvkM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Omar Osama\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admins/update-profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admins",
+								"update-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"JWT\", pm.response.json().data.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwOGEwZWEyMzU2YTI1Y2IxNWY0NSIsInVzZXJOYW1lIjoibW9oYW1tZWQyMiIsInJvbGUiOiJpdCIsImlhdCI6MTcxMTQ5MDk1MSwiZXhwIjoxNzExNTc3MzUxfQ.XjT6NTJeorFcBEaJ4xnK7UPqo2YRpijd4jAqkZkb2lA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\": \"Mohammed@1234\",\r\n    \"password\": \"Mohammed@123\",\r\n    \"passwordConfirm\": \"Mohammed@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/admins/update-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admins",
+								"update-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-profile-image",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNDkzNTQyLCJleHAiOjE3MTE1Nzk5NDJ9.HiFla6fzXwQkown75a_Fq0SIX6ddpUTsRsioLb4EwoU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "oldPublicId",
+									"value": "art-space/Admins/2acd/i5nvzd8kfczqb20adcla",
+									"type": "text"
+								},
+								{
+									"key": "profileImg",
+									"type": "file",
+									"src": "/C:/Users/ashra/OneDrive/Pictures/ashraf.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/admins/update-profile-img",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admins",
+								"update-profile-img"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-profile",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDYxN2U1ZDliYTdiZjA0NDljZjA0MSIsInVzZXJOYW1lIjoibW9oYW1tZWQyMiIsInJvbGUiOiJ0cmFja2VyIiwiaWF0IjoxNzExNjc1MzcyLCJleHAiOjE3MTk0NTEzNzJ9.Qx9_U9VpIvmFEeNYCaq1esFsWfewnvmFMZmwSvIwiLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/admins/delete-profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"admins",
+								"delete-profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "userAuth",
+			"item": [
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userName",
+									"value": "Ashraf Osama",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Ashraf@1234",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "01153152008",
+									"type": "text"
+								},
+								{
+									"key": "passwordConfirm",
+									"value": "Ashraf@1234",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ashrafosama6699@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "profileImg",
+									"type": "file",
+									"src": "/C:/Users/ashra/OneDrive/Pictures/ashraf.jpeg"
+								},
+								{
+									"key": "alias",
+									"value": "ashrof",
+									"type": "text"
+								},
+								{
+									"key": "street",
+									"value": "khalifa st",
+									"type": "text"
+								},
+								{
+									"key": "region",
+									"value": "shobra",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "cairo",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "country",
+									"value": "egypt",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "postalCode",
+									"value": "22255",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "0224591667",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/userAuth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"userAuth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ashrafosama6699@gmail.com\",\r\n    \"password\": \"Ashraf@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/userAuth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"userAuth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify-email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"activateCode\": \"1694\",\r\n    \"email\": \"ashrafosama6699@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/userAuth/verifyemail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"userAuth",
+								"verifyemail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ashrafosama6699@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/userAuth/forgetpassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"userAuth",
+								"forgetpassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify-code",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"resetCode\": \"6646\",\r\n    \"email\": \"ashrafosama6699@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/userAuth/verifycode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"userAuth",
+								"verifycode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ashrafosama6699@gmail.com\",\r\n    \"password\": \"Ashraf@111\",\r\n    \"passwordConfirm\": \"Ashraf@111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/userAuth/resetpassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"userAuth",
+								"resetpassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resend-code",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ashrafosama6699@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/userAuth/resendcode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"userAuth",
+								"resendcode"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "get-all-users (IT)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwOGEwZWEyMzU2YTI1Y2IxNWY0NSIsInVzZXJOYW1lIjoibW9oYW1tZWQyMiIsInJvbGUiOiJpdCIsImlhdCI6MTcxMTQ4MTk2NiwiZXhwIjoxNzExNTY4MzY2fQ.9WQB0dHNQ5PHwfZSQAbrSWnTqGUdSCML_BHOtsUKArg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user?page=1&size=3&sortBy=userName asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "3"
+								},
+								{
+									"key": "sortBy",
+									"value": "userName asc"
+								},
+								{
+									"key": "sortBy",
+									"value": "userName desc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-user (IT)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwOGEwZWEyMzU2YTI1Y2IxNWY0NSIsInVzZXJOYW1lIjoibW9oYW1tZWQyMiIsInJvbGUiOiJpdCIsImlhdCI6MTcxMTQ4MTk2NiwiZXhwIjoxNzExNTY4MzY2fQ.9WQB0dHNQ5PHwfZSQAbrSWnTqGUdSCML_BHOtsUKArg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/account/65fdc01a0d1a2fc174282db4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"account",
+								"65fdc01a0d1a2fc174282db4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search-users (IT)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwOGEwZWEyMzU2YTI1Y2IxNWY0NSIsInVzZXJOYW1lIjoibW9oYW1tZWQyMiIsInJvbGUiOiJpdCIsImlhdCI6MTcxMTQ4MTk2NiwiZXhwIjoxNzExNTY4MzY2fQ.9WQB0dHNQ5PHwfZSQAbrSWnTqGUdSCML_BHOtsUKArg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/search?gender=male&size=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"search"
+							],
+							"query": [
+								{
+									"key": "gender",
+									"value": "male"
+								},
+								{
+									"key": "size",
+									"value": "4"
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-user (IT)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwOGEwZWEyMzU2YTI1Y2IxNWY0NSIsInVzZXJOYW1lIjoibW9oYW1tZWQyMiIsInJvbGUiOiJpdCIsImlhdCI6MTcxMTQ4MTk2NiwiZXhwIjoxNzExNTY4MzY2fQ.9WQB0dHNQ5PHwfZSQAbrSWnTqGUdSCML_BHOtsUKArg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phoneNumber\": \"01153152009\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/update/65ff3729dfa95ff5f9352e3d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"update",
+								"65ff3729dfa95ff5f9352e3d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-user (IT)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDVjNzYxZThmMjdkYTZmODNjOTM1NSIsInVzZXJOYW1lIjoib21hcjIyIiwicm9sZSI6Iml0IiwiaWF0IjoxNzExNjU0ODc3LCJleHAiOjE3MTk0MzA4Nzd9.rbjQIp_qevTyEhP6TRgEwqhEuaJEkMVBJwlgXZYS7z4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/delete/65ff421ec719e20e1cfdc9d4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"delete",
+								"65ff421ec719e20e1cfdc9d4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA1YjcwNjc5NTUwNzVmMzA2YWUxYiIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTE0NzUzODQsImV4cCI6MTcxMTU2MTc4NH0.pOadURXrDTLjH3Bz-ZlBV4pjNPr9tduIoZv16lYUZ1Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/profiledata/66005b7067955075f306ae1b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"profiledata",
+								"66005b7067955075f306ae1b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZmU0ZWY5Y2VkYTE0NDNiZmZkOGMyMyIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTEyMTM2MzQsImV4cCI6MTcxMTMwMDAzNH0.3A87uEFHT7fXxAGigLwYcb5df4cOjFfl5NKeeVBviCE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"AshRaf Osama\",\r\n    \"phoneNumber\": \"01153152008\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/updateprofile/65fe4ef9ceda1443bffd8c23",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"updateprofile",
+								"65fe4ef9ceda1443bffd8c23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZmYxZjQ1YTk4NjBkZjZlYzg4NTJhNCIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTEyMTg1NDQsImV4cCI6MTcxMTMwNDk0NH0.WbujR3_OdYXrvlvFlfLS4IeSWUMcnsUYG6QsvTVd3_g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\": \"Ashraf@1234\",\r\n    \"password\": \"Ashraf@123\",\r\n    \"passwordConfirm\": \"Ashraf@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/updatepassword/65ff1f45a9860df6ec8852a4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"updatepassword",
+								"65ff1f45a9860df6ec8852a4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-profile-picture",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA1YjcwNjc5NTUwNzVmMzA2YWUxYiIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTE0OTQwNTYsImV4cCI6MTcxMTU4MDQ1Nn0.r8ZgHf-6lcPoSltN3Fd-0yQkRBlManhtLbXvMJyBvZo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "oldPublicId",
+									"value": "art-space/Users/45ad/ynwlmugamd13tghuccar",
+									"type": "text"
+								},
+								{
+									"key": "profileImg",
+									"type": "file",
+									"src": "/C:/Users/ashra/OneDrive/Desktop/Picsart_23-02-02_23-35-34-405.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/updateprofilepicture/66005b7067955075f306ae1b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"updateprofilepicture",
+								"66005b7067955075f306ae1b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-profile",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZmYxZjQ1YTk4NjBkZjZlYzg4NTJhNCIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTEyMTk2NTAsImV4cCI6MTcxMTMwNjA1MH0.VFjtKZcmGiJ03EJK79BnDMo1CICrKsvNoLq5JFlHDeY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/deleteaccount/65ff1f45a9860df6ec8852a4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"deleteaccount",
+								"65ff1f45a9860df6ec8852a4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-user-address",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZmYyNzVlM2Y1Y2Q1OTNlMTg2NzI1NyIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTEyMjA2MzksImV4cCI6MTcxMTMwNzAzOX0.yKzBEbeWoukvLSQhomej5FFkAiapi5pPI3cmr8Lzz0Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"alias\": \"ashrof\",\r\n    \"street\": \"khalifa st\",\r\n    \"region\": \"shobra\",\r\n    \"city\": \"cairo\",\r\n    \"country\": \"egypt\",\r\n    \"postalCode\": \"2255\",\r\n    \"phone\": \"24591667\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/add-address/65ff275e3f5cd593e1867257",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"add-address",
+								"65ff275e3f5cd593e1867257"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-addresses",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZmYxZjQ1YTk4NjBkZjZlYzg4NTJhNCIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTEyMTk2NTAsImV4cCI6MTcxMTMwNjA1MH0.VFjtKZcmGiJ03EJK79BnDMo1CICrKsvNoLq5JFlHDeY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/alladdresses/65ff1f45a9860df6ec8852a4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"alladdresses",
+								"65ff1f45a9860df6ec8852a4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-user-address",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZmYxZjQ1YTk4NjBkZjZlYzg4NTJhNCIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTEyMTk2NTAsImV4cCI6MTcxMTMwNjA1MH0.VFjtKZcmGiJ03EJK79BnDMo1CICrKsvNoLq5JFlHDeY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/deleteaddress/65ff2569097bfa77bda83631",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"deleteaddress",
+								"65ff2569097bfa77bda83631"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "artistAuth",
+			"item": [
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "artistName",
+									"value": "Ashraf Osama",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ashrafosama667@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Ashraf@1234",
+									"type": "text"
+								},
+								{
+									"key": "passwordConfirm",
+									"value": "Ashraf@1234",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "01153152008",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "profileImg",
+									"type": "file",
+									"src": "/C:/Users/ashra/OneDrive/Desktop/Picsart_23-02-02_23-35-34-405.jpg"
+								},
+								{
+									"key": "alias",
+									"value": "ashrof",
+									"type": "text"
+								},
+								{
+									"key": "street",
+									"value": "khalifa st",
+									"type": "text"
+								},
+								{
+									"key": "region",
+									"value": "shobra",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "cairo",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "country",
+									"value": "egypt",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "postalCode",
+									"value": "22255",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "0224591667",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/artistAuth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"artistAuth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ashrafosama667@gmail.com\",\r\n    \"password\": \"Ashraf@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/artistAuth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"artistAuth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify-email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"activateCode\": \"5389\",\r\n    \"email\": \"ashrafosama667@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/artistAuth/verifyemail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"artistAuth",
+								"verifyemail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ashrafosama667@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/artistAuth/forgetpassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"artistAuth",
+								"forgetpassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify-code",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"resetCode\": \"9237\",\r\n    \"email\": \"ashrafosama667@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/artistAuth/verifycode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"artistAuth",
+								"verifycode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ashrafosama667@gmail.com\",\r\n    \"password\": \"Ashraf@111\",\r\n    \"passwordConfirm\": \"Ashraf@111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/artistAuth/resetpassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"artistAuth",
+								"resetpassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resend-code",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ashrafosama667@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/artistAuth/resendcode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"artistAuth",
+								"resendcode"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Artist",
+			"item": [
+				{
+					"name": "get-all-artist(IT)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwOGEwZWEyMzU2YTI1Y2IxNWY0NSIsInVzZXJOYW1lIjoibW9oYW1tZWQyMiIsInJvbGUiOiJpdCIsImlhdCI6MTcxMTQ4MTk2NiwiZXhwIjoxNzExNTY4MzY2fQ.9WQB0dHNQ5PHwfZSQAbrSWnTqGUdSCML_BHOtsUKArg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/artist?page=1&size=3&sortBy=userName asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"artist"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "3"
+								},
+								{
+									"key": "sortBy",
+									"value": "userName asc"
+								},
+								{
+									"key": "sortBy",
+									"value": "userName desc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-artist (IT)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwOGEwZWEyMzU2YTI1Y2IxNWY0NSIsInVzZXJOYW1lIjoibW9oYW1tZWQyMiIsInJvbGUiOiJpdCIsImlhdCI6MTcxMTQ4MTk2NiwiZXhwIjoxNzExNTY4MzY2fQ.9WQB0dHNQ5PHwfZSQAbrSWnTqGUdSCML_BHOtsUKArg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/artist/account/66003fd4eb61a0bf8849800e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"artist",
+								"account",
+								"66003fd4eb61a0bf8849800e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search-artist (IT)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwOGEwZWEyMzU2YTI1Y2IxNWY0NSIsInVzZXJOYW1lIjoibW9oYW1tZWQyMiIsInJvbGUiOiJpdCIsImlhdCI6MTcxMTQ4MTk2NiwiZXhwIjoxNzExNTY4MzY2fQ.9WQB0dHNQ5PHwfZSQAbrSWnTqGUdSCML_BHOtsUKArg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/artist/search?size=4&artistName=b&email=a&phoneNumber=0&gender=male",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"artist",
+								"search"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "4"
+								},
+								{
+									"key": "artistName",
+									"value": "b"
+								},
+								{
+									"key": "email",
+									"value": "a"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "0"
+								},
+								{
+									"key": "gender",
+									"value": "male"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-artist (IT)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwOGEwZWEyMzU2YTI1Y2IxNWY0NSIsInVzZXJOYW1lIjoibW9oYW1tZWQyMiIsInJvbGUiOiJpdCIsImlhdCI6MTcxMTQ4MTk2NiwiZXhwIjoxNzExNTY4MzY2fQ.9WQB0dHNQ5PHwfZSQAbrSWnTqGUdSCML_BHOtsUKArg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"artistName\": \"Mohammed Osama\",\r\n    \"phoneNumber\": \"01153152009\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/artist/update/66003fd4eb61a0bf8849800e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"artist",
+								"update",
+								"66003fd4eb61a0bf8849800e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-artist (IT)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwOGEwZWEyMzU2YTI1Y2IxNWY0NSIsInVzZXJOYW1lIjoibW9oYW1tZWQyMiIsInJvbGUiOiJpdCIsImlhdCI6MTcxMTQ4MTk2NiwiZXhwIjoxNzExNTY4MzY2fQ.9WQB0dHNQ5PHwfZSQAbrSWnTqGUdSCML_BHOtsUKArg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/artist/delete/66003fd4eb61a0bf8849800e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"artist",
+								"delete",
+								"66003fd4eb61a0bf8849800e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA2MDdiOWQwOTgwNGY0OTliM2I5YyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTEzMDIyNzksImV4cCI6MTcxMTM4ODY3OX0.YSkMvzNSQDTCQaIKTP9mpDHpLpb5156hBUdBxP_4AUU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/artist/profiledata/6600607b9d09804f499b3b9c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"artist",
+								"profiledata",
+								"6600607b9d09804f499b3b9c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA2MDdiOWQwOTgwNGY0OTliM2I5YyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTEzMDIyNzksImV4cCI6MTcxMTM4ODY3OX0.YSkMvzNSQDTCQaIKTP9mpDHpLpb5156hBUdBxP_4AUU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"artistName\": \"AshRaf Osama\",\r\n    \"phoneNumber\": \"01153152001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/artist/updateprofile/6600607b9d09804f499b3b9c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"artist",
+								"updateprofile",
+								"6600607b9d09804f499b3b9c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA2MDdiOWQwOTgwNGY0OTliM2I5YyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTEzMDIyNzksImV4cCI6MTcxMTM4ODY3OX0.YSkMvzNSQDTCQaIKTP9mpDHpLpb5156hBUdBxP_4AUU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\": \"Ashraf@1234\",\r\n    \"password\": \"Ashraf@123\",\r\n    \"passwordConfirm\": \"Ashraf@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/artist/updatepassword/6600607b9d09804f499b3b9c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"artist",
+								"updatepassword",
+								"6600607b9d09804f499b3b9c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-profile-picture",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA2MDdiOWQwOTgwNGY0OTliM2I5YyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaFJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTEzMDQ2MDUsImV4cCI6MTcxMTM5MTAwNX0.qHxeJiHgMqnvj-Y3B16NRFyxSTVk2UnKnj5DQzrjZUw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "oldPublicId",
+									"value": "art-space/Artists/a114/Profile-Img/nyff4v4qycviunshxj93",
+									"type": "text"
+								},
+								{
+									"key": "profileImg",
+									"type": "file",
+									"src": "/C:/Users/ashra/OneDrive/Pictures/ashraf.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/artist/updateprofilepicture/6600607b9d09804f499b3b9c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"artist",
+								"updateprofilepicture",
+								"6600607b9d09804f499b3b9c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-profile",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDYxYjU0OGM3MjYxOWRiOTEyOTAyNiIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTE2NzYyNzQsImV4cCI6MTcxOTQ1MjI3NH0.MIBNATPtTT3UOcRVAzAbAvEWLs7PUKyVAdK03JImRik",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/artist/deleteaccount/66061b548c72619db9129026",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"artist",
+								"deleteaccount",
+								"66061b548c72619db9129026"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-artist-address",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA2MDdiOWQwOTgwNGY0OTliM2I5YyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTEzMDIyNzksImV4cCI6MTcxMTM4ODY3OX0.YSkMvzNSQDTCQaIKTP9mpDHpLpb5156hBUdBxP_4AUU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"alias\": \"ashrof\",\r\n    \"street\": \"khalifa st\",\r\n    \"region\": \"shobra\",\r\n    \"city\": \"cairo\",\r\n    \"country\": \"egypt\",\r\n    \"postalCode\": \"2255\",\r\n    \"phone\": \"24591667\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/artist/add-address/6600607b9d09804f499b3b9c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"artist",
+								"add-address",
+								"6600607b9d09804f499b3b9c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-addresses",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA2MDdiOWQwOTgwNGY0OTliM2I5YyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTEzMDIyNzksImV4cCI6MTcxMTM4ODY3OX0.YSkMvzNSQDTCQaIKTP9mpDHpLpb5156hBUdBxP_4AUU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/artist/alladdresses/6600607b9d09804f499b3b9c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"artist",
+								"alladdresses",
+								"6600607b9d09804f499b3b9c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-artist-address",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA2MDdiOWQwOTgwNGY0OTliM2I5YyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTEzMDIyNzksImV4cCI6MTcxMTM4ODY3OX0.YSkMvzNSQDTCQaIKTP9mpDHpLpb5156hBUdBxP_4AUU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/artist/deleteaddress/6600607b9d09804f499b3b9d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"artist",
+								"deleteaddress",
+								"6600607b9d09804f499b3b9d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "add-category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA1YjcwNjc5NTUwNzVmMzA2YWUxYiIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTE1NDYxOTcsImV4cCI6MTcxMTYzMjU5N30.f0IBK0HKrMSKFUGzcxejWcy3QztMEg-nn6WuWusAHKo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"second\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://art-space-v1.onrender.com/categories",
+							"protocol": "https",
+							"host": [
+								"art-space-v1",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-categories",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "title desc",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "title asc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/categories/single/6601995b7994a3a6de2c783b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories",
+								"single",
+								"6601995b7994a3a6de2c783b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNDc2OTM4LCJleHAiOjE3MTE1NjMzMzh9.keNfGghDEZbODRimGV16ZLrRwSRzvxvYLp1BFHq1moI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"first\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/categories/66019b5f5c737005beb4f193",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories",
+								"66019b5f5c737005beb4f193"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNDc2OTM4LCJleHAiOjE3MTE1NjMzMzh9.keNfGghDEZbODRimGV16ZLrRwSRzvxvYLp1BFHq1moI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/categories/6601995b7994a3a6de2c783b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories",
+								"6601995b7994a3a6de2c783b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search-category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/categories/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories",
+								"search"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "title asc",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "s",
+									"disabled": true
+								},
+								{
+									"key": "slug",
+									"value": "s",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Style",
+			"item": [
+				{
+					"name": "add-style",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNTQ5MjU3LCJleHAiOjE3MTE2MzU2NTd9.Yv6P91t6ps2VyPyPymD6oKZy4qcBSXGY5JUmN8PPWvE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"third\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/styles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"styles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-styles",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/styles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"styles"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "title desc",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "title asc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-style",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/styles/single/66042b60c6b40ea9520ad5eb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"styles",
+								"single",
+								"66042b60c6b40ea9520ad5eb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-style",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNDc2OTM4LCJleHAiOjE3MTE1NjMzMzh9.keNfGghDEZbODRimGV16ZLrRwSRzvxvYLp1BFHq1moI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"first\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/styles/66042b60c6b40ea9520ad5eb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"styles",
+								"66042b60c6b40ea9520ad5eb"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-style",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNDc2OTM4LCJleHAiOjE3MTE1NjMzMzh9.keNfGghDEZbODRimGV16ZLrRwSRzvxvYLp1BFHq1moI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/styles/66042b72c6b40ea9520ad5ef",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"styles",
+								"66042b72c6b40ea9520ad5ef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search-style",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/styles/search?title=t",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"styles",
+								"search"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "title asc",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "t"
+								},
+								{
+									"key": "slug",
+									"value": "s",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subject",
+			"item": [
+				{
+					"name": "add-subject",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNTQ5MjU3LCJleHAiOjE3MTE2MzU2NTd9.Yv6P91t6ps2VyPyPymD6oKZy4qcBSXGY5JUmN8PPWvE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"third\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/subjects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"subjects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-subjects",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/subjects?size=3&sortBy=title asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"subjects"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "3"
+								},
+								{
+									"key": "sortBy",
+									"value": "title desc",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "title asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-subject",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/subjects/single/66043449601d8e56d31f8861",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"subjects",
+								"single",
+								"66043449601d8e56d31f8861"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-subject",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNDc2OTM4LCJleHAiOjE3MTE1NjMzMzh9.keNfGghDEZbODRimGV16ZLrRwSRzvxvYLp1BFHq1moI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"third\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/subjects/660433eeaef41e9b0560d2cc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"subjects",
+								"660433eeaef41e9b0560d2cc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-subject",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNDc2OTM4LCJleHAiOjE3MTE1NjMzMzh9.keNfGghDEZbODRimGV16ZLrRwSRzvxvYLp1BFHq1moI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/subjects/6604344e601d8e56d31f8865",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"subjects",
+								"6604344e601d8e56d31f8865"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search-subject",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/subjects/search?title=t&slug=t",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"subjects",
+								"search"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "title asc",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "t"
+								},
+								{
+									"key": "slug",
+									"value": "t"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "add-product",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDYxYjU0OGM3MjYxOWRiOTEyOTAyNiIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTE2NzYyNzQsImV4cCI6MTcxOTQ1MjI3NH0.MIBNATPtTT3UOcRVAzAbAvEWLs7PUKyVAdK03JImRik",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "product 5",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "this is description of product his title test1 this is description of product his title test1 this is description of product his title test1 this is description of product his title test1 this is description of product his title test1",
+									"type": "text"
+								},
+								{
+									"key": "basePrice",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "discount",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "categoryId",
+									"value": "66019b5f5c737005beb4f192",
+									"type": "text"
+								},
+								{
+									"key": "styleId",
+									"value": "66042b60c6b40ea9520ad5eb",
+									"type": "text"
+								},
+								{
+									"key": "subjectId",
+									"value": "660433eeaef41e9b0560d2cc",
+									"type": "text"
+								},
+								{
+									"key": "material",
+									"value": "paper",
+									"type": "text"
+								},
+								{
+									"key": "height",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "width",
+									"value": "30",
+									"type": "text"
+								},
+								{
+									"key": "depth",
+									"value": "1.25",
+									"type": "text"
+								},
+								{
+									"key": "Cover",
+									"type": "file",
+									"src": "/C:/Users/ashra/OneDrive/Desktop/Picsart_23-02-02_23-35-34-405.jpg"
+								},
+								{
+									"key": "Images",
+									"type": "file",
+									"src": [
+										"/C:/Users/ashra/OneDrive/Pictures/Screenshots/Screenshot 2023-12-10 003749.png",
+										"/C:/Users/ashra/OneDrive/Pictures/Screenshots/Screenshot 2023-12-12 003540.png"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/products/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-products",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/products/all?page=1&size=5&sortBy=title asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"all"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sortBy",
+									"value": "title asc"
+								},
+								{
+									"key": "sortBy",
+									"value": "title desc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-product",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/products/single/6605cb6424054ea5757a70b3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"single",
+								"6605cb6424054ea5757a70b3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-product (IT)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDVjNzYxZThmMjdkYTZmODNjOTM1NSIsInVzZXJOYW1lIjoib21hcjIyIiwicm9sZSI6Iml0IiwiaWF0IjoxNzExNjU0ODc3LCJleHAiOjE3MTk0MzA4Nzd9.rbjQIp_qevTyEhP6TRgEwqhEuaJEkMVBJwlgXZYS7z4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"test1 product 7\",\r\n    \"basePrice\": 600,\r\n    \"discount\": 50,\r\n    \"height\": 15,\r\n    \"width\": 25\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/products/update/6605cbed716b2d01e26a86cd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"update",
+								"6605cbed716b2d01e26a86cd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-product (IT)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDVjNzYxZThmMjdkYTZmODNjOTM1NSIsInVzZXJOYW1lIjoib21hcjIyIiwicm9sZSI6Iml0IiwiaWF0IjoxNzExNjU0ODc3LCJleHAiOjE3MTk0MzA4Nzd9.rbjQIp_qevTyEhP6TRgEwqhEuaJEkMVBJwlgXZYS7z4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/products/delete/6606068d1980ada2b72d02f7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"delete",
+								"6606068d1980ada2b72d02f7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-my-products",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDViNDI5Y2ZhOWZjNWMyOWQ3NTQwZiIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTE2NDk4NjIsImV4cCI6MTcxOTQyNTg2Mn0.OP1R4wSSUhIl-wuSoCzHdHCI0dxdElKNio4Qyp-hNgs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/products/myProducts?size=1&sortBy=title desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"myProducts"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "1"
+								},
+								{
+									"key": "sortBy",
+									"value": "title asc",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "title desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-my-product",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDViNDI5Y2ZhOWZjNWMyOWQ3NTQwZiIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTE2NDk4NjIsImV4cCI6MTcxOTQyNTg2Mn0.OP1R4wSSUhIl-wuSoCzHdHCI0dxdElKNio4Qyp-hNgs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"paint 9\",\r\n    \"basePrice\": 600,\r\n    \"discount\": 10,\r\n    \"height\": 22,\r\n    \"width\": 30\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/products/updateMyProduct/6605cbed716b2d01e26a86cd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"updateMyProduct",
+								"6605cbed716b2d01e26a86cd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change-cover-image",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDViNDI5Y2ZhOWZjNWMyOWQ3NTQwZiIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTE2NDk4NjIsImV4cCI6MTcxOTQyNTg2Mn0.OP1R4wSSUhIl-wuSoCzHdHCI0dxdElKNio4Qyp-hNgs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Cover",
+									"type": "file",
+									"src": "/C:/Users/ashra/OneDrive/Pictures/ashraf.jpeg"
+								},
+								{
+									"key": "oldPublicId",
+									"value": "art-space/Artists/345a/Products/b232/Cover/e3murqlirfxieyl3degl",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/products/changeCoverImg/6605cb6424054ea5757a70b3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"changeCoverImg",
+								"6605cb6424054ea5757a70b3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change-specific-image",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDViNDI5Y2ZhOWZjNWMyOWQ3NTQwZiIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTE2NDk4NjIsImV4cCI6MTcxOTQyNTg2Mn0.OP1R4wSSUhIl-wuSoCzHdHCI0dxdElKNio4Qyp-hNgs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Image",
+									"type": "file",
+									"src": "/C:/Users/ashra/OneDrive/Desktop/Picsart_23-02-02_23-35-34-405.jpg"
+								},
+								{
+									"key": "oldPublicId",
+									"value": "art-space/Artists/345a/Products/d2a4/Images/qsbpux68oembtolkf9i3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/products/changeSpecificImage/6605efd15b1aaeb36ccd546d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"changeSpecificImage",
+								"6605efd15b1aaeb36ccd546d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-my-product",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDViNDI5Y2ZhOWZjNWMyOWQ3NTQwZiIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTE2NDk4NjIsImV4cCI6MTcxOTQyNTg2Mn0.OP1R4wSSUhIl-wuSoCzHdHCI0dxdElKNio4Qyp-hNgs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/products/deleteMyProduct/6605cbed716b2d01e26a86cd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"deleteMyProduct",
+								"6605cbed716b2d01e26a86cd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/products/search?page=1&size=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"search"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sortBy",
+									"value": "createdAt asc",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "createdAt desc",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "material",
+									"value": "oil",
+									"disabled": true
+								},
+								{
+									"key": "slug",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "30",
+									"disabled": true
+								},
+								{
+									"key": "appliedPrice",
+									"value": "630",
+									"disabled": true
+								},
+								{
+									"key": "discount",
+									"value": "15",
+									"disabled": true
+								},
+								{
+									"key": "priceFrom",
+									"value": "200",
+									"disabled": true
+								},
+								{
+									"key": "priceTo",
+									"value": "500",
+									"disabled": true
+								},
+								{
+									"key": "isAvailable",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "artistId",
+									"value": "4",
+									"disabled": true
+								},
+								{
+									"key": "height",
+									"value": "20",
+									"disabled": true
+								},
+								{
+									"key": "width",
+									"value": "25",
+									"disabled": true
+								},
+								{
+									"key": "depth",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filter",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/products/filter?page=1&size=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sortBy",
+									"value": "createdAt asc",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "createdAt desc",
+									"disabled": true
+								},
+								{
+									"key": "categoryId",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "styleId",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "subjectId",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
