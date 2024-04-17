@@ -2,6 +2,8 @@ import { APIFeatures } from "../../utils/api-features.js";
 import { getIO } from "../../utils/io-generation.js";
 
 import Category from "../../../DB/models/category.model.js";
+import Product from "../../../DB/models/product.model.js";
+
 import slugify from "slugify"; 
 
 export const addCategory = async (req, res, next)=> {
@@ -116,5 +118,23 @@ export const search = async (req, res, next)=> {
         msg: "Category fetched successfully",
         statusCode: 200,
         category 
+    })
+}
+
+export const getProductsInCategory = async (req, res, next)=> {
+    // destruct data from user
+    const {categoryId} = req.params
+    const {page, size, sortBy} = req.query
+    const features = new APIFeatures(req.query, Product.find({categoryId}).select("-createdAt -updatedAt -__v -basePrice -images -folderId"))
+    .pagination({page, size})
+    .sort(sortBy)
+    const products = await features.mongooseQuery
+    if(!products.length) {
+        return next(new Error('No products found', { cause: 404 }))
+    }
+    res.status(200).json({ 
+        msg: "Products fetched successfully", 
+        statusCode: 200, 
+        products
     })
 }

@@ -42,3 +42,15 @@ export const searchValidator = {
         slug: Joi.string().optional()
     })
 }
+
+
+export const getProductsInSubjectValidator = {
+    query: Joi.object({
+        page: Joi.number().optional(),
+        size: Joi.number().optional(),
+        sortBy: Joi.string().optional()
+    }),
+    params: Joi.object({
+        subjectId: Joi.string().length(24).hex().required()
+    })
+}

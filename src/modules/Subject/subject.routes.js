@@ -27,5 +27,7 @@ router.delete('/:subjectId', authAdmin(), validationMiddleware(validator.IDValid
 router.get('/search', validationMiddleware(validator.searchValidator),
     expressAsyncHandler(subjectController.search))
 
+router.get('/products/:subjectId', validationMiddleware(validator.getProductsInSubjectValidator),
+    expressAsyncHandler(subjectController.getProductsInSubject))
 
 export default router
