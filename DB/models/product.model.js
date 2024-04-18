@@ -97,7 +97,10 @@ const productSchema = new Schema({
         required: true,
         trim: true,
     },
-}, {timestamps: true});
+}, {timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true }
+});
 
 
 // products in category and poroducts in style and products in subject

@@ -30,4 +30,7 @@ router.get('/search', validationMiddleware(validator.searchValidator),
 router.get('/products/:subjectId', validationMiddleware(validator.getProductsInSubjectValidator),
     expressAsyncHandler(subjectController.getProductsInSubject))
 
+router.get('/with-products', validationMiddleware(validator.getAllSubjectsValidator),
+    expressAsyncHandler(subjectController.getProductsWithSubject))
+
 export default router

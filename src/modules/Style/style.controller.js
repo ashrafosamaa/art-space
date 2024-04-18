@@ -136,3 +136,24 @@ export const getProductsInStyle = async (req, res, next)=> {
         products
     })
 }
+
+export const getProductsWithStyle = async (req, res, next)=> {
+    // destruct data from user
+    const {page, size, sortBy} = req.query
+    const features = new APIFeatures(req.query, Style.find()
+    .select('-createdAt -updatedAt -__v')
+    .populate([{
+        path: 'products',
+        select: '-createdAt -updatedAt -__v '}])) 
+    .pagination({page, size})
+    .sort(sortBy)
+    const styles = await features.mongooseQuery
+    if(!styles.length) {
+        return next(new Error('No styles found', { cause: 404 }))
+    }
+    res.status(200).json({ 
+        msg: "Styles and Products fetched successfully", 
+        statusCode: 200, 
+        styles
+    })
+} 

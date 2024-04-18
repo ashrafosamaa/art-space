@@ -29,6 +29,8 @@ router.get('/search', validationMiddleware(validator.searchValidator),
 
 router.get('/products/:categoryId', validationMiddleware(validator.getProductsInCategoryValidator),
     expressAsyncHandler(categoryController.getProductsInCategory))
-
+    
+router.get('/with-products', validationMiddleware(validator.getAllCategoriesValidator),
+    expressAsyncHandler(categoryController.getProductsWithCategory))
 
 export default router

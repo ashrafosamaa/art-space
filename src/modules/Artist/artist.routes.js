@@ -54,5 +54,8 @@ router.get('/alladdresses/:artistId', authArtist(), validationMiddleware(validat
 router.delete('/deleteaddress/:addressId', authArtist(), validationMiddleware(validator.addressIdValidator), 
     expressAsyncHandler(artistController.removeArtistAddress))
 
+router.get('/products/:artistId', validationMiddleware(validator.productsValidator),
+    expressAsyncHandler(artistController.getProductsForArtist))
+
 
 export default router;

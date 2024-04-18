@@ -30,5 +30,7 @@ router.get('/search', validationMiddleware(validator.searchValidator),
 router.get('/products/:styleId', validationMiddleware(validator.getProductsInStyleValidator),
     expressAsyncHandler(styleController.getProductsInStyle))
 
+router.get('/with-products', validationMiddleware(validator.getAllStylesValidator),
+    expressAsyncHandler(styleController.getProductsWithStyle))
 
 export default router

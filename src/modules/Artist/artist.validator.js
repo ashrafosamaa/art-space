@@ -86,3 +86,15 @@ export const addressIdValidator = {
         addressId: Joi.string().length(24).hex().required()
     })
 }
+
+
+export const productsValidator = {
+    params: Joi.object({
+        artistId: Joi.string().length(24).hex().required()
+    }),
+    query: Joi.object({
+        page: Joi.number().optional(),
+        size: Joi.number().optional(),
+        sortBy: Joi.string().optional()
+    })
+}

@@ -135,3 +135,24 @@ export const getProductsInSubject = async (req, res, next)=> {
         products
     })
 }
+
+export const getProductsWithSubject = async (req, res, next)=> {
+    // destruct data from user
+    const {page, size, sortBy} = req.query
+    const features = new APIFeatures(req.query, Subject.find()
+    .select('-createdAt -updatedAt -__v')
+    .populate([{
+        path: 'products',
+        select: '-createdAt -updatedAt -__v '}])) 
+    .pagination({page, size})
+    .sort(sortBy)
+    const subjects = await features.mongooseQuery
+    if(!subjects.length) {
+        return next(new Error('No subjects found', { cause: 404 }))
+    }
+    res.status(200).json({ 
+        msg: "Subjects and Products fetched successfully", 
+        statusCode: 200, 
+        subjects
+    })
+}

@@ -2,10 +2,10 @@ import { APIFeatures } from "../../utils/api-features.js";
 import { allAddresses } from "./artist-utils/all-addresses.js";
 
 import Artist from "../../../DB/models/artist.model.js";
+import Product from "../../../DB/models/product.model.js";
 import cloudinaryConnection from "../../utils/cloudinary.js";
 import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
-import Product from "../../../DB/models/product.model.js";
 
 
 export const getAllArtists = async (req, res, next) => {
@@ -339,5 +339,23 @@ export const removeArtistAddress = async (req, res) => {
         msg: "Artist addresses fetched successfully",
         statusCode: 200,
         artistAddresses
+    })
+}
+
+export const getProductsForArtist = async (req, res, next)=> {
+    // destruct data from user
+    const {artistId} = req.params
+    const {page, size, sortBy} = req.query
+    const features = new APIFeatures(req.query, Product.find({artistId}).select("-createdAt -updatedAt -__v -basePrice -images -folderId"))
+    .pagination({page, size})
+    .sort(sortBy)
+    const products = await features.mongooseQuery
+    if(!products.length) {
+        return next(new Error('No products found for this artist', { cause: 404 }))
+    }
+    res.status(200).json({ 
+        msg: "Products fetched successfully", 
+        statusCode: 200, 
+        products
     })
 }

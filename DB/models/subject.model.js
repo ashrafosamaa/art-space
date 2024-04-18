@@ -11,7 +11,16 @@ const subjectSchema = new Schema({
         type: String,
         lowercase: true,
     }
-}, {timestamps: true})
+}, {timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true }
+})
+
+subjectSchema.virtual('products', {
+    ref: 'Product',
+    localField: '_id',
+    foreignField: 'subjectId'
+})
 
 const Subject = model("Subject", subjectSchema);
 

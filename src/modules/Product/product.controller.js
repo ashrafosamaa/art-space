@@ -56,7 +56,13 @@ export const addProduct = async (req, res, next)=> {
     // cover image
     let coverImage
     const folderId = generateUniqueString(4)
-    const folder = artist.profileImg.public_id.split(`${artist.folderId}/`)[0]
+    let folder
+    if(artist.profileImg.public_id){
+        folder = artist.profileImg.public_id.split(`${artist.folderId}/`)[0]
+    }
+    else if(!artist.profileImg.public_id){
+        folder = `${process.env.MAIN_FOLDER}/Artists/`
+    }
     if(req.files.Cover){
         const { secure_url, public_id } = await cloudinaryConnection().uploader.upload(req.files.Cover[0].path, {
             folder: folder + `${artist.folderId}` + `/Products/${folderId}/Cover`

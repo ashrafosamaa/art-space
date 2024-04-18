@@ -8,6 +8,7 @@ import styleRouter from "./Style/style.routes.js"
 import subjectRouter from "./Subject/subject.routes.js"
 import productRouter from "./Product/product.routes.js"
 import cartRouter from "./Cart/cart.routes.js"
+import eventRouter from "./Event/event.routes.js"
 
 export {
     userAuthRouter,
@@ -19,5 +20,6 @@ export {
     styleRouter,
     subjectRouter,
     productRouter,
-    cartRouter
+    cartRouter,
+    eventRouter
 }

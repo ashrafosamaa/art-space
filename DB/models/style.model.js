@@ -11,7 +11,16 @@ const styleSchema = new Schema({
         type: String,
         lowercase: true,
     }
-}, {timestamps: true})
+}, {timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true }
+})
+
+styleSchema.virtual('products', {
+    ref: 'Product',
+    localField: '_id',
+    foreignField: 'styleId'
+})
 
 const Style = model("Style", styleSchema);
 

@@ -7,7 +7,7 @@ import * as validator from "./cart.validator.js"
 
 import expressAsyncHandler from "express-async-handler";
 
-const router = Router();
+const router = Router()
 
 router.post('/', authUser(), validationMiddleware(validator.bodyIDValidator),
     expressAsyncHandler(cartController.addProductToCart))
