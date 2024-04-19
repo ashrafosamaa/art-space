@@ -174,16 +174,20 @@ export const updateProduct = async (req, res, next)=> {
 
 export const deleteProduct = async (req, res, next)=> {
     const { productId } = req.params
-    const product = await Product.findByIdAndDelete(productId)
-    const artist = await Artist.findById(product.artistId)
+    const product = await Product.findById(productId)
     if(!product){
         return next(new Error("Product not found", { cause: 404 }))
+    }
+    const artist = await Artist.findById(product.artistId)
+    if(product.isEvent == true) {
+        return next(new Error("Cannot delete this product, please remove it from event first", { cause: 400 }))
     }
 
     // delete folder
     const folder = `${process.env.MAIN_FOLDER}/Artists/${artist.folderId}/Products/${product.folderId}`
     await cloudinaryConnection().api.delete_resources_by_prefix(folder)
     await cloudinaryConnection().api.delete_folder(folder)
+    await product.deleteOne()
     // send response
     res.status(200).json({
         msg: "Product deleted successfully",
@@ -353,7 +357,7 @@ export const deleteMyProduct = async (req, res, next)=> {
     // destruct data from artist
     const { _id } = req.authArtist
     const { productId } = req.params
-    const product = await Product.findByIdAndDelete(productId)
+    const product = await Product.findById(productId)
     const artist = await Artist.findById(_id)
     if(!product){
         return next(new Error("Product not found", { cause: 404 }))
@@ -361,10 +365,14 @@ export const deleteMyProduct = async (req, res, next)=> {
     if(product.artistId.toString() != _id.toString()){
         return next(new Error("Access denied", { cause: 403 }))
     }
+    if(product.isEvent == true) {
+        return next(new Error("Cannot delete this product, please remove it from event first", { cause: 400 }))
+    }
     // delete folder
     const folder = `${process.env.MAIN_FOLDER}/Artists/${artist.folderId}/Products/${product.folderId}`
     await cloudinaryConnection().api.delete_resources_by_prefix(folder)
     await cloudinaryConnection().api.delete_folder(folder)
+    await product.deleteOne()
     // send response
     res.status(200).json({
         msg: "Product deleted successfully",

@@ -105,10 +105,14 @@ export const deleteArtist = async(req, res, next)=> {
         const folderProfile = `${process.env.MAIN_FOLDER}/Artists/${deleteArtist.folderId}`
         await cloudinaryConnection().api.delete_resources_by_prefix(folderProfile)
         await cloudinaryConnection().api.delete_folder(folderProfile)
+        await Product.deleteMany({artistId})
+    }
+    const events = await Event.find({artistId})
+    if(events.length){
+        await Event.deleteMany({artistId})
     }
     // delete artist
     await deleteArtist.deleteOne()
-    await Product.deleteMany({artistId})
     // send response
     res.status(200).json({
         msg: "Artist deleted successfully",
@@ -253,10 +257,14 @@ export const deleteAccount = async (req, res, next)=> {
         const folderProfile = `${process.env.MAIN_FOLDER}/Artists/${deleteArtist.folderId}`
         await cloudinaryConnection().api.delete_resources_by_prefix(folderProfile)
         await cloudinaryConnection().api.delete_folder(folderProfile)
+        await Product.deleteMany({artistId})
+    }
+    const events = await Event.find({artistId})
+    if(events.length){
+        await Event.deleteMany({artistId})
     }
     // delete artist
     await deleteArtist.deleteOne()
-    await Product.deleteMany({artistId})
     // send response
     res.status(200).json({
         msg: "Artist deleted successfully",
