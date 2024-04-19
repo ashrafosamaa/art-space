@@ -718,12 +718,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/userAuth/login",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/userAuth/login",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"userAuth",
 								"login"
@@ -1814,7 +1815,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/artist/products/661fb5bd052a3e9057cef4fc?page=1&size=1",
+							"raw": "http://localhost:3000/artist/products/66213faab91e102360a95337?page=1&size=1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1823,7 +1824,7 @@
 							"path": [
 								"artist",
 								"products",
-								"661fb5bd052a3e9057cef4fc"
+								"66213faab91e102360a95337"
 							],
 							"query": [
 								{
@@ -1833,6 +1834,37 @@
 								{
 									"key": "size",
 									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-events-for-specific-artist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/artist/events/66213faab91e102360a95337?page=1&size=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"artist",
+								"events",
+								"66213faab91e102360a95337"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "2"
 								}
 							]
 						}
@@ -3031,7 +3063,7 @@
 							"formdata": [
 								{
 									"key": "title",
-									"value": "product 1",
+									"value": "product 2",
 									"type": "text"
 								},
 								{
@@ -3092,10 +3124,7 @@
 								{
 									"key": "Images",
 									"type": "file",
-									"src": [
-										"/C:/Users/ashra/OneDrive/Pictures/Screenshots/Screenshot 2023-12-10 003749.png",
-										"/C:/Users/ashra/OneDrive/Pictures/Screenshots/Screenshot 2023-11-27 225110.png"
-									]
+									"src": "/C:/Users/ashra/OneDrive/Pictures/ashraf.jpeg"
 								}
 							]
 						},
@@ -3641,7 +3670,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"second\",\r\n    \"description\": \"first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first\",\r\n    \"duration\": 7,\r\n    \"startAt\": \"2024-05-01\",\r\n    \"productIds\": [\r\n        \"6621406bb91e102360a9534e\"\r\n    ]\r\n}",
+							"raw": "{\r\n    \"title\": \"second\",\r\n    \"description\": \"first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first\",\r\n    \"duration\": 10,\r\n    \"startAt\": \"2024-05-04\",\r\n    \"productIds\": [\r\n        \"6622739036e11380aa01ee80\",\r\n        \"6622743136e11380aa01ee8f\"\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3696,12 +3725,40 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA1YjcwNjc5NTUwNzVmMzA2YWUxYiIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hYWFhIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTM0NzM4NjYsImV4cCI6MTcyMTI0OTg2Nn0.8-oKKVR2s8h0MvK1roMj9hxdmWaVcYXdqhIB7wYWpt0",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA1YjcwNjc5NTUwNzVmMzA2YWUxYiIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hYWFhIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTM1MzQ5MTAsImV4cCI6MTcyMTMxMDkxMH0.7KkmRKhZK3UagwAdh6PkC_lzH42qxhLUZwgcvhS3C_k",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/events/with-products/66217af674eba3dc6c002a47",
+							"raw": "https://art-space-v1.onrender.com/events/with-products/662275b836e11380aa01eeb2",
+							"protocol": "https",
+							"host": [
+								"art-space-v1",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"events",
+								"with-products",
+								"662275b836e11380aa01eeb2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-my-event",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjEzZmFhYjkxZTEwMjM2MGE5NTMzNyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM0NTUwMzgsImV4cCI6MTcyMTIzMTAzOH0.PdUmYQidHI7Hhr1a2eYLZE24xWIXJiU-_d-A59aeAY0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/events/mine/6622e4af3b69a47ca05f9436",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3709,8 +3766,334 @@
 							"port": "3000",
 							"path": [
 								"events",
-								"with-products",
-								"66217af674eba3dc6c002a47"
+								"mine",
+								"6622e4af3b69a47ca05f9436"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-my-events",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjEzZmFhYjkxZTEwMjM2MGE5NTMzNyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM0NTUwMzgsImV4cCI6MTcyMTIzMTAzOH0.PdUmYQidHI7Hhr1a2eYLZE24xWIXJiU-_d-A59aeAY0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/events/myevents",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events",
+								"myevents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-my-event",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjEzZmFhYjkxZTEwMjM2MGE5NTMzNyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM0NTUwMzgsImV4cCI6MTcyMTIzMTAzOH0.PdUmYQidHI7Hhr1a2eYLZE24xWIXJiU-_d-A59aeAY0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"third\",\r\n    \"description\": \"third second first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first\",\r\n    \"duration\": 2,\r\n    \"startAt\": \"2024-05-07\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/events/update/66227aee971993a0391af69c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events",
+								"update",
+								"66227aee971993a0391af69c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-product-to-event",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjEzZmFhYjkxZTEwMjM2MGE5NTMzNyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM0NTUwMzgsImV4cCI6MTcyMTIzMTAzOH0.PdUmYQidHI7Hhr1a2eYLZE24xWIXJiU-_d-A59aeAY0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productIds\": [\r\n        \"6622739036e11380aa01ee80\",\r\n        \"6622743136e11380aa01ee8f\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/events/add-product/66227aee971993a0391af69c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events",
+								"add-product",
+								"66227aee971993a0391af69c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-product-from-event",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjEzZmFhYjkxZTEwMjM2MGE5NTMzNyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM0NTUwMzgsImV4cCI6MTcyMTIzMTAzOH0.PdUmYQidHI7Hhr1a2eYLZE24xWIXJiU-_d-A59aeAY0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productIds\": [\r\n        \"6622739036e11380aa01ee80\",\r\n        \"6622743136e11380aa01ee8f\"\r\n\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/events/delete-product/66227aee971993a0391af69c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events",
+								"delete-product",
+								"66227aee971993a0391af69c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-my-event",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjEzZmFhYjkxZTEwMjM2MGE5NTMzNyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM0NTUwMzgsImV4cCI6MTcyMTIzMTAzOH0.PdUmYQidHI7Hhr1a2eYLZE24xWIXJiU-_d-A59aeAY0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/events/66227aee971993a0391af69c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events",
+								"66227aee971993a0391af69c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-event (IT)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDZiN2ZmYThlZWViZDk2Yzg4MzM1YyIsInVzZXJOYW1lIjoibW9oYW1tZWQxMSIsInJvbGUiOiJpdCIsImlhdCI6MTcxMzU1MDkzMiwiZXhwIjoxNzIxMzI2OTMyfQ.8Vcz7QOV_40lJ9bip3v1aXU3KMl9-PYgnnpVCND9p8k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/events/single/6622b69d7cd5208c5fb2ac6a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events",
+								"single",
+								"6622b69d7cd5208c5fb2ac6a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-event (IT)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDZiN2ZmYThlZWViZDk2Yzg4MzM1YyIsInVzZXJOYW1lIjoibW9oYW1tZWQxMSIsInJvbGUiOiJpdCIsImlhdCI6MTcxMzU1MDkzMiwiZXhwIjoxNzIxMzI2OTMyfQ.8Vcz7QOV_40lJ9bip3v1aXU3KMl9-PYgnnpVCND9p8k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"third\",\r\n    \"description\": \"third second first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first\",\r\n    \"duration\": 2,\r\n    \"startAt\": \"2024-05-07\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/events/single/6622b69d7cd5208c5fb2ac6a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events",
+								"single",
+								"6622b69d7cd5208c5fb2ac6a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-event",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDZiN2ZmYThlZWViZDk2Yzg4MzM1YyIsInVzZXJOYW1lIjoibW9oYW1tZWQxMSIsInJvbGUiOiJpdCIsImlhdCI6MTcxMzU1MDkzMiwiZXhwIjoxNzIxMzI2OTMyfQ.8Vcz7QOV_40lJ9bip3v1aXU3KMl9-PYgnnpVCND9p8k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/events/admin/6622e4703b69a47ca05f941d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events",
+								"admin",
+								"6622e4703b69a47ca05f941d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search-events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/events/search?artistId=66213faab91e102360a95337&title=s",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events",
+								"search"
+							],
+							"query": [
+								{
+									"key": "artistId",
+									"value": "66213faab91e102360a95337"
+								},
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "s"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filter-events-time",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/events/filter?duration=8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "dateFrom",
+									"value": "2024-05-01",
+									"disabled": true
+								},
+								{
+									"key": "dateTo",
+									"value": "2024-05-09",
+									"disabled": true
+								},
+								{
+									"key": "duration",
+									"value": "8"
+								}
 							]
 						}
 					},
