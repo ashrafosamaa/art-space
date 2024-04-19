@@ -56,6 +56,9 @@ router.delete('/deleteaddress/:addressId', authArtist(), validationMiddleware(va
 
 router.get('/products/:artistId', validationMiddleware(validator.productsValidator),
     expressAsyncHandler(artistController.getProductsForArtist))
+    
+router.get('/events/:artistId', validationMiddleware(validator.productsValidator),
+        expressAsyncHandler(artistController.getEventsForArtist))
 
 
 export default router;

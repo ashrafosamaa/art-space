@@ -53,7 +53,7 @@ export const createAdmin = async (req, res, next) => {
     // send response
     res.status(201).json({
         msg: "Admin created successfully",
-        satusCode: 201
+        statusCode: 201
     })
 }
 

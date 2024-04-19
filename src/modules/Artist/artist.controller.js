@@ -3,6 +3,7 @@ import { allAddresses } from "./artist-utils/all-addresses.js";
 
 import Artist from "../../../DB/models/artist.model.js";
 import Product from "../../../DB/models/product.model.js";
+import Event from "../../../DB/models/event.model.js";
 import cloudinaryConnection from "../../utils/cloudinary.js";
 import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
@@ -357,5 +358,23 @@ export const getProductsForArtist = async (req, res, next)=> {
         msg: "Products fetched successfully", 
         statusCode: 200, 
         products
+    })
+}
+
+export const getEventsForArtist = async (req, res, next)=> {
+    // destruct data from user
+    const {artistId} = req.params
+    const {page, size, sortBy} = req.query
+    const features = new APIFeatures(req.query, Event.find({artistId}).select("-createdAt -updatedAt -__v"))
+    .pagination({page, size})
+    .sort(sortBy)
+    const events = await features.mongooseQuery
+    if(!events.length) {
+        return next(new Error('No events found for this artist', { cause: 404 }))
+    }
+    res.status(200).json({ 
+        msg: "Events fetched successfully", 
+        statusCode: 200, 
+        events
     })
 }

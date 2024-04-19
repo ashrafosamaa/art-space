@@ -17,23 +17,17 @@ export const addProduct = async (req, res, next)=> {
     // check that category is found
     const category = await Category.findById(categoryId)
     if(!category){
-        return res.status(404).json({
-            msg: "Category not found"
-        })
+        return next(new Error('Category not found', { cause: 404 }))
     }
     // check that style is found
     const style = await Style.findById(styleId)
     if(!style){
-        return res.status(404).json({
-            msg: "Style not found"
-        })
+        return next(new Error('Style not found', { cause: 404 }))
     }
     // check that subject is found
     const subject = await Subject.findById(subjectId)
     if(!subject){
-        return res.status(404).json({
-            msg: "Subject not found"
-        })
+        return next(new Error('Subject not found', { cause: 404 }))
     }
     const artist = await Artist.findById(artistId)
     // slug
@@ -44,14 +38,10 @@ export const addProduct = async (req, res, next)=> {
     const size = `${height}h x ${width}w x ${depth}d`
     // check images
     if(!req.files.Cover){
-        return res.status(400).json({
-            msg: "Cover Image are required"
-        })
+        return next(new Error('Cover Image is required', { cause: 400 }))
     }
     if(!req.files.Images?.length){
-        return res.status(400).json({
-            msg: "Images are required"
-        })
+        return next(new Error('Images are required', { cause: 400 }))
     }
     // cover image
     let coverImage
@@ -89,7 +79,10 @@ export const addProduct = async (req, res, next)=> {
     const newProduct = await Product.create(product)
     req.savedDocument = { model: Product, _id: newProduct._id }
     // send response
-    res.status(201).json({ message: 'Product created successfully' })
+    res.status(201).json({
+        msg: 'Product created successfully',
+        statusCode: 201,
+    })
 }
 
 export const getAllProducts = async (req, res, next) => {
@@ -100,12 +93,11 @@ export const getAllProducts = async (req, res, next) => {
         .sort(sortBy)
     const products = await features.mongooseQuery
     if(!products.length) {
-        return res.status(404).json({
-            msg: "No products found"
-        })
+        return next(new Error('No products found', { cause: 404 }))
     }
     res.status(200).json({
         msg: "Products fetched successfully",
+        statusCode: 200,
         products
     })
 }
@@ -113,12 +105,11 @@ export const getAllProducts = async (req, res, next) => {
 export const getProductById = async (req, res, next)=> {
     const product = await Product.findById(req.params.productId).select("-createdAt -updatedAt -__v -basePrice -folderId")
     if(!product){
-        return res.status(404).json({
-            msg: "Product not found"
-        })
+        return next(new Error("Product not found", { cause: 404 }))
     }
     res.status(200).json({
         msg: "Product fetched successfully",
+        statusCode: 200,
         product
     })
 }
@@ -130,35 +121,27 @@ export const updateProduct = async (req, res, next)=> {
     // check that product is found
     const product = await Product.findById(productId).select("-createdAt -updatedAt -__v -basePrice -folderId")
     if(!product){
-        return res.status(404).json({
-            msg: "Product not found"
-        })
+        return next(new Error("Product not found", { cause: 404 }))
     }
     // check that category is found
     if(categoryId){
         const category = await Category.findById(categoryId)
         if(!category){
-            return res.status(404).json({
-                msg: "Category not found"
-            })
+            return next(new Error("Category not found", { cause: 404 }))
         }
     }
     // check that style is found
     if(styleId){
         const style = await Style.findById(styleId)
         if(!style){
-            return res.status(404).json({
-                msg: "Style not found"
-            })
+            return next(new Error("Style not found", { cause: 404 }))
         }
     }
     // check that subject is found
     if(subjectId){
         const subject = await Subject.findById(subjectId)
         if(!subject){
-            return res.status(404).json({
-                msg: "Subject not found"
-            })
+            return next(new Error("Subject not found", { cause: 404 }))
         }
     }
     if(title){
@@ -184,6 +167,7 @@ export const updateProduct = async (req, res, next)=> {
     await product.save()
     res.status(200).json({
         msg: "Product updated successfully",
+        statusCode: 200,
         product
     })
 }
@@ -193,9 +177,7 @@ export const deleteProduct = async (req, res, next)=> {
     const product = await Product.findByIdAndDelete(productId)
     const artist = await Artist.findById(product.artistId)
     if(!product){
-        return res.status(404).json({
-            msg: "Product not found"
-        })
+        return next(new Error("Product not found", { cause: 404 }))
     }
 
     // delete folder
@@ -204,7 +186,8 @@ export const deleteProduct = async (req, res, next)=> {
     await cloudinaryConnection().api.delete_folder(folder)
     // send response
     res.status(200).json({
-        msg: "Product deleted successfully"
+        msg: "Product deleted successfully",
+        statusCode: 200
     })
 }
 
@@ -217,12 +200,11 @@ export const getMyProducts = async (req, res, next)=> {
         .sort(sortBy)
     const products = await features.mongooseQuery
     if(!products.length) {
-        return res.status(404).json({
-            msg: "No products found"
-        })
+        return next (new Error ("No products found", { cause: 404 }))
     }
     res.status(200).json({
         msg: "Products fetched successfully",
+        statusCode: 200,
         products
     })
 }
@@ -235,40 +217,30 @@ export const updateMyProduct = async (req, res, next)=> {
     // check that product is found
     const product = await Product.findById(productId).select("-createdAt -updatedAt -__v -basePrice -folderId")
     if(!product){
-        return res.status(404).json({
-            msg: "Product not found"
-        })
+        return next(new Error("Product not found", { cause: 404 }))
     }
     if(product.artistId.toString() != _id.toString()){
-        return res.status(403).json({
-            msg: "Access denied"
-        })
+        return next (new Error("Unauthorized", { cause: 401 }))
     }
     // check that category is found
     if(categoryId){
         const category = await Category.findById(categoryId)
         if(!category){
-            return res.status(404).json({
-                msg: "Category not found"
-            })
+            return next (new Error("Category not found", { cause: 404 }))
         }
     }
     // check that style is found
     if(styleId){
         const style = await Style.findById(styleId)
         if(!style){
-            return res.status(404).json({
-                msg: "Style not found"
-            })
+            return next (new Error("Style not found", { cause: 404 }))
         }
     }
     // check that subject is found
     if(subjectId){
         const subject = await Subject.findById(subjectId)
         if(!subject){
-            return res.status(404).json({
-                msg: "Subject not found"
-            })
+            return next (new Error("Subject not found", { cause: 404 }))
         }
     }
     if(title){
@@ -294,6 +266,7 @@ export const updateMyProduct = async (req, res, next)=> {
     await product.save()
     res.status(200).json({
         msg: "Product updated successfully",
+        statusCode: 200,
         product
     })
 }
@@ -306,22 +279,16 @@ export const updateCoverImg = async (req, res, next)=> {
     // check that product is found
     const product = await Product.findById(productId).select("-createdAt -updatedAt -__v -basePrice -images")
     if(!product){
-        return res.status(404).json({
-            msg: "Product not found"
-        })
+        return next(new Error("Product not found", { cause: 404 }))
     }
     if(product.artistId.toString() != _id.toString()){
-        return res.status(403).json({
-            msg: "Access denied"
-        })
+        return next (new Error("Access denied", { cause: 403 }))
     }
     // get artist 
     const artist = await Artist.findById(_id)
 
     if(!req.file || product.coverImage.public_id != oldPublicId){
-        return res.status(404).json({
-            msg: "Cover image hasn't uploaded"
-        })
+        return next(new Error("Cover image not found", { cause: 404 }))
     }
     // cover image
     const newPublicId = oldPublicId.split(`${artist.folderId}/Products/${product.folderId}/Cover`)[1]
@@ -336,6 +303,7 @@ export const updateCoverImg = async (req, res, next)=> {
     // send response
     res.status(200).json({
         msg: "Cover image updated successfully",
+        statusCode: 200,
         product
     })
 }
@@ -348,28 +316,20 @@ export const updateSpecificImg = async (req, res, next)=> {
     // check that product is found
     const product = await Product.findById(productId).select("-createdAt -updatedAt -__v -basePrice")
     if(!product){
-        return res.status(404).json({
-            msg: "Product not found"
-        })
+        return next(new Error('Product not found', { cause: 404 }))
     }
     if(product.artistId.toString() != _id.toString()){
-        return res.status(403).json({
-            msg: "Access denied"
-        })
+        return next(new Error('Access denied', { cause: 403 }))
     }
     // get artist 
     const artist = await Artist.findById(_id)
     let index
     index = product.images.findIndex(img => img.public_id.toString() == oldPublicId.toString())
     if(index == -1){
-        return res.status(404).json({
-            msg: "Select Image please"
-        })
+        return next(new Error('Image not found', { cause: 404 }))
     }
     if(!req.file){
-        return res.status(404).json({
-            msg: "Image not sent"
-        })
+        return next(new Error('Image hasn\'t uploaded', { cause: 404 }))
     }
     await cloudinaryConnection().uploader.destroy(oldPublicId)
     const newPublicId = oldPublicId.split(`${artist.folderId}/Products/${product.folderId}/Images`)[1]
@@ -384,6 +344,7 @@ export const updateSpecificImg = async (req, res, next)=> {
     // send response
     res.status(200).json({
         msg: "Selected image updated successfully",
+        statusCode: 200,
         product
     })
 }
@@ -395,14 +356,10 @@ export const deleteMyProduct = async (req, res, next)=> {
     const product = await Product.findByIdAndDelete(productId)
     const artist = await Artist.findById(_id)
     if(!product){
-        return res.status(404).json({
-            msg: "Product not found"
-        })
+        return next(new Error("Product not found", { cause: 404 }))
     }
     if(product.artistId.toString() != _id.toString()){
-        return res.status(403).json({
-            msg: "Access denied"
-        })
+        return next(new Error("Access denied", { cause: 403 }))
     }
     // delete folder
     const folder = `${process.env.MAIN_FOLDER}/Artists/${artist.folderId}/Products/${product.folderId}`
@@ -410,7 +367,8 @@ export const deleteMyProduct = async (req, res, next)=> {
     await cloudinaryConnection().api.delete_folder(folder)
     // send response
     res.status(200).json({
-        msg: "Product deleted successfully"
+        msg: "Product deleted successfully",
+        statusCode: 200
     })
 }
 
@@ -423,12 +381,11 @@ export const search = async (req, res, next)=> {
         .searchProduct(search)
     const products = await features.mongooseQuery
     if(!products.length) {
-        return res.status(404).json({
-            msg: "No products found"
-        })
+        return next(new Error("No products found", { cause: 404 }))
     }
     res.status(200).json({
         msg: "Products fetched successfully",
+        statusCode: 200,
         products
     })
 }
@@ -442,12 +399,11 @@ export const filterProducts = async (req, res, next)=> {
         .filterProducts(search)
     const products = await features.mongooseQuery
     if(!products.length) {
-        return res.status(404).json({
-            msg: "No products found"
-        })
+        return next(new Error("No products found", { cause: 404 }))
     }
     res.status(200).json({
         msg: "Products fetched successfully",
+        statusCode: 200,
         products
     })
 }

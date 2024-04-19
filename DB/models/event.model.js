@@ -48,8 +48,6 @@ const eventSchema = new Schema({
         },
         
     ],
-    
-
 
     views: {
         type: Number,

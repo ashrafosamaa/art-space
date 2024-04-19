@@ -21,8 +21,8 @@ export class APIFeatures {
         this.mongooseQuery = this.mongooseQuery.sort({ [key]: +value })
         return this
     }
-    searchUsers(search) {
     //  Search on user with any field
+    searchUsers(search) {
         const queryFiler = {}
         
         if (search.userName) queryFiler.userName = { $regex: search.userName, $options: 'i' }
@@ -43,8 +43,8 @@ export class APIFeatures {
         this.mongooseQuery = this.mongooseQuery.find(queryFiler)
         return this
     }
-    searchArtists(search) {
     //  Search on artist with any field
+    searchArtists(search) {
         const queryFiler = {}
 
         if (search.artistName) queryFiler.artistName = { $regex: search.artistName, $options: 'i' }
@@ -55,8 +55,8 @@ export class APIFeatures {
         this.mongooseQuery = this.mongooseQuery.find(queryFiler)
         return this
     }
-    searchAdmins(search) {
     //  Search on artist with any field
+    searchAdmins(search) {
         const queryFiler = {}
 
         if (search.userName) queryFiler.userName = { $regex: search.userName, $options: 'i' }
@@ -69,8 +69,8 @@ export class APIFeatures {
         this.mongooseQuery = this.mongooseQuery.find(queryFiler)
         return this
     }
+    //  Search on category , style , subject with any field
     searchCategories(search) {
-    //  Search on category with any field
         const queryFiler = {}
 
         if (search.title) queryFiler.title = { $regex: search.title, $options: 'i' }
@@ -98,6 +98,31 @@ export class APIFeatures {
         if (search.isAvailable) queryFiler.isAvailable = { $in: search.isAvailable }
         if (search.artistId ) queryFiler.artistId = { $in: search.artistId }
 
+        this.mongooseQuery = this.mongooseQuery.find(queryFiler)
+        return this
+    }
+    //   Search on event with any field
+    searchEvents(search) {
+        const queryFiler = {}
+
+        if (search.title) queryFiler.title = { $regex: search.title, $options: 'i' }
+        if (search.description) queryFiler.description = { $regex: search.description, $options: 'i' }
+        if (search.artistId ) queryFiler.artistId = { $in: search.artistId }
+
+        this.mongooseQuery = this.mongooseQuery.find(queryFiler)
+        return this
+    }
+    //   Search on event with any field
+    filterEventsTime(search) {
+        const queryFiler = {}
+
+        if (search.dateFrom && !search.dateTo) queryFiler.startAt = { $gte: search.dateFrom }
+        if (search.dateTo && !search.dateFrom) queryFiler.endAt = { $gte: search.dateTo }
+        if (search.dateTo && search.dateFrom) {
+            queryFiler.startAt = { $gte: search.dateFrom }
+            queryFiler.endAt = { $gte: search.dateTo }
+        }
+        if(search.duration) queryFiler.duration = { $in: search.duration }
 
         this.mongooseQuery = this.mongooseQuery.find(queryFiler)
         return this
@@ -108,7 +133,7 @@ export class APIFeatures {
         if (search.categoryId ) queryFiler.categoryId = { $in: search.categoryId }
         if (search.styleId ) queryFiler.styleId = { $in: search.styleId }
         if (search.subjectId ) queryFiler.subjectId = { $in: search.subjectId }
-        
+
         this.mongooseQuery = this.mongooseQuery.find(queryFiler)
         return this
     }

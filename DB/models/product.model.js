@@ -38,6 +38,14 @@ const productSchema = new Schema({
         type: Boolean,
         default: true
     },
+    isEvent: {
+        type:Boolean,
+        default:false
+    },
+    eventId: {
+        type: Schema.Types.ObjectId,
+        ref: "Event",
+    },
 
     artistId: {
         type: Schema.Types.ObjectId,
