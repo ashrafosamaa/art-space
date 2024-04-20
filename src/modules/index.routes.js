@@ -9,6 +9,7 @@ import subjectRouter from "./Subject/subject.routes.js"
 import productRouter from "./Product/product.routes.js"
 import cartRouter from "./Cart/cart.routes.js"
 import eventRouter from "./Event/event.routes.js"
+import auctionRouter from "./Auction/auction.routes.js"
 
 export {
     userAuthRouter,
@@ -21,5 +22,6 @@ export {
     subjectRouter,
     productRouter,
     cartRouter,
-    eventRouter
+    eventRouter,
+    auctionRouter
 }

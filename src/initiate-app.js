@@ -28,6 +28,7 @@ export const initiateApp = (app, express)=> {
     app.use('/products', routers.productRouter)
     app.use('/cart', routers.cartRouter)
     app.use('/events', routers.eventRouter)
+    app.use('/auctions', routers.auctionRouter)
 
     app.use('*', (req, res, next)=> {
         return next({message: "Page not found", cause: 404})

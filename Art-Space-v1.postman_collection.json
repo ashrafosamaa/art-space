@@ -148,7 +148,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userName\": \"ashrof22\",\r\n    \"password\": \"Ashraf@1234\"\r\n}",
+							"raw": "{\r\n    \"userName\": \"mohammed11\",\r\n    \"password\": \"Mohammed@1234\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1362,7 +1362,8 @@
 								{
 									"key": "profileImg",
 									"type": "file",
-									"src": "/C:/Users/ashra/OneDrive/Desktop/Picsart_23-02-02_23-35-34-405.jpg"
+									"src": [],
+									"disabled": true
 								},
 								{
 									"key": "alias",
@@ -1452,7 +1453,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"activateCode\": \"5047\",\r\n    \"email\": \"ashrafosama667@gmail.com\"\r\n}",
+							"raw": "{\r\n    \"activateCode\": \"6839\",\r\n    \"email\": \"ashrafosama667@gmail.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1762,12 +1763,12 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwOGEwZWEyMzU2YTI1Y2IxNWY0NSIsInVzZXJOYW1lIjoibW9oYW1tZWQyMiIsInJvbGUiOiJpdCIsImlhdCI6MTcxMTQ4MTk2NiwiZXhwIjoxNzExNTY4MzY2fQ.9WQB0dHNQ5PHwfZSQAbrSWnTqGUdSCML_BHOtsUKArg",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDVjNzYxZThmMjdkYTZmODNjOTM1NSIsInVzZXJOYW1lIjoib21hcjIyIiwicm9sZSI6Iml0IiwiaWF0IjoxNzExNjU0ODc3LCJleHAiOjE3MTk0MzA4Nzd9.rbjQIp_qevTyEhP6TRgEwqhEuaJEkMVBJwlgXZYS7z4",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/artist/delete/66003fd4eb61a0bf8849800e",
+							"raw": "http://localhost:3000/artist/delete/66213faab91e102360a95337",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1776,7 +1777,7 @@
 							"path": [
 								"artist",
 								"delete",
-								"66003fd4eb61a0bf8849800e"
+								"66213faab91e102360a95337"
 							]
 						}
 					},
@@ -3054,7 +3055,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjEzZmFhYjkxZTEwMjM2MGE5NTMzNyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM0NTUwMzgsImV4cCI6MTcyMTIzMTAzOH0.PdUmYQidHI7Hhr1a2eYLZE24xWIXJiU-_d-A59aeAY0",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjNiNDk5MjkyZjE3NmZlNjliNWI0OCIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM2MTYwNjksImV4cCI6MTcyMTM5MjA2OX0.ZzmNkqTyDUBVjfkJFkiyIjLFq0cpoI3shS4MxA1KK-M",
 								"type": "text"
 							}
 						],
@@ -3063,7 +3064,7 @@
 							"formdata": [
 								{
 									"key": "title",
-									"value": "product 2",
+									"value": "product 3",
 									"type": "text"
 								},
 								{
@@ -3073,7 +3074,7 @@
 								},
 								{
 									"key": "basePrice",
-									"value": "600",
+									"value": "800",
 									"type": "text"
 								},
 								{
@@ -3119,12 +3120,15 @@
 								{
 									"key": "Cover",
 									"type": "file",
-									"src": "/C:/Users/ashra/OneDrive/Desktop/Picsart_23-02-02_23-35-34-405.jpg"
+									"src": "/C:/Users/ashra/OneDrive/Pictures/Screenshots/Screenshot (103).png"
 								},
 								{
 									"key": "Images",
 									"type": "file",
-									"src": "/C:/Users/ashra/OneDrive/Pictures/ashraf.jpeg"
+									"src": [
+										"/C:/Users/ashra/OneDrive/Pictures/Screenshots/Screenshot (103).png",
+										"/C:/Users/ashra/OneDrive/Pictures/Screenshots/Screenshot (102).png"
+									]
 								}
 							]
 						},
@@ -3175,6 +3179,36 @@
 									"key": "sortBy",
 									"value": "title asc"
 								},
+								{
+									"key": "sortBy",
+									"value": "title desc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-products-with-auctions",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/products/with-auctions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"with-auctions"
+							],
+							"query": [
 								{
 									"key": "sortBy",
 									"value": "title desc",
@@ -3263,7 +3297,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/products/delete/6606068d1980ada2b72d02f7",
+							"raw": "http://localhost:3000/products/delete/6623b587292f176fe69b5b70",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3272,7 +3306,7 @@
 							"path": [
 								"products",
 								"delete",
-								"6606068d1980ada2b72d02f7"
+								"6623b587292f176fe69b5b70"
 							]
 						}
 					},
@@ -3664,13 +3698,13 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjEzZmFhYjkxZTEwMjM2MGE5NTMzNyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM0NTUwMzgsImV4cCI6MTcyMTIzMTAzOH0.PdUmYQidHI7Hhr1a2eYLZE24xWIXJiU-_d-A59aeAY0",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjNiNDk5MjkyZjE3NmZlNjliNWI0OCIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM2MTYwNjksImV4cCI6MTcyMTM5MjA2OX0.ZzmNkqTyDUBVjfkJFkiyIjLFq0cpoI3shS4MxA1KK-M",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"second\",\r\n    \"description\": \"first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first\",\r\n    \"duration\": 10,\r\n    \"startAt\": \"2024-05-04\",\r\n    \"productIds\": [\r\n        \"6622739036e11380aa01ee80\",\r\n        \"6622743136e11380aa01ee8f\"\r\n    ]\r\n}",
+							"raw": "{\r\n    \"title\": \"second\",\r\n    \"description\": \"first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first first\",\r\n    \"duration\": 10,\r\n    \"startAt\": \"2024-05-04\",\r\n    \"productIds\": [\r\n        \"6623b56e292f176fe69b5b66\"\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3806,7 +3840,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjEzZmFhYjkxZTEwMjM2MGE5NTMzNyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM0NTUwMzgsImV4cCI6MTcyMTIzMTAzOH0.PdUmYQidHI7Hhr1a2eYLZE24xWIXJiU-_d-A59aeAY0",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjNiNDk5MjkyZjE3NmZlNjliNWI0OCIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM2MTYwNjksImV4cCI6MTcyMTM5MjA2OX0.ZzmNkqTyDUBVjfkJFkiyIjLFq0cpoI3shS4MxA1KK-M",
 								"type": "text"
 							}
 						],
@@ -3820,7 +3854,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/events/update/66227aee971993a0391af69c",
+							"raw": "http://localhost:3000/events/update/6623b7cc1c1f89dd9d7d0f82",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3829,7 +3863,7 @@
 							"path": [
 								"events",
 								"update",
-								"66227aee971993a0391af69c"
+								"6623b7cc1c1f89dd9d7d0f82"
 							]
 						}
 					},
@@ -3848,7 +3882,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"productIds\": [\r\n        \"6622739036e11380aa01ee80\",\r\n        \"6622743136e11380aa01ee8f\"\r\n    ]\r\n}",
+							"raw": "{\r\n    \"productIds\": [\r\n        \"6622fe8b738808f3f4c547de\"\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3856,7 +3890,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/events/add-product/66227aee971993a0391af69c",
+							"raw": "http://localhost:3000/events/add-product/6622e49d3b69a47ca05f942f",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3865,7 +3899,7 @@
 							"path": [
 								"events",
 								"add-product",
-								"66227aee971993a0391af69c"
+								"6622e49d3b69a47ca05f942f"
 							]
 						}
 					},
@@ -3884,7 +3918,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"productIds\": [\r\n        \"6622739036e11380aa01ee80\",\r\n        \"6622743136e11380aa01ee8f\"\r\n\r\n    ]\r\n}",
+							"raw": "{\r\n    \"productIds\": [\r\n        \"6622743136e11380aa01ee8f\"\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3892,7 +3926,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/events/delete-product/66227aee971993a0391af69c",
+							"raw": "http://localhost:3000/events/delete-product/6622e49d3b69a47ca05f942f",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3901,7 +3935,7 @@
 							"path": [
 								"events",
 								"delete-product",
-								"66227aee971993a0391af69c"
+								"6622e49d3b69a47ca05f942f"
 							]
 						}
 					},
@@ -3997,7 +4031,7 @@
 					"response": []
 				},
 				{
-					"name": "delete-event",
+					"name": "delete-event (IT)",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -4234,6 +4268,317 @@
 							"path": [
 								"cart",
 								"661fea6d70866943c24c1908"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auction",
+			"item": [
+				{
+					"name": "create-auction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjNiNDk5MjkyZjE3NmZlNjliNWI0OCIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM2MTYwNjksImV4cCI6MTcyMTM5MjA2OX0.ZzmNkqTyDUBVjfkJFkiyIjLFq0cpoI3shS4MxA1KK-M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"duration\": 2,\r\n    \"beginDate\": \"2024-05-01\",\r\n    \"productId\": \"6623ef65161a0dcf0b84fd5d\",\r\n    \"beginPrice\": 1500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auctions/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auctions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-my-products-in-auctions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjNiNDk5MjkyZjE3NmZlNjliNWI0OCIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM2MTYwNjksImV4cCI6MTcyMTM5MjA2OX0.ZzmNkqTyDUBVjfkJFkiyIjLFq0cpoI3shS4MxA1KK-M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/auctions/my-products?size=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auctions",
+								"my-products"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-auction-by-id-with-products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjNiNDk5MjkyZjE3NmZlNjliNWI0OCIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM2MTYwNjksImV4cCI6MTcyMTM5MjA2OX0.ZzmNkqTyDUBVjfkJFkiyIjLFq0cpoI3shS4MxA1KK-M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/auctions/mine/66243ff640b6f281510379bc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auctions",
+								"mine",
+								"66243ff640b6f281510379bc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-auctions (IT)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDZiN2ZmYThlZWViZDk2Yzg4MzM1YyIsInVzZXJOYW1lIjoibW9oYW1tZWQxMSIsInJvbGUiOiJpdCIsImlhdCI6MTcxMzU1MDkzMiwiZXhwIjoxNzIxMzI2OTMyfQ.8Vcz7QOV_40lJ9bip3v1aXU3KMl9-PYgnnpVCND9p8k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/auctions/all?size=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auctions",
+								"all"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-an-auction (IT)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDZiN2ZmYThlZWViZDk2Yzg4MzM1YyIsInVzZXJOYW1lIjoibW9oYW1tZWQxMSIsInJvbGUiOiJpdCIsImlhdCI6MTcxMzY0NTAyNywiZXhwIjoxNzIxNDIxMDI3fQ.UQq3n_aLRXkU0O0VAhE0GzXYLFMNSum74m-MYel_mwY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"duration\": 3,\r\n    \"beginDate\": \"2024-05-05\",\r\n    \"productId\": \"6623b526292f176fe69b5b5c\",\r\n    \"beginPrice\": 3000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auctions/admin-update/662448a3fb3fa707f47f26d3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auctions",
+								"admin-update",
+								"662448a3fb3fa707f47f26d3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-an-auction (IT)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDZiN2ZmYThlZWViZDk2Yzg4MzM1YyIsInVzZXJOYW1lIjoibW9oYW1tZWQxMSIsInJvbGUiOiJpdCIsImlhdCI6MTcxMzY0NTAyNywiZXhwIjoxNzIxNDIxMDI3fQ.UQq3n_aLRXkU0O0VAhE0GzXYLFMNSum74m-MYel_mwY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/auctions/admin-delete/662448a3fb3fa707f47f26d3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auctions",
+								"admin-delete",
+								"662448a3fb3fa707f47f26d3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-my-auction",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjNiNDk5MjkyZjE3NmZlNjliNWI0OCIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM2MTYwNjksImV4cCI6MTcyMTM5MjA2OX0.ZzmNkqTyDUBVjfkJFkiyIjLFq0cpoI3shS4MxA1KK-M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"duration\": 2,\r\n    \"beginDate\": \"2024-05-03\",\r\n    \"productId\": \"6623b526292f176fe69b5b5c\",\r\n    \"beginPrice\": 3000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auctions/update/662448a3fb3fa707f47f26d3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auctions",
+								"update",
+								"662448a3fb3fa707f47f26d3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-my-auction",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjNiNDk5MjkyZjE3NmZlNjliNWI0OCIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM2MTYwNjksImV4cCI6MTcyMTM5MjA2OX0.ZzmNkqTyDUBVjfkJFkiyIjLFq0cpoI3shS4MxA1KK-M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/auctions/delete/662448a3fb3fa707f47f26d3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auctions",
+								"delete",
+								"662448a3fb3fa707f47f26d3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view-auction (User)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA1YjcwNjc5NTUwNzVmMzA2YWUxYiIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hYWFhIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTMzNTM1NTIsImV4cCI6MTcyMTEyOTU1Mn0.2uRNgHvn5tvYKn7cbZsyn5uRgTXOR6y_QAXlDRDg1Qc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/auctions/user/66243ff640b6f281510379bc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auctions",
+								"user",
+								"66243ff640b6f281510379bc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "join-auction (User)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA1YjcwNjc5NTUwNzVmMzA2YWUxYiIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hYWFhIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTMzNTM1NTIsImV4cCI6MTcyMTEyOTU1Mn0.2uRNgHvn5tvYKn7cbZsyn5uRgTXOR6y_QAXlDRDg1Qc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/auctions/request-user/662448a3fb3fa707f47f26d3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auctions",
+								"request-user",
+								"662448a3fb3fa707f47f26d3"
 							]
 						}
 					},

@@ -46,6 +46,14 @@ const productSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Event",
     },
+    isAuction: {
+        type:Boolean,
+        default:false
+    },
+    auctionId: {
+        type: Schema.Types.ObjectId,
+        ref: "Auction",
+    },
 
     artistId: {
         type: Schema.Types.ObjectId,

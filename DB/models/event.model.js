@@ -7,6 +7,12 @@ const eventSchema = new Schema({
         required: true,
     },
 
+    slug: {
+        type: String,
+        required: true,
+        lowercase: true,
+    },
+
     description: {
         type: String,
         trim: true,

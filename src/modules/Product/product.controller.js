@@ -87,13 +87,31 @@ export const addProduct = async (req, res, next)=> {
 
 export const getAllProducts = async (req, res, next) => {
     const {page, size, sortBy} = req.query
-    const features = new APIFeatures(req.query, Product.find()
+    const features = new APIFeatures(req.query, Product.find({ isEvent: false })
     .select("-createdAt -updatedAt -__v -basePrice -images -folderId"))
         .pagination({page, size})
         .sort(sortBy)
     const products = await features.mongooseQuery
     if(!products.length) {
         return next(new Error('No products found', { cause: 404 }))
+    }
+    res.status(200).json({
+        msg: "Products fetched successfully",
+        statusCode: 200,
+        products
+    })
+}
+
+export const getProductsWithAuction = async (req, res, next)=> {
+    // destruct data from artist
+    const {page, size, sortBy} = req.query
+    const features = new APIFeatures(req.query, Product.find({ isAuction: true })
+    .select("-createdAt -updatedAt -__v -basePrice -images -folderId"))
+    .pagination({page, size})
+    .sort(sortBy)
+    const products = await features.mongooseQuery
+    if(!products.length) {
+        return next(new Error('No events found', { cause: 404 }))
     }
     res.status(200).json({
         msg: "Products fetched successfully",

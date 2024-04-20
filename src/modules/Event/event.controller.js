@@ -3,6 +3,8 @@ import {APIFeatures} from "../../utils/api-features.js";
 import Event from "../../../DB/models/event.model.js";
 import Product from "../../../DB/models/product.model.js";
 
+import slugify from "slugify"; 
+
 
 export const createEvent = async (req, res, next) => {
     // destruct data from artist
@@ -17,24 +19,29 @@ export const createEvent = async (req, res, next) => {
     const products = await Product.find({ _id: { $in: productIds } })
     for (const product of products) {
         if(product.artistId.toString() !== _id.toString()) {
-            return next(new Error("You are not authorized to add this product to event", { cause: 404 }))
-        }
-        if(product.isEvent == true) {
-            return next(new Error("A Product is also in event", { cause: 404 }))
+            return next(new Error(`You are not authorized to add ${product.title} to your event`, { cause: 404 }))
         }
         if(product.isAvailable == false) {
-            return next(new Error("A Product is not available", { cause: 404 }))
+            return next(new Error(`${product.title} is not available`, { cause: 404 }))
+        }
+        if(product.isAuction == true) {
+            return next(new Error(`${product.title} is also in an auction`, { cause: 404 }))
+        }
+        if(product.isEvent == true) {
+            return next(new Error(`${product.title} is also in an event`, { cause: 404 }))
         }
     }
     if (products.length !== productIds.length) {
         return next(new Error("A Product is not found", { cause: 404 }))
     }
+    const slug = slugify( title, '-' )
     // set duration and end date
     const startDate = new Date(startAt)
     const endAt = startDate.getTime() + duration * 24 * 60 * 60 * 1000
     // create event
     const event = new Event({
         title,
+        slug,
         description,
         productIds,
         duration,
@@ -144,6 +151,10 @@ export const updateMyEvent = async (req, res, next) => {
     if(!event) {
         return next(new Error('Event not found', { cause: 404 }))
     }
+    // check that time is still not start
+    if(event.startAt < Date.now()) {
+        return next(new Error('Event is already started, you can not update on it', { cause: 400 }))
+    }
     // check if title already exist
     if(title) {
         const isTitleExist = await Event.findOne({ title, artistId: _id, _id: { $ne: eventId } })
@@ -151,6 +162,7 @@ export const updateMyEvent = async (req, res, next) => {
             return next(new Error("Event title already exist, please try new one", { cause: 409 }))
         }
         event.title = title
+        event.slug = slugify( title, '-' )
     }
     if(description) {
         event.description = description
@@ -187,17 +199,17 @@ export const addNewProductsToEvent = async (req, res, next) => {
     // check products avaliability
     const products = await Product.find({ _id: { $in: productIds } })
     for (const product of products) {
-        if(!product){
-            return next(new Error('Product not found', { cause: 404 }))
-        }
         if(product.artistId.toString() !== _id.toString()) {
-            return next(new Error("You are not authorized to add this product to event", { cause: 404 }))
-        }
-        if(product.isEvent == true) {
-            return next(new Error(`Product ${product.title} is already in an event`, { cause: 404 }))
+            return next(new Error(`You are not authorized to add ${product.title} to your event`, { cause: 404 }))
         }
         if(product.isAvailable == false) {
-            return next(new Error(`Product ${product._id} is not available`, { cause: 404 }))
+            return next(new Error(`${product.title} is not available`, { cause: 404 }))
+        }
+        if(product.isAuction == true) {
+            return next(new Error(`${product.title} is also in an auction`, { cause: 404 }))
+        }
+        if(product.isEvent == true) {
+            return next(new Error(`${product.title} is also in an event`, { cause: 404 }))
         }
     }
     // check that all products are found
@@ -234,13 +246,13 @@ export const deleteProductsFromEvent = async (req, res, next)=> {
     const products = await Product.find({ _id: { $in: productIds }, })
     for (const product of products) {
         if(product.artistId.toString() !== _id.toString()) {
-            return next(new Error("You are not authorized to add this product to event", { cause: 404 }))
+            return next(new Error(`You are not authorized to delete ${product.title} from event`, { cause: 404 }))
         }
         if(product.isEvent == false) {
-            return next(new Error(`Product ${product._id} is not in event`, { cause: 404 }))
+            return next(new Error(`${product.title} is not in event`, { cause: 404 }))
         }
         if(product.eventId != eventId) {
-            return next(new Error(`Product ${product._id} can not be deleted`, { cause: 404 }))
+            return next(new Error(`${product.title} can not be deleted`, { cause: 404 }))
         }
     }
     // check that all products are found
@@ -315,9 +327,19 @@ export const updateEventByAdmin = async (req, res, next)=> {
     if(!event) {
         return next(new Error('Event not found', { cause: 404 }))
     }
+    // check that time is still not start
+    if(event.startAt < Date.now()) {
+        return next(new Error('Event is already started, you can not update on it', { cause: 400 }))
+    }
     // update event
-    if(title) event.title = title
-    if(description) event.description = description
+    if(title) {
+        const isTitleExist = await Event.findOne({ title, artistId: event.artistId, _id: { $ne: eventId } })
+        if (isTitleExist) {
+            return next(new Error("Event title already exist, please try new one", { cause: 409 }))
+        }
+        event.title = title
+        event.slug = slugify( title, '-' )
+    }    if(description) event.description = description
     if(duration) {
         const startDate = new Date(event.startAt)
         event.endAt = startDate.getTime() + duration * 24 * 60 * 60 * 1000

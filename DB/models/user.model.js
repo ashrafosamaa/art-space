@@ -57,7 +57,17 @@ const userSchema = new Schema({
         type: String,
         enum: ["user"],
         default: "user",
-    }
+    },
+    auctionStatus: {
+        type: String,
+        enum: ["none", "pending", "paid"],
+        default: "none",
+    },
+    auctionId: {
+        type: Schema.Types.ObjectId,
+        ref: 'Auction',
+        default: null
+    },
 }, { timestamps: true })
 
 const User = model('User', userSchema)

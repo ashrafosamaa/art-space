@@ -22,6 +22,9 @@ router.post('/add', authArtist(), multerMiddleHost({
 router.get('/all', validationMiddleware(validator.getAllProductsValidator),
     expressAsyncHandler(productController.getAllProducts))
 
+router.get('/with-auctions', validationMiddleware(validator.getAllProductsValidator),
+    expressAsyncHandler(productController.getProductsWithAuction))
+
 router.get('/single/:productId', validationMiddleware(validator.IDValidator),
     expressAsyncHandler(productController.getProductById))
 

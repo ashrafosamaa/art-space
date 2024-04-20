@@ -5,7 +5,7 @@ export const createEventValidator = {
         title: Joi.string().required().min(3).max(100),
         description: Joi.string().required().min(50).max(400),
         startAt: Joi.date().greater(Date.now()-(24*60*60*1000)).required(),
-        duration: Joi.number().required(),
+        duration: Joi.number().required().max(14),
         productIds: Joi.array().items(Joi.string().length(24).hex().required()).required(),
     })
 }
@@ -32,7 +32,7 @@ export const updateEventValidator = {
         title: Joi.string().optional().min(3).max(100),
         description: Joi.string().optional().min(50).max(400),
         startAt: Joi.date().greater(Date.now()-(24*60*60*1000)).optional(),
-        duration: Joi.number().optional(),
+        duration: Joi.number().optional().max(14),
     }),
     params: Joi.object({
         eventId: Joi.string().length(24).hex().required()
