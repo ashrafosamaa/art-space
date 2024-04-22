@@ -63,10 +63,10 @@ export const createEvent = async (req, res, next) => {
 }
 
 export const getEvent = async (req, res, next) => {
-    // destruct data from user
+    // destruct data from user 
     const { _id } = req.authUser
     const { eventId } = req.params
-    const event = await Event.findById(eventId)
+    const event = await Event.findOne({_id: eventId, status: 'open'})
     .populate({path:"productIds", select:"-createdAt -updatedAt -__v -viewrsId"})
     .select("-createdAt -updatedAt -__v")
     if(!event) {
@@ -152,7 +152,7 @@ export const updateMyEvent = async (req, res, next) => {
         return next(new Error('Event not found', { cause: 404 }))
     }
     // check that time is still not start
-    if(event.startAt < Date.now()) {
+    if(event.status == 'open') {
         return next(new Error('Event is already started, you can not update on it', { cause: 400 }))
     }
     // check if title already exist
@@ -195,6 +195,10 @@ export const addNewProductsToEvent = async (req, res, next) => {
     const event = await Event.findOne({ _id: eventId, artistId: _id })
     if(!event) {
         return next(new Error('Event not found', { cause: 404 }))
+    }
+    // check that time is still not start
+    if(event.status == 'open') {
+        return next(new Error('Event is already started, you can not update on it', { cause: 400 }))
     }
     // check products avaliability
     const products = await Product.find({ _id: { $in: productIds } })
@@ -241,6 +245,10 @@ export const deleteProductsFromEvent = async (req, res, next)=> {
     const event = await Event.findOne({ _id: eventId, artistId: _id })
     if(!event) {
         return next(new Error('Event not found', { cause: 404 }))
+    }
+    // check that time is still not start
+    if(event.status == 'open') {
+        return next(new Error('Event is already started, you can not update on it', { cause: 400 }))
     }
     // check products avaliability
     const products = await Product.find({ _id: { $in: productIds }, })
@@ -328,7 +336,7 @@ export const updateEventByAdmin = async (req, res, next)=> {
         return next(new Error('Event not found', { cause: 404 }))
     }
     // check that time is still not start
-    if(event.startAt < Date.now()) {
+    if(event.status == 'open') {
         return next(new Error('Event is already started, you can not update on it', { cause: 400 }))
     }
     // update event

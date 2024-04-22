@@ -4,6 +4,8 @@ import { globalResponse } from "./middlewares/global-response.middleware.js"
 import { rollbackSavedDocument } from "./middlewares/rollback-saved-document.middleware.js"
 import { rollbackUploadedFiles } from "./middlewares/rollback-uploaded-files.middleware.js"
 import { generateIO } from "./utils/io-generation.js"
+import { cronToChangeAuctionsToClosed, cronToChangeAuctionsToLive } from "./utils/crons.js"
+import { cronToChangeEventsToClosed, cronToChangeEventsToLive } from "./utils/crons.js"
 import cors from 'cors'
 
 import * as routers from "./modules/index.routes.js"
@@ -35,6 +37,10 @@ export const initiateApp = (app, express)=> {
     })
 
     app.use(globalResponse, rollbackUploadedFiles, rollbackSavedDocument)
+    cronToChangeAuctionsToLive()
+    cronToChangeEventsToLive()
+    cronToChangeAuctionsToClosed()
+    cronToChangeEventsToClosed()
 
     const server = app.listen(port, ()=> console.log(`server is running on host`))
 

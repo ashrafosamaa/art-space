@@ -4042,7 +4042,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/events/admin/6622e4703b69a47ca05f941d",
+							"raw": "http://localhost:3000/events/admin/66259b763c1de0f662f7b531",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -4051,7 +4051,7 @@
 							"path": [
 								"events",
 								"admin",
-								"6622e4703b69a47ca05f941d"
+								"66259b763c1de0f662f7b531"
 							]
 						}
 					},
@@ -4373,16 +4373,10 @@
 					"response": []
 				},
 				{
-					"name": "get-all-auctions (IT)",
+					"name": "get-all-auctions",
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDZiN2ZmYThlZWViZDk2Yzg4MzM1YyIsInVzZXJOYW1lIjoibW9oYW1tZWQxMSIsInJvbGUiOiJpdCIsImlhdCI6MTcxMzU1MDkzMiwiZXhwIjoxNzIxMzI2OTMyfQ.8Vcz7QOV_40lJ9bip3v1aXU3KMl9-PYgnnpVCND9p8k",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"url": {
 							"raw": "http://localhost:3000/auctions/all?size=1",
 							"protocol": "http",
@@ -4569,7 +4563,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/auctions/request-user/662448a3fb3fa707f47f26d3",
+							"raw": "http://localhost:3000/auctions/request-user/6625add6e8c3193ff320ed13",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -4578,7 +4572,7 @@
 							"path": [
 								"auctions",
 								"request-user",
-								"662448a3fb3fa707f47f26d3"
+								"6625add6e8c3193ff320ed13"
 							]
 						}
 					},

@@ -21,7 +21,7 @@ router.get('/my-products', authArtist(), validationMiddleware(validator.getProdu
 router.get('/mine/:auctionId', authArtist(), validationMiddleware(validator.IdValidator),
     expressAsyncHandler(auctionController.getMyAuctionByIdWithProducts))
 
-router.get('/all', authAdmin([systemRoles.IT]), validationMiddleware(validator.getProductsWithAuctionValidator),
+router.get('/all', validationMiddleware(validator.getProductsWithAuctionValidator),
     expressAsyncHandler(auctionController.getAllAuctions))
 
 router.put('/update/:auctionId', authArtist(), validationMiddleware(validator.updateAuctionValidator),

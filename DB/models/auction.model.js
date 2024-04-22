@@ -33,10 +33,12 @@ const auctionSchema = new Schema({
         ref: 'Artist',
         required: true
     },
-    userId: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-    },
+    userIds: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+        },
+    ],
     heighstPriceId: {
         type: Schema.Types.ObjectId,
         ref: 'User',
@@ -56,6 +58,11 @@ const auctionSchema = new Schema({
         type: Number
     },
 
+    status: {
+        type: String,
+        enum: ['not-started' ,'open', 'closed'],
+        default: 'not-started'
+    }
 }, {timestamps: true,
     toJSON: { virtuals: true },
     toObject: { virtuals: true }

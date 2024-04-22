@@ -58,6 +58,12 @@ const eventSchema = new Schema({
     views: {
         type: Number,
         default: 0
+    },
+
+    status: {
+        type: String,
+        enum: ['not-started' ,'open', 'closed'],
+        default: 'not-started'
     }
 }, {timestamps: true});
 

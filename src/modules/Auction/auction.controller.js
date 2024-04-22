@@ -100,7 +100,7 @@ export const getMyAuctionByIdWithProducts = async (req, res, next)=> {
 export const getAllAuctions = async (req, res, next)=> {
     const { page, size, sortBy } = req.query
     const features = new APIFeatures(req.query, Auction.find()
-    .select("-createdAt -updatedAt -__v"))
+    .select("-createdAt -updatedAt -__v -oldBasePrice -oldDiscount -oldAppliedPrice -productId"))
     .pagination({page, size})
     .sort(sortBy)
     const auctions = await features.mongooseQuery
@@ -125,7 +125,7 @@ export const updateMyAuction = async (req, res, next)=> {
         return next(new Error('Auction not found', { cause: 404 }))
     }
     // check that time is still not start
-    if(auction.beginDate < Date.now()) {
+    if(auction.status == 'open') {
         return next(new Error('Auction is already started, you can not update on it', { cause: 400 }))
     }
     let finalPrice
@@ -210,7 +210,7 @@ export const deleteMyAuction = async (req, res, next)=> {
         return next(new Error('Auction not found', { cause: 404 }))
     }
     // check that auction is start and if it satrt auction can not delete after compare beginDate with now
-    if(auction.beginDate < new Date()) return next(new Error('Auction is already started, you can not delete it', { cause: 403 }))
+    if(auction.status == 'open') return next(new Error('Auction is already started, you can not delete it', { cause: 403 }))
     // update delete old product if there
     const oldProduct = await Product.findById(auction.productId)
     oldProduct.isAuction = false
@@ -236,7 +236,7 @@ export const updateAnAuctionByAdmin = async (req, res, next)=> {
         return next(new Error('Auction not found', { cause: 404 }))
     }
     // check that time is still not start
-    if(auction.beginDate < Date.now()) {
+    if(auction.status == 'open') {
         return next(new Error('Auction is already started, you can not update on it', { cause: 400 }))
     }
     // set prices
@@ -320,7 +320,7 @@ export const deleteAnAuctionByAdmin = async (req, res, next)=> {
         return next(new Error('Auction not found', { cause: 404 }))
     }
     // check that auction is start
-    if(auction.beginDate < new Date()) return next(new Error('Auction is already started, you can not delete it', { cause: 403 }))
+    if(auction.status == 'open') return next(new Error('Auction is already started, you can not delete it', { cause: 403 }))
     // update delete old product if there
     const oldProduct = await Product.findById(auction.productId)
     oldProduct.isAuction = false
@@ -338,7 +338,7 @@ export const deleteAnAuctionByAdmin = async (req, res, next)=> {
 
 export const viewAuction = async (req, res, next)=> {
     const { auctionId } = req.params
-    const auction= await Auction.findById(auctionId)
+    const auction = await Auction.findOne({_id: auctionId, status: { $in: ['open', 'not-started'] }})
     .populate({path:"productId", select:"-createdAt -updatedAt -__v -images -folderId"})
     .select("-createdAt -updatedAt -__v -oldBasePrice -oldDiscount -oldAppliedPrice")
     if(!auction) {
@@ -361,14 +361,18 @@ export const requestToJoinAuction = async (req, res, next)=> {
         return next(new Error('Auction not found', { cause: 404 }))
     }
     // check that auction is start
-    if(auction.beginDate > new Date()) return next(new Error('Auction is not started yet, you can not request to join it now', { cause: 403 }))
+    if(auction.status == "not-started") return next(new Error('Auction is not started yet, you can not request to join it now', { cause: 403 }))
+    if(auction.status == "closed") return next(new Error('Auction is finished, you can not request to join it', { cause: 403 }))
     // update user data
     const user = await User.findById(_id)
     // check that user is not already in any auction
-    if(user.auctionStatus == "paid") return next(new Error
-        ('You have already paid for another auction, after it finish you can request to join any auction you want', { cause: 403 }))
+    if(user.auctionStatus == "paid" && user.auctionId == auctionId) return next(new Error
+        ('You have already paid for this auction', { cause: 403 }))
+    if(user.auctionStatus == "paid" && user.auctionId != auctionId) return next(new Error
+        ('You have already paid for another auction, after it finishes you can request to join any auction you want', { cause: 403 }))
     // check that user is not already in this auction
-    if(user.auctionId == auctionId) return next(new Error('You have already requested to join this auction', { cause: 403 }))
+    if(user.auctionId == auctionId && user.auctionStatus == "pending") return next(new Error
+        ('You have already requested to join this auction, please check your email', { cause: 403 }))
     user.auctionStatus = "pending"
     user.auctionId = auctionId
     await user.save()
