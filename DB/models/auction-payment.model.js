@@ -21,8 +21,6 @@ const orderAuctionSchema = new mongoose.Schema({
 
 },{timestamps: true});
 
-orderAuctionSchema.index({ auctionId: 1, userId: 1 }, { unique: true });
-
 const AuctionOrder = mongoose.model('AuctionOrder', orderAuctionSchema);
 
 export default AuctionOrder

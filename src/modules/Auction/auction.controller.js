@@ -365,6 +365,9 @@ export const requestToJoinAuction = async (req, res, next)=> {
     }
     // check that auction is start
     if(auction.status == "closed") return next(new Error('Auction is finished, you can not request to join it', { cause: 403 }))
+    // check user not make twice request for single auction
+    const auctionOrder = await AuctionOrder.findOne({userId: _id, auctionId})
+    if(auctionOrder) return next(new Error('You have already requested to join this auction', { cause: 403 }))
     // create auction request payment
     const auctionPaymnet = await AuctionOrder.create({
         userId: _id,
@@ -427,7 +430,7 @@ export const webhookAuction = async (req, res, next) => {
     // Handle the event
     if(event.type == 'checkout.session.completed') {
         // const checkoutSessionCompleted = event.data.object;
-        await AuctionOrder.findOneAndUpdate({_id: auctionOrderID}, {paymentStatus: "Paid", isPaid: true})
+        await AuctionOrder.findOneAndUpdate({_id: auctionOrderID}, {paymentStatus: "Paid", payUrl: null})
         return res.status(200).json({
             msg: "Auction order is paid successfully",
             statusCode: 200,

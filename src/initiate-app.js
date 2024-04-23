@@ -21,8 +21,7 @@ export const initiateApp = (app, express)=> {
         } else {
             express.json()(req, res, next)
         }
-    }
-);
+    })
 
     db_connection()
 
