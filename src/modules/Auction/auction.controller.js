@@ -423,10 +423,10 @@ export const webhookAuction = async (req, res, next) => {
     } catch (err) {
         return res.status(400).send(`Webhook Error: ${err.message}`);
     }
-    const auctionOrderID = event.data.object.metadata.auctionOrderID
+    const { auctionOrderID } = event.data.object.metadata
     // Handle the event
     if(event.type == 'checkout.session.completed') {
-        const checkoutSessionCompleted = event.data.object;
+        // const checkoutSessionCompleted = event.data.object;
         await AuctionOrder.findOneAndUpdate({_id: auctionOrderID}, {paymentStatus: "Paid", isPaid: true})
         return res.status(200).json({
             msg: "Auction order is paid successfully",

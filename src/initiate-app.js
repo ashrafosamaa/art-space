@@ -15,14 +15,14 @@ export const initiateApp = (app, express)=> {
 
     app.use(cors())
 
-    app.use((req, res, next)=> {
-        if(req.orignalUrl == '/auctions/webhook'){
+    app.use((req, res, next) => {
+        if (req.originalUrl == "/auctions/webhook") {
             next()
-        }
-        else {
+        } else {
             express.json()(req, res, next)
         }
-    })
+    }
+);
 
     db_connection()
 
