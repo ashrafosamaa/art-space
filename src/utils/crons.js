@@ -44,6 +44,7 @@ export function cronToChangeAuctionsToClosed(){
                     product.basePrice = auction.variablePrice
                     product.appliedPrice = auction.variablePrice
                     product.discount = 0
+                    product.isAuction = false
                     await product.save()
                 }
                 if(auction.userIds.length == 0) {
@@ -52,12 +53,6 @@ export function cronToChangeAuctionsToClosed(){
                     product.discount = auction.oldDiscount
                     product.appliedPrice = auction.oldAppliedPrice
                     await product.save()
-                }
-                const users = await User.find({auctionId: auction._id})
-                for (const user of users) {
-                    user.auctionId = null
-                    user.auctionStatus = "none"
-                    await user.save()
                 }
             }
             await auction.save()

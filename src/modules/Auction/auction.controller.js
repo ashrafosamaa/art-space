@@ -1,8 +1,11 @@
 import { APIFeatures } from "../../utils/api-features.js";
+import { confirmPaymentIntent, createCheckOutSessionForAuction, createPaymentIntent } from "../../payment-handlers/stripe.js";
 
 import Auction from "../../../DB/models/auction.model.js";
 import Product from "../../../DB/models/product.model.js";
-import User from "../../../DB/models/user.model.js";
+import AuctionOrder from "../../../DB/models/auction-payment.model.js";
+
+import stripe from "stripe";
 
 
 export const createAuction = async (req, res, next) => {
@@ -361,21 +364,13 @@ export const requestToJoinAuction = async (req, res, next)=> {
         return next(new Error('Auction not found', { cause: 404 }))
     }
     // check that auction is start
-    if(auction.status == "not-started") return next(new Error('Auction is not started yet, you can not request to join it now', { cause: 403 }))
     if(auction.status == "closed") return next(new Error('Auction is finished, you can not request to join it', { cause: 403 }))
-    // update user data
-    const user = await User.findById(_id)
-    // check that user is not already in any auction
-    if(user.auctionStatus == "paid" && user.auctionId == auctionId) return next(new Error
-        ('You have already paid for this auction', { cause: 403 }))
-    if(user.auctionStatus == "paid" && user.auctionId != auctionId) return next(new Error
-        ('You have already paid for another auction, after it finishes you can request to join any auction you want', { cause: 403 }))
-    // check that user is not already in this auction
-    if(user.auctionId == auctionId && user.auctionStatus == "pending") return next(new Error
-        ('You have already requested to join this auction, please check your email', { cause: 403 }))
-    user.auctionStatus = "pending"
-    user.auctionId = auctionId
-    await user.save()
+    // create auction request payment
+    const auctionPaymnet = await AuctionOrder.create({
+        userId: _id,
+        auctionId
+    })
+    if(!auctionPaymnet) return next(new Error('Something went wrong, please try again.', { cause: 500 }))
     // update auction
     await auction.save()
     res.status(200).json({
@@ -384,7 +379,103 @@ export const requestToJoinAuction = async (req, res, next)=> {
     })
     // to do : send email to user after stripe payment link
     // , pay 200 L.E by your credit card\
-    // . You will get an email in next 12 hours with link to pay and join the auction\
+    // . Check link below to pay.\
     // . After payment you will be able to join the auction.\
     // If you win the Auction you will get your 200 Pound back.
 }
+
+export const payAuction = async (req, res, next)=> {
+    // destruct data from user
+    const { _id } = req.authUser
+    const { auctionId } = req.params
+    // check auction is found
+    const auction = await Auction.findOne({_id: auctionId, status: { $in: ['open', 'not-started'] }})
+    if (!auction) {
+        return next(new Error('Auction not found or auction is closed', { cause: 404 }))
+    }
+    // check that auction order request sent
+    const auctionOrder = await AuctionOrder.findOne({userId: _id, auctionId, paymentStatus: "Pending"})
+    if(!auctionOrder) return next(new Error('You are not request to join this auction, please request to join first', { cause: 403 }))
+    // payment object
+    const paymentObj = {
+        customer_email: req.authUser.email,
+        metadata: {auctionOrderID: auctionOrder._id.toString()},
+        success_url: `${req.protocol}://${req.headers.host}/sucess`,
+        cancel_url: `${req.protocol}://${req.headers.host}/cancel`,
+    }
+    const checkOutSession = await createCheckOutSessionForAuction(paymentObj)
+    const payUrl = checkOutSession.url
+    auctionOrder.payUrl = payUrl
+    const paymentIntent = await createPaymentIntent({amount: 200, currency: 'EGP'})
+    auctionOrder.payment_intent = paymentIntent.id;
+    await auctionOrder.save()
+    res.status(200).json({
+        msg: "Check paymnet link below to pay and join the auction",
+        statusCode: 200,
+        payUrl
+    })
+}
+
+
+export const webhooksStripe = async (req, res, next) => {
+
+    let event;
+
+    try {
+    event = stripe.webhooks.constructEvent(req.body, process.env.STRIPE_SECRET_KEY, process.env.END_POINT_SECRET);
+        }
+    catch (err) {
+        res.status(400).send(`Webhook Error: ${err.message}`);
+            return;
+    }
+
+    const auctionOrderID = req.body.data.object.metadata.auctionOrderID
+    const auctionOrder = await AuctionOrder.findById(auctionOrderID)
+    if(!auctionOrder) return next(new Error('Auction Order not found', { cause: 404 }))
+  // Handle the event
+    switch (event.type) {
+        case 'checkout.session.async_payment_succeeded' || 'checkout.session.completed' :
+        const checkoutSessionCompleted = event.data.object;
+        // Then define and call a function to handle the event checkout.session.async_payment_succeeded
+        // or checkout.session.completed
+        await confirmPaymentIntent({paymentIntentId: auctionOrder.payment_intent}); 
+        auctionOrder.isPaid = true;
+        auctionOrder.orderStatus = 'Paid';
+        // save order
+        await auctionOrder.save();
+        // send response 
+        res.status(200).json({
+            msg: "Auction order is paid successfully",
+            statusCode: 200,
+        })
+        break;
+        // ... handle other event types
+        default:
+        console.log(`Unhandled event type ${event.type}`);
+    }
+
+  // Return a 200 res to acknowledge receipt of the event
+    res.status(200).json({
+        msg: "Auction order is paid successfully",
+        statusCode: 200,
+    })
+}
+
+
+
+
+
+//   // Handle the event
+//   switch (event.type) {
+//     case 'checkout.session.async_payment_succeeded':
+//     const checkoutSessionAsyncPaymentSucceeded = event.data.object;
+//     // Then define and call a function to handle the event checkout.session.async_payment_succeeded
+//     break;
+//     case 'checkout.session.completed':
+//     const checkoutSessionCompleted = event.data.object;
+//     // Then define and call a function to handle the event checkout.session.completed
+//     break;
+//     // ... handle other event types
+//     default:
+//     console.log(`Unhandled event type ${event.type}`);
+// }
