@@ -397,8 +397,9 @@ export const payAuction = async (req, res, next)=> {
         return next(new Error('Auction not found or auction is closed', { cause: 404 }))
     }
     // check that auction order request sent
-    const auctionOrder = await AuctionOrder.findOne({userId: _id, auctionId, paymentStatus: "Pending"})
+    const auctionOrder = await AuctionOrder.findOne({userId: _id, auctionId})
     if(!auctionOrder) return next(new Error('You are not request to join this auction, please request to join first', { cause: 403 }))
+    if(auctionOrder.paymentStatus == "Paid") return next(new Error('You have already paid for joining this auction', { cause: 403 }))
     // payment object
     const paymentObj = {
         customer_email: req.authUser.email,
