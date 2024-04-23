@@ -1,11 +1,11 @@
 import { APIFeatures } from "../../utils/api-features.js";
-import { confirmPaymentIntent, createCheckOutSessionForAuction, createPaymentIntent } from "../../payment-handlers/stripe.js";
+import { createCheckOutSessionForAuction } from "../../payment-handlers/stripe.js";
 
 import Auction from "../../../DB/models/auction.model.js";
 import Product from "../../../DB/models/product.model.js";
 import AuctionOrder from "../../../DB/models/auction-payment.model.js";
 
-import stripe from "stripe";
+import Stripe from "stripe";
 
 
 export const createAuction = async (req, res, next) => {
@@ -373,9 +373,9 @@ export const requestToJoinAuction = async (req, res, next)=> {
     if(!auctionPaymnet) return next(new Error('Something went wrong, please try again.', { cause: 500 }))
     // update auction
     await auction.save()
-    res.status(200).json({
-        msg: "Request to join auction sent successfully",
-        statusCode: 200,
+    res.status(201).json({
+        msg: "Request to join auction added successfully",
+        statusCode: 201,
     })
     // to do : send email to user after stripe payment link
     // , pay 200 L.E by your credit card\
@@ -406,8 +406,6 @@ export const payAuction = async (req, res, next)=> {
     const checkOutSession = await createCheckOutSessionForAuction(paymentObj)
     const payUrl = checkOutSession.url
     auctionOrder.payUrl = payUrl
-    const paymentIntent = await createPaymentIntent({amount: 200, currency: 'EGP'})
-    auctionOrder.payment_intent = paymentIntent.id;
     await auctionOrder.save()
     res.status(200).json({
         msg: "Check paymnet link below to pay and join the auction",
@@ -416,66 +414,29 @@ export const payAuction = async (req, res, next)=> {
     })
 }
 
-
-export const webhooksStripe = async (req, res, next) => {
-
+export const webhookAuction = async (req, res, next) => {
+    const sig = req.headers['stripe-signature']
     let event;
-
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
     try {
-    event = stripe.webhooks.constructEvent(req.body, process.env.STRIPE_SECRET_KEY, process.env.END_POINT_SECRET);
-        }
-    catch (err) {
-        res.status(400).send(`Webhook Error: ${err.message}`);
-            return;
+        event = stripe.webhooks.constructEvent(req.body, sig, process.env.END_POINT_SECRET);
+    } catch (err) {
+        return res.status(400).send(`Webhook Error: ${err.message}`);
     }
-
-    const auctionOrderID = req.body.data.object.metadata.auctionOrderID
-    const auctionOrder = await AuctionOrder.findById(auctionOrderID)
-    if(!auctionOrder) return next(new Error('Auction Order not found', { cause: 404 }))
-  // Handle the event
-    switch (event.type) {
-        case 'checkout.session.async_payment_succeeded' || 'checkout.session.completed' :
+    const auctionOrderID = event.data.object.metadata.auctionOrderID
+    // Handle the event
+    if(event.type == 'checkout.session.completed') {
         const checkoutSessionCompleted = event.data.object;
-        // Then define and call a function to handle the event checkout.session.async_payment_succeeded
-        // or checkout.session.completed
-        await confirmPaymentIntent({paymentIntentId: auctionOrder.payment_intent}); 
-        auctionOrder.isPaid = true;
-        auctionOrder.orderStatus = 'Paid';
-        // save order
-        await auctionOrder.save();
-        // send response 
-        res.status(200).json({
+        await AuctionOrder.findOneAndUpdate({_id: auctionOrderID}, {paymentStatus: "Paid", isPaid: true})
+        return res.status(200).json({
             msg: "Auction order is paid successfully",
             statusCode: 200,
         })
-        break;
-        // ... handle other event types
-        default:
-        console.log(`Unhandled event type ${event.type}`);
+    }else {
+        return res.status(400).json({
+            msg: "Something went wrong while paying, please try again.",
+            statusCode: 400,
+        })
     }
-
-  // Return a 200 res to acknowledge receipt of the event
-    res.status(200).json({
-        msg: "Auction order is paid successfully",
-        statusCode: 200,
-    })
 }
 
-
-
-
-
-//   // Handle the event
-//   switch (event.type) {
-//     case 'checkout.session.async_payment_succeeded':
-//     const checkoutSessionAsyncPaymentSucceeded = event.data.object;
-//     // Then define and call a function to handle the event checkout.session.async_payment_succeeded
-//     break;
-//     case 'checkout.session.completed':
-//     const checkoutSessionCompleted = event.data.object;
-//     // Then define and call a function to handle the event checkout.session.completed
-//     break;
-//     // ... handle other event types
-//     default:
-//     console.log(`Unhandled event type ${event.type}`);
-// }

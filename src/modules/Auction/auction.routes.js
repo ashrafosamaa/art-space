@@ -1,5 +1,3 @@
-import express from "express";
-
 import { Router } from "express";
 import { systemRoles } from "../../utils/system-roles.js";
 import { authAdmin } from "../../middlewares/auth-admin.middleware.js";
@@ -11,6 +9,7 @@ import * as auctionController from './auction.controller.js'
 import * as validator from "./auction.validator.js"
 
 import expressAsyncHandler from "express-async-handler";
+import express from "express";
 
 const router = Router();
 
@@ -44,10 +43,11 @@ router.get('/user/:auctionId', authUser(), validationMiddleware(validator.IdVali
 router.post('/request-user/:auctionId', authUser(), validationMiddleware(validator.IdValidator),
     expressAsyncHandler(auctionController.requestToJoinAuction))
 
-router.post('/pay-stripe/:auctionId', authUser(),
+router.post('/pay-stripe/:auctionId', authUser(), validationMiddleware(validator.IdValidator),
     expressAsyncHandler(auctionController.payAuction))
 
-router.post('/webhooks', express.raw({type: 'application/json'}),
-    expressAsyncHandler(auctionController.webhooksStripe))
+router.post('/webhook', express.raw({type: 'application/json'}),
+    expressAsyncHandler(auctionController.webhookAuction))
+
 
 export default router

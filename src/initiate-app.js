@@ -13,11 +13,18 @@ import * as routers from "./modules/index.routes.js"
 export const initiateApp = (app, express)=> {
     const port = process.env.PORT
 
-    app.use(express.json())
+    app.use(cors())
+
+    app.use((req, res, next)=> {
+        if(req.orignalUrl == '/auctions/webhook'){
+            next()
+        }
+        else {
+            express.json()(req, res, next)
+        }
+    })
 
     db_connection()
-
-    app.use(cors())
 
     app.use('/userAuth', routers.userAuthRouter)
     app.use('/user', routers.userRouter)
