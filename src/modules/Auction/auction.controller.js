@@ -384,5 +384,7 @@ export const requestToJoinAuction = async (req, res, next)=> {
     })
     // to do : send email to user after stripe payment link
     // , pay 200 L.E by your credit card\
-    // . You will get an email in next 12 hours with link to pay and join the auction
+    // . You will get an email in next 12 hours with link to pay and join the auction\
+    // . After payment you will be able to join the auction.\
+    // If you win the Auction you will get your 200 Pound back.
 }
