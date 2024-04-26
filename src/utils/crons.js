@@ -4,7 +4,12 @@ import {DateTime} from 'luxon'
 import Event from "../../DB/models/event.model.js"
 import Auction from "../../DB/models/auction.model.js"
 import Product from "../../DB/models/product.model.js"
-import User from "../../DB/models/user.model.js"
+
+export function cronEveryQuarterHour(){
+    scheduleJob('*/15 * * * *', async ()=> {
+        console.log('hi every 15 min')
+    })
+}
 
 export function cronToChangeAuctionsToLive(){
     scheduleJob('0 0 0 * * *', async ()=> {
