@@ -45,6 +45,7 @@ export function cronToChangeAuctionsToClosed(){
                     product.appliedPrice = auction.variablePrice
                     product.discount = 0
                     product.isAuction = false
+                    auction.winnerId = auction.heighstPriceId
                     await product.save()
                 }
                 if(auction.userIds.length == 0) {

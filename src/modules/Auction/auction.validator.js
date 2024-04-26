@@ -37,3 +37,13 @@ export const updateAuctionValidator = {
         productId: Joi.string().length(24).hex().optional()
     })
 }
+
+
+export const takePartInAuctionValidator = {
+    body: Joi.object({
+        variablePrice: Joi.number().required(),
+    }),
+    params: Joi.object({
+        auctionId: Joi.string().length(24).hex().required()
+    })
+}

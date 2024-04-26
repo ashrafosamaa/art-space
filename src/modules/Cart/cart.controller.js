@@ -33,7 +33,7 @@ export const addProductToCart = async (req, res, next) => {
     }
     // add new product to cart
     let isProductsExists = false
-    let subTotal = 0
+    let subTotal = 0 
     for (const product of userCart.products) {
         if(product.productId == productId){
             isProductsExists = true

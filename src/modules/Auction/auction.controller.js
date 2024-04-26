@@ -1,5 +1,7 @@
 import { APIFeatures } from "../../utils/api-features.js";
 import { createCheckOutSessionForAuction } from "../../payment-handlers/stripe.js";
+import { getIO } from "../../utils/io-generation.js";
+
 
 import Auction from "../../../DB/models/auction.model.js";
 import Product from "../../../DB/models/product.model.js";
@@ -431,7 +433,11 @@ export const webhookAuction = async (req, res, next) => {
     // Handle the event
     if(event.type == 'checkout.session.completed') {
         // const checkoutSessionCompleted = event.data.object;
-        await AuctionOrder.findOneAndUpdate({_id: auctionOrderID}, {paymentStatus: "Paid", payUrl: null})
+        const auctionOrder = await AuctionOrder.findOneAndUpdate({_id: auctionOrderID}, {paymentStatus: "Paid", payUrl: null})
+        const userId = auctionOrder.userId
+        const auction = await Auction.findOne({_id: auctionOrder.auctionId})
+        auction.userIds.push(userId)
+        await auction.save()
         return res.status(200).json({
             msg: "Auction order is paid successfully",
             statusCode: 200,
@@ -444,3 +450,32 @@ export const webhookAuction = async (req, res, next) => {
     }
 }
 
+export const takePartInAuction = async (req, res, next)=> {
+    // destruct data from user
+    const { _id } = req.authUser
+    const { auctionId } = req.params
+    const { variablePrice } = req.body
+    // check auction is found
+    const auction = await Auction.findOne({_id: auctionId, status: 'open'})
+    if (!auction) {
+        return next(new Error('Auction not found or auction is closed', { cause: 404 }))
+    }
+    // check that auction order request sent
+    const auctionOrder = await AuctionOrder.findOne({userId: _id, auctionId})
+    if(!auctionOrder) return next(new Error
+        ('You are not request to join this auction, please request to join first', { cause: 403 }))
+    if(auctionOrder.paymentStatus == "Pending") return next(new Error
+        ('You dont have paid for joining this auction', { cause: 403 }))
+    // check variable price
+    if(auction.variablePrice >= variablePrice) return next(new Error
+        ('Variable price is not enough, please try with a higher price', { cause: 403 }))
+    auction.variablePrice = variablePrice
+    auction.heighstPriceId = _id
+    await auction.save()
+    // socket.io
+    getIO().emit('new-price', auction.variablePrice)
+    res.status(200).json({ 
+        msg: 'New price added successfully',
+        statusCode: 200
+    })
+}

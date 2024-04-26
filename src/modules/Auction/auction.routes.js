@@ -49,5 +49,7 @@ router.post('/pay-stripe/:auctionId', authUser(), validationMiddleware(validator
 router.post('/webhook', express.raw({type: 'application/json'}),
     expressAsyncHandler(auctionController.webhookAuction))
 
+router.post('/take-part/:auctionId', authUser(), validationMiddleware(validator.takePartInAuctionValidator),
+    expressAsyncHandler(auctionController.takePartInAuction))
 
 export default router
