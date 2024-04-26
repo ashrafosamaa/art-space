@@ -2146,7 +2146,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"fifth\"\r\n}",
+							"raw": "{\r\n    \"title\": \"seventh\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2251,7 +2251,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"forth\"\r\n}",
+							"raw": "{\r\n    \"title\": \"seveeeenth\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2259,7 +2259,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/categories/66041a721682c839a60c8987",
+							"raw": "http://localhost:3000/categories/6627bfeea3fdb8da8aa3e52f",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2267,7 +2267,7 @@
 							"port": "3000",
 							"path": [
 								"categories",
-								"66041a721682c839a60c8987"
+								"6627bfeea3fdb8da8aa3e52f"
 							],
 							"query": [
 								{
@@ -2295,7 +2295,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/categories/66041a1a1682c839a60c897f",
+							"raw": "http://localhost:3000/categories/661fb0a8486bdfdf02bea2aa",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2303,7 +2303,7 @@
 							"port": "3000",
 							"path": [
 								"categories",
-								"66041a1a1682c839a60c897f"
+								"661fb0a8486bdfdf02bea2aa"
 							]
 						}
 					},
@@ -2458,13 +2458,13 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNTQ5MjU3LCJleHAiOjE3MTE2MzU2NTd9.Yv6P91t6ps2VyPyPymD6oKZy4qcBSXGY5JUmN8PPWvE",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzEzMzA1MzAwLCJleHAiOjE3MjEwODEzMDB9.LO2IbtT3JzQz1VuaCyrBevv-Zze4fx-ikuaqk2Dz-IM",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"third\"\r\n}",
+							"raw": "{\r\n    \"title\": \"seventh\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2563,13 +2563,13 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNDc2OTM4LCJleHAiOjE3MTE1NjMzMzh9.keNfGghDEZbODRimGV16ZLrRwSRzvxvYLp1BFHq1moI",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzEzMzA1MzAwLCJleHAiOjE3MjEwODEzMDB9.LO2IbtT3JzQz1VuaCyrBevv-Zze4fx-ikuaqk2Dz-IM",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"first\"\r\n}",
+							"raw": "{\r\n    \"title\": \"seveeenthh\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2577,7 +2577,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/styles/66042b60c6b40ea9520ad5eb",
+							"raw": "http://localhost:3000/styles/6627c1369804a3595e652fa9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2585,7 +2585,7 @@
 							"port": "3000",
 							"path": [
 								"styles",
-								"66042b60c6b40ea9520ad5eb"
+								"6627c1369804a3595e652fa9"
 							],
 							"query": [
 								{
@@ -2608,12 +2608,12 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNDc2OTM4LCJleHAiOjE3MTE1NjMzMzh9.keNfGghDEZbODRimGV16ZLrRwSRzvxvYLp1BFHq1moI",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzEzMzA1MzAwLCJleHAiOjE3MjEwODEzMDB9.LO2IbtT3JzQz1VuaCyrBevv-Zze4fx-ikuaqk2Dz-IM",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/styles/66042b72c6b40ea9520ad5ef",
+							"raw": "http://localhost:3000/styles/6627c1369804a3595e652fa9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2621,7 +2621,7 @@
 							"port": "3000",
 							"path": [
 								"styles",
-								"66042b72c6b40ea9520ad5ef"
+								"6627c1369804a3595e652fa9"
 							]
 						}
 					},
@@ -2775,13 +2775,13 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNTQ5MjU3LCJleHAiOjE3MTE2MzU2NTd9.Yv6P91t6ps2VyPyPymD6oKZy4qcBSXGY5JUmN8PPWvE",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzEzMzA1MzAwLCJleHAiOjE3MjEwODEzMDB9.LO2IbtT3JzQz1VuaCyrBevv-Zze4fx-ikuaqk2Dz-IM",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"third\"\r\n}",
+							"raw": "{\r\n    \"title\": \"sseventh\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2811,7 +2811,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/subjects?size=3&sortBy=title asc",
+							"raw": "http://localhost:3000/subjects?size=3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2837,7 +2837,8 @@
 								},
 								{
 									"key": "sortBy",
-									"value": "title asc"
+									"value": "title asc",
+									"disabled": true
 								}
 							]
 						}
@@ -2878,13 +2879,13 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNDc2OTM4LCJleHAiOjE3MTE1NjMzMzh9.keNfGghDEZbODRimGV16ZLrRwSRzvxvYLp1BFHq1moI",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzEzMzA1MzAwLCJleHAiOjE3MjEwODEzMDB9.LO2IbtT3JzQz1VuaCyrBevv-Zze4fx-ikuaqk2Dz-IM",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"third\"\r\n}",
+							"raw": "{\r\n    \"title\": \"sevennth\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2892,7 +2893,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/subjects/660433eeaef41e9b0560d2cc",
+							"raw": "http://localhost:3000/subjects/6627c1a39804a3595e652fb3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2900,7 +2901,7 @@
 							"port": "3000",
 							"path": [
 								"subjects",
-								"660433eeaef41e9b0560d2cc"
+								"6627c1a39804a3595e652fb3"
 							]
 						}
 					},
@@ -2916,12 +2917,12 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNDc2OTM4LCJleHAiOjE3MTE1NjMzMzh9.keNfGghDEZbODRimGV16ZLrRwSRzvxvYLp1BFHq1moI",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzEzMzA1MzAwLCJleHAiOjE3MjEwODEzMDB9.LO2IbtT3JzQz1VuaCyrBevv-Zze4fx-ikuaqk2Dz-IM",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/subjects/6604344e601d8e56d31f8865",
+							"raw": "http://localhost:3000/subjects/6627c1a39804a3595e652fb3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2929,7 +2930,7 @@
 							"port": "3000",
 							"path": [
 								"subjects",
-								"6604344e601d8e56d31f8865"
+								"6627c1a39804a3595e652fb3"
 							]
 						}
 					},
@@ -4291,7 +4292,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"duration\": 2,\r\n    \"beginDate\": \"2024-05-01\",\r\n    \"productId\": \"6623ef65161a0dcf0b84fd5d\",\r\n    \"beginPrice\": 1500\r\n}",
+							"raw": "{\r\n    \"duration\": 2,\r\n    \"beginDate\": \"2024-05-01\",\r\n    \"productId\": \"6623b526292f176fe69b5b5c\",\r\n    \"beginPrice\": 1500\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4378,12 +4379,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/auctions/all?size=1",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/auctions/all?size=5",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"auctions",
 								"all"
@@ -4391,7 +4393,7 @@
 							"query": [
 								{
 									"key": "size",
-									"value": "1"
+									"value": "5"
 								}
 							]
 						}
@@ -4563,7 +4565,72 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/auctions/request-user/6625add6e8c3193ff320ed13",
+							"raw": "https://art-space-v1.onrender.com/auctions/request-user/6627f552bd5e5f2c267582ee",
+							"protocol": "https",
+							"host": [
+								"art-space-v1",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"auctions",
+								"request-user",
+								"6627f552bd5e5f2c267582ee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-stripe-auction (User)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA1YjcwNjc5NTUwNzVmMzA2YWUxYiIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hYWFhIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTMzNTM1NTIsImV4cCI6MTcyMTEyOTU1Mn0.2uRNgHvn5tvYKn7cbZsyn5uRgTXOR6y_QAXlDRDg1Qc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://art-space-v1.onrender.com/auctions/pay-stripe/6627f552bd5e5f2c267582ee",
+							"protocol": "https",
+							"host": [
+								"art-space-v1",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"auctions",
+								"pay-stripe",
+								"6627f552bd5e5f2c267582ee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "takepart-in-auction (User)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA1YjcwNjc5NTUwNzVmMzA2YWUxYiIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hYWFhIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTMzNTM1NTIsImV4cCI6MTcyMTEyOTU1Mn0.2uRNgHvn5tvYKn7cbZsyn5uRgTXOR6y_QAXlDRDg1Qc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"variablePrice\": 1503\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auctions/take-part/6627f552bd5e5f2c267582ee",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -4571,8 +4638,8 @@
 							"port": "3000",
 							"path": [
 								"auctions",
-								"request-user",
-								"6625add6e8c3193ff320ed13"
+								"take-part",
+								"6627f552bd5e5f2c267582ee"
 							]
 						}
 					},

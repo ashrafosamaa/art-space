@@ -8,7 +8,7 @@ import Auction from "../../DB/models/auction.model.js"
 import Product from "../../DB/models/product.model.js"
 
 export function cronEveryQuarterHour(){
-    scheduleJob('*/1 * * * *', async ()=> {
+    scheduleJob('*/14 * * * *', async ()=> {
         axios.get('https://art-space-v1.onrender.com/admins/keep-alive')
         .then(response => {
             console.log('Keep-alive request sent:', response.data);
