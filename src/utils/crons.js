@@ -1,13 +1,21 @@
 import { scheduleJob } from "node-schedule"
 import {DateTime} from 'luxon'
+import axios from 'axios';
+
 
 import Event from "../../DB/models/event.model.js"
 import Auction from "../../DB/models/auction.model.js"
 import Product from "../../DB/models/product.model.js"
 
 export function cronEveryQuarterHour(){
-    scheduleJob('*/15 * * * *', async ()=> {
-        console.log('hi every 15 min')
+    scheduleJob('*/1 * * * *', async ()=> {
+        axios.get('https://art-space-v1.onrender.com/admins/keep-alive')
+        .then(response => {
+            console.log('Keep-alive request sent:', response.data);
+        })
+        .catch(error => {
+            console.error('Error sending keep-alive request:', error.message);
+        });    
     })
 }
 
