@@ -10,6 +10,7 @@ import productRouter from "./Product/product.routes.js"
 import cartRouter from "./Cart/cart.routes.js"
 import eventRouter from "./Event/event.routes.js"
 import auctionRouter from "./Auction/auction.routes.js"
+import orderRouter from "./Order/order.routes.js"
 
 export {
     userAuthRouter,
@@ -23,5 +24,6 @@ export {
     productRouter,
     cartRouter,
     eventRouter,
-    auctionRouter
+    auctionRouter,
+    orderRouter
 }

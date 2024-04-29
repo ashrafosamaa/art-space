@@ -37,9 +37,10 @@ export const initiateApp = (app, express)=> {
     app.use('/cart', routers.cartRouter)
     app.use('/events', routers.eventRouter)
     app.use('/auctions', routers.auctionRouter)
+    app.use('/orders', routers.orderRouter)
 
     app.use('*', (req, res, next)=> {
-        return next({message: "Page not found", cause: 404})
+        return next(new Error('Page not found', { cause: 404 }))
     })
 
     app.use(globalResponse, rollbackUploadedFiles, rollbackSavedDocument)

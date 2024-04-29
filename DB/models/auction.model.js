@@ -71,7 +71,7 @@ const auctionSchema = new Schema({
 auctionSchema.virtual('products', {
     ref: 'Product',
     localField: '_id',
-    foreignField: 'auctionId'
+    foreignField: 'auctionId',
 })
 
 const Auction = model("Auction", auctionSchema);

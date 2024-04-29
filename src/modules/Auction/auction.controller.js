@@ -9,7 +9,6 @@ import AuctionOrder from "../../../DB/models/auction-payment.model.js";
 
 import Stripe from "stripe";
 
-
 export const createAuction = async (req, res, next) => {
     // destructe data from artist
     const {_id} = req.authArtist
@@ -344,7 +343,7 @@ export const deleteAnAuctionByAdmin = async (req, res, next)=> {
 export const viewAuction = async (req, res, next)=> {
     const { auctionId } = req.params
     const auction = await Auction.findOne({_id: auctionId, status: { $in: ['open', 'not-started'] }})
-    .populate({path:"productId", select:"-createdAt -updatedAt -__v -images -folderId"})
+    .populate({path:"productId", select:"-createdAt -updatedAt -__v -folderId"})
     .select("-createdAt -updatedAt -__v -oldBasePrice -oldDiscount -oldAppliedPrice")
     if(!auction) {
         return next(new Error('Auction not found', { cause: 404 }))
