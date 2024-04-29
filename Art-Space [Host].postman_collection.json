@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "c329aa05-a1a1-40ee-9537-9dbf32be2ed9",
-		"name": "Art-Space-v1",
+		"_postman_id": "ccf7c476-813c-42c0-be40-b4161b83a594",
+		"name": "Art-Space [Host]",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30814973"
+		"_exporter_id": "30814973",
+		"_collection_link": "https://cloudy-space-135946-1.postman.co/workspace/art-sapce~bf80921f-ade2-496e-a8ff-b81635a2e230/collection/30814973-ccf7c476-813c-42c0-be40-b4161b83a594?action=share&source=collection_link&creator=30814973"
 	},
 	"item": [
 		{
@@ -96,12 +97,13 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/admins",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/admins",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"admins"
 							]
@@ -156,12 +158,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/admins/login",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/admins/login",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"admins",
 								"login"
@@ -185,12 +188,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/admins/all",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/admins/all",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"admins",
 								"all"
@@ -236,12 +240,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/admins/single/660308a0ea2356a25cb15f45",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/admins/single/660308a0ea2356a25cb15f45",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"admins",
 								"single",
@@ -275,12 +280,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/admins/update/660308a0ea2356a25cb15f45",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/admins/update/660308a0ea2356a25cb15f45",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"admins",
 								"update",
@@ -305,12 +311,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/admins/account/6603111f5a4773dd0f3bef3b",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/admins/account/6603111f5a4773dd0f3bef3b",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"admins",
 								"account",
@@ -335,12 +342,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/admins/search?page=1&size=5",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/admins/search?page=1&size=5",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"admins",
 								"search"
@@ -414,12 +422,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/admins/profile",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/admins/profile",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"admins",
 								"profile"
@@ -452,12 +461,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/admins/update-profile",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/admins/update-profile",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"admins",
 								"update-profile"
@@ -512,12 +522,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/admins/update-password",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/admins/update-password",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"admins",
 								"update-password"
@@ -556,12 +567,13 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/admins/update-profile-img",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/admins/update-profile-img",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"admins",
 								"update-profile-img"
@@ -585,12 +597,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/admins/delete-profile",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/admins/delete-profile",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"admins",
 								"delete-profile"
@@ -689,12 +702,13 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/userAuth/signup",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/userAuth/signup",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"userAuth",
 								"signup"
@@ -748,12 +762,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/userAuth/verifyemail",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/userAuth/verifyemail",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"userAuth",
 								"verifyemail"
@@ -777,12 +792,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/userAuth/forgetpassword",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/userAuth/forgetpassword",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"userAuth",
 								"forgetpassword"
@@ -806,12 +822,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/userAuth/verifycode",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/userAuth/verifycode",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"userAuth",
 								"verifycode"
@@ -835,12 +852,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/userAuth/resetpassword",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/userAuth/resetpassword",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"userAuth",
 								"resetpassword"
@@ -864,12 +882,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/userAuth/resendcode",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/userAuth/resendcode",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"userAuth",
 								"resendcode"
@@ -895,12 +914,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/user?page=1&size=3&sortBy=userName asc",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/user?page=1&size=3&sortBy=userName asc",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"user"
 							],
@@ -939,12 +959,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/user/account/65fdc01a0d1a2fc174282db4",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/user/account/65fdc01a0d1a2fc174282db4",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"user",
 								"account",
@@ -966,12 +987,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/user/search?gender=male&size=4",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/user/search?gender=male&size=4",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"user",
 								"search"
@@ -1016,12 +1038,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/user/update/65ff3729dfa95ff5f9352e3d",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/user/update/65ff3729dfa95ff5f9352e3d",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"user",
 								"update",
@@ -1043,12 +1066,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/user/delete/65ff421ec719e20e1cfdc9d4",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/user/delete/65ff421ec719e20e1cfdc9d4",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"user",
 								"delete",
@@ -1070,12 +1094,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/user/profiledata/66005b7067955075f306ae1b",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/user/profiledata/66005b7067955075f306ae1b",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"user",
 								"profiledata",
@@ -1106,12 +1131,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/user/updateprofile/65fe4ef9ceda1443bffd8c23",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/user/updateprofile/65fe4ef9ceda1443bffd8c23",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"user",
 								"updateprofile",
@@ -1142,12 +1168,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/user/updatepassword/65ff1f45a9860df6ec8852a4",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/user/updatepassword/65ff1f45a9860df6ec8852a4",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"user",
 								"updatepassword",
@@ -1184,12 +1211,13 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/user/updateprofilepicture/66005b7067955075f306ae1b",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/user/updateprofilepicture/66005b7067955075f306ae1b",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"user",
 								"updateprofilepicture",
@@ -1211,12 +1239,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/user/deleteaccount/65ff1f45a9860df6ec8852a4",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/user/deleteaccount/65ff1f45a9860df6ec8852a4",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"user",
 								"deleteaccount",
@@ -1247,12 +1276,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/user/add-address/65ff275e3f5cd593e1867257",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/user/add-address/65ff275e3f5cd593e1867257",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"user",
 								"add-address",
@@ -1274,12 +1304,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/user/alladdresses/65ff1f45a9860df6ec8852a4",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/user/alladdresses/65ff1f45a9860df6ec8852a4",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"user",
 								"alladdresses",
@@ -1301,12 +1332,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/user/deleteaddress/65ff2569097bfa77bda83631",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/user/deleteaddress/65ff2569097bfa77bda83631",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"user",
 								"deleteaddress",
@@ -1403,12 +1435,13 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/artistAuth/signup",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/artistAuth/signup",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"artistAuth",
 								"signup"
@@ -1432,12 +1465,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/artistAuth/login",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/artistAuth/login",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"artistAuth",
 								"login"
@@ -1461,12 +1495,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/artistAuth/verifyemail",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/artistAuth/verifyemail",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"artistAuth",
 								"verifyemail"
@@ -1490,12 +1525,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/artistAuth/forgetpassword",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/artistAuth/forgetpassword",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"artistAuth",
 								"forgetpassword"
@@ -1519,12 +1555,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/artistAuth/verifycode",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/artistAuth/verifycode",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"artistAuth",
 								"verifycode"
@@ -1548,12 +1585,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/artistAuth/resetpassword",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/artistAuth/resetpassword",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"artistAuth",
 								"resetpassword"
@@ -1577,12 +1615,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/artistAuth/resendcode",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/artistAuth/resendcode",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"artistAuth",
 								"resendcode"
@@ -1608,12 +1647,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/artist?page=1&size=3&sortBy=userName asc",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/artist?page=1&size=3&sortBy=userName asc",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"artist"
 							],
@@ -1652,12 +1692,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/artist/account/66003fd4eb61a0bf8849800e",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/artist/account/66003fd4eb61a0bf8849800e",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"artist",
 								"account",
@@ -1679,12 +1720,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/artist/search?size=4&artistName=b&email=a&phoneNumber=0&gender=male",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/artist/search?size=4&artistName=b&email=a&phoneNumber=0&gender=male",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"artist",
 								"search"
@@ -1741,12 +1783,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/artist/update/66003fd4eb61a0bf8849800e",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/artist/update/66003fd4eb61a0bf8849800e",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"artist",
 								"update",
@@ -1768,12 +1811,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/artist/delete/66213faab91e102360a95337",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/artist/delete/66213faab91e102360a95337",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"artist",
 								"delete",
@@ -1795,12 +1839,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/artist/profiledata/6600607b9d09804f499b3b9c",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/artist/profiledata/6600607b9d09804f499b3b9c",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"artist",
 								"profiledata",
@@ -1816,12 +1861,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/artist/products/66213faab91e102360a95337?page=1&size=1",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/artist/products/66213faab91e102360a95337?page=1&size=1",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"artist",
 								"products",
@@ -1847,12 +1893,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/artist/events/66213faab91e102360a95337?page=1&size=2",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/artist/events/66213faab91e102360a95337?page=1&size=2",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"artist",
 								"events",
@@ -1893,12 +1940,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/artist/updateprofile/6600607b9d09804f499b3b9c",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/artist/updateprofile/6600607b9d09804f499b3b9c",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"artist",
 								"updateprofile",
@@ -1929,12 +1977,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/artist/updatepassword/6600607b9d09804f499b3b9c",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/artist/updatepassword/6600607b9d09804f499b3b9c",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"artist",
 								"updatepassword",
@@ -1971,12 +2020,13 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/artist/updateprofilepicture/6600607b9d09804f499b3b9c",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/artist/updateprofilepicture/6600607b9d09804f499b3b9c",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"artist",
 								"updateprofilepicture",
@@ -1998,12 +2048,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/artist/deleteaccount/661fb5bd052a3e9057cef4fc",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/artist/deleteaccount/661fb5bd052a3e9057cef4fc",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"artist",
 								"deleteaccount",
@@ -2034,12 +2085,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/artist/add-address/6600607b9d09804f499b3b9c",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/artist/add-address/6600607b9d09804f499b3b9c",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"artist",
 								"add-address",
@@ -2061,12 +2113,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/artist/alladdresses/6600607b9d09804f499b3b9c",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/artist/alladdresses/6600607b9d09804f499b3b9c",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"artist",
 								"alladdresses",
@@ -2088,12 +2141,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/artist/deleteaddress/6600607b9d09804f499b3b9d",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/artist/deleteaddress/6600607b9d09804f499b3b9d",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"artist",
 								"deleteaddress",
@@ -2154,12 +2208,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/categories",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/categories",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"categories"
 							]
@@ -2176,12 +2231,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/categories",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/categories",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"categories"
 							],
@@ -2220,12 +2276,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/categories/single/6601995b7994a3a6de2c783b",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/categories/single/6601995b7994a3a6de2c783b",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"categories",
 								"single",
@@ -2259,12 +2316,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/categories/6627bfeea3fdb8da8aa3e52f",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/categories/6627bfeea3fdb8da8aa3e52f",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"categories",
 								"6627bfeea3fdb8da8aa3e52f"
@@ -2295,12 +2353,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/categories/661fb0a8486bdfdf02bea2aa",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/categories/661fb0a8486bdfdf02bea2aa",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"categories",
 								"661fb0a8486bdfdf02bea2aa"
@@ -2318,12 +2377,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/categories/search",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/categories/search",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"categories",
 								"search"
@@ -2365,12 +2425,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/categories/products/66019b5f5c737005beb4f192?size=1&page=2",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/categories/products/66019b5f5c737005beb4f192?size=1&page=2",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"categories",
 								"products",
@@ -2396,12 +2457,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/categories/with-products?size=6",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/categories/with-products?size=6",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"categories",
 								"with-products"
@@ -2472,12 +2534,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/styles",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/styles",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"styles"
 							]
@@ -2494,12 +2557,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/styles",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/styles",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"styles"
 							],
@@ -2538,12 +2602,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/styles/single/66042b60c6b40ea9520ad5eb",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/styles/single/66042b60c6b40ea9520ad5eb",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"styles",
 								"single",
@@ -2577,12 +2642,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/styles/6627c1369804a3595e652fa9",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/styles/6627c1369804a3595e652fa9",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"styles",
 								"6627c1369804a3595e652fa9"
@@ -2613,12 +2679,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/styles/6627c1369804a3595e652fa9",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/styles/6627c1369804a3595e652fa9",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"styles",
 								"6627c1369804a3595e652fa9"
@@ -2636,12 +2703,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/styles/search?title=t",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/styles/search?title=t",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"styles",
 								"search"
@@ -2682,12 +2750,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/styles/products/66042b60c6b40ea9520ad5eb?size=1&page=1",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/styles/products/66042b60c6b40ea9520ad5eb?size=1&page=1",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"styles",
 								"products",
@@ -2713,12 +2782,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/styles/with-products?size=6",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/styles/with-products?size=6",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"styles",
 								"with-products"
@@ -2789,12 +2859,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/subjects",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/subjects",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"subjects"
 							]
@@ -2811,12 +2882,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/subjects?size=3",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/subjects?size=3",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"subjects"
 							],
@@ -2854,12 +2926,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/subjects/single/66043449601d8e56d31f8861",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/subjects/single/66043449601d8e56d31f8861",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"subjects",
 								"single",
@@ -2893,12 +2966,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/subjects/6627c1a39804a3595e652fb3",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/subjects/6627c1a39804a3595e652fb3",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"subjects",
 								"6627c1a39804a3595e652fb3"
@@ -2922,12 +2996,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/subjects/6627c1a39804a3595e652fb3",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/subjects/6627c1a39804a3595e652fb3",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"subjects",
 								"6627c1a39804a3595e652fb3"
@@ -2945,12 +3020,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/subjects/search?title=t&slug=t",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/subjects/search?title=t&slug=t",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"subjects",
 								"search"
@@ -2990,12 +3066,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/subjects/products/660433eeaef41e9b0560d2cc?size=1&page=2",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/subjects/products/660433eeaef41e9b0560d2cc?size=1&page=2",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"subjects",
 								"products",
@@ -3021,12 +3098,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/subjects/with-products?size=6",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/subjects/with-products?size=6",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"subjects",
 								"with-products"
@@ -3134,12 +3212,13 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/products/add",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/products/add",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"products",
 								"add"
@@ -3157,12 +3236,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/products/all?page=1&size=5&sortBy=title asc",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/products/all?page=1&size=5&sortBy=title asc",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"products",
 								"all"
@@ -3199,12 +3279,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/products/with-auctions",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/products/with-auctions",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"products",
 								"with-auctions"
@@ -3229,12 +3310,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/products/single/6605cb6424054ea5757a70b3",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/products/single/6605cb6424054ea5757a70b3",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"products",
 								"single",
@@ -3268,12 +3350,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/products/update/6605cbed716b2d01e26a86cd",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/products/update/6605cbed716b2d01e26a86cd",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"products",
 								"update",
@@ -3298,12 +3381,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/products/delete/6623b587292f176fe69b5b70",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/products/delete/6623b587292f176fe69b5b70",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"products",
 								"delete",
@@ -3328,12 +3412,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/products/myProducts?size=1&sortBy=title desc",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/products/myProducts?size=1&sortBy=title desc",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"products",
 								"myProducts"
@@ -3386,12 +3471,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/products/updateMyProduct/6605cbed716b2d01e26a86cd",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/products/updateMyProduct/6605cbed716b2d01e26a86cd",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"products",
 								"updateMyProduct",
@@ -3431,12 +3517,13 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/products/changeCoverImg/6605cb6424054ea5757a70b3",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/products/changeCoverImg/6605cb6424054ea5757a70b3",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"products",
 								"changeCoverImg",
@@ -3476,12 +3563,13 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/products/changeSpecificImage/6605efd15b1aaeb36ccd546d",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/products/changeSpecificImage/6605efd15b1aaeb36ccd546d",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"products",
 								"changeSpecificImage",
@@ -3506,12 +3594,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/products/deleteMyProduct/6605cbed716b2d01e26a86cd",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/products/deleteMyProduct/6605cbed716b2d01e26a86cd",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"products",
 								"deleteMyProduct",
@@ -3530,12 +3619,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/products/search?page=1&size=5",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/products/search?page=1&size=5",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"products",
 								"search"
@@ -3638,12 +3728,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/products/filter?page=1&size=5",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/products/filter?page=1&size=5",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"products",
 								"filter"
@@ -3713,12 +3804,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/events/add",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/events/add",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"events",
 								"add"
@@ -3733,12 +3825,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/events/all?size=2",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/events/all?size=2",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"events",
 								"all"
@@ -3793,12 +3886,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/events/mine/6622e4af3b69a47ca05f9436",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/events/mine/6622e4af3b69a47ca05f9436",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"events",
 								"mine",
@@ -3820,12 +3914,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/events/myevents",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/events/myevents",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"events",
 								"myevents"
@@ -3855,12 +3950,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/events/update/6623b7cc1c1f89dd9d7d0f82",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/events/update/6623b7cc1c1f89dd9d7d0f82",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"events",
 								"update",
@@ -3891,12 +3987,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/events/add-product/6622e49d3b69a47ca05f942f",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/events/add-product/6622e49d3b69a47ca05f942f",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"events",
 								"add-product",
@@ -3927,12 +4024,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/events/delete-product/6622e49d3b69a47ca05f942f",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/events/delete-product/6622e49d3b69a47ca05f942f",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"events",
 								"delete-product",
@@ -3954,12 +4052,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/events/66227aee971993a0391af69c",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/events/66227aee971993a0391af69c",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"events",
 								"66227aee971993a0391af69c"
@@ -3980,12 +4079,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/events/single/6622b69d7cd5208c5fb2ac6a",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/events/single/6622b69d7cd5208c5fb2ac6a",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"events",
 								"single",
@@ -4016,12 +4116,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/events/single/6622b69d7cd5208c5fb2ac6a",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/events/single/6622b69d7cd5208c5fb2ac6a",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"events",
 								"single",
@@ -4043,12 +4144,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/events/admin/66259b763c1de0f662f7b531",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/events/admin/66259b763c1de0f662f7b531",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"events",
 								"admin",
@@ -4064,12 +4166,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/events/search?artistId=66213faab91e102360a95337&title=s",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/events/search?artistId=66213faab91e102360a95337&title=s",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"events",
 								"search"
@@ -4099,12 +4202,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/events/filter?duration=8",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/events/filter?duration=8",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"events",
 								"filter"
@@ -4160,12 +4264,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/cart",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/cart",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"cart"
 							]
@@ -4185,12 +4290,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/cart",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/cart",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"cart"
 							],
@@ -4226,12 +4332,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/cart",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/cart",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"cart"
 							]
@@ -4260,12 +4367,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/cart/661fea6d70866943c24c1908",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/cart/661fea6d70866943c24c1908",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"cart",
 								"661fea6d70866943c24c1908"
@@ -4300,12 +4408,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/auctions/create",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/auctions/create",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"auctions",
 								"create"
@@ -4326,12 +4435,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/auctions/my-products?size=5",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/auctions/my-products?size=5",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"auctions",
 								"my-products"
@@ -4358,12 +4468,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/auctions/mine/66243ff640b6f281510379bc",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/auctions/mine/66243ff640b6f281510379bc",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"auctions",
 								"mine",
@@ -4421,12 +4532,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/auctions/admin-update/662448a3fb3fa707f47f26d3",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/auctions/admin-update/662448a3fb3fa707f47f26d3",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"auctions",
 								"admin-update",
@@ -4448,12 +4560,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/auctions/admin-delete/662448a3fb3fa707f47f26d3",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/auctions/admin-delete/662448a3fb3fa707f47f26d3",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"auctions",
 								"admin-delete",
@@ -4484,12 +4597,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/auctions/update/662448a3fb3fa707f47f26d3",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/auctions/update/662448a3fb3fa707f47f26d3",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"auctions",
 								"update",
@@ -4511,12 +4625,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/auctions/delete/662448a3fb3fa707f47f26d3",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/auctions/delete/662448a3fb3fa707f47f26d3",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"auctions",
 								"delete",
@@ -4538,12 +4653,13 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/auctions/user/66243ff640b6f281510379bc",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/auctions/user/66243ff640b6f281510379bc",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"auctions",
 								"user",
@@ -4622,7 +4738,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"variablePrice\": 1503\r\n}",
+							"raw": "{\r\n    \"variablePrice\": 1504\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4630,12 +4746,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/auctions/take-part/6627f552bd5e5f2c267582ee",
-							"protocol": "http",
+							"raw": "https://art-space-v1.onrender.com/auctions/take-part/6627f552bd5e5f2c267582ee",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"art-space-v1",
+								"onrender",
+								"com"
 							],
-							"port": "3000",
 							"path": [
 								"auctions",
 								"take-part",
