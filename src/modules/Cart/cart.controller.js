@@ -9,6 +9,7 @@ export const addProductToCart = async (req, res, next) => {
     const product = await Product.findById(productId)
     if(!product) return next(new Error("Product not found", { cause: 404 }))
     if(product.isAvailable == false) return next(new Error("Product is not available", { cause: 404 }))
+    if(product.isAuction == true) return next(new Error("Product is in auction", { cause: 404 }))
     // check that cart is not found
     const userCart = await Cart.findOne({ userId: _id }).select("-createdAt -updatedAt -__v")
     if (!userCart) {
@@ -16,9 +17,11 @@ export const addProductToCart = async (req, res, next) => {
             userId: _id,
             products: [
                 {
+                    title: product.title,
+                    basePrice: product.basePrice,
+                    discount: product.discount,
+                    appliedPrice: product.appliedPrice,
                     productId,
-                    basePrice: product.appliedPrice,
-                    title: product.title
                 }
             ],
             subTotal: product.appliedPrice
@@ -28,7 +31,7 @@ export const addProductToCart = async (req, res, next) => {
         return res.status(201).json({
             msg: "Product added to cart successfully",
             statusCode: 201,
-            cartData
+            newCart
         })
     }
     // add new product to cart
@@ -48,13 +51,15 @@ export const addProductToCart = async (req, res, next) => {
     // add new product to cart
     if(!isProductsExists){
         userCart.products.push({
+            title: product.title,
+            basePrice: product.basePrice,
+            discount: product.discount,
+            appliedPrice: product.appliedPrice,
             productId,
-            basePrice: product.appliedPrice,
-            title: product.title
         })
     }
     for (const product of userCart.products) {
-        subTotal += product.basePrice
+        subTotal += product.appliedPrice
     }
     userCart.subTotal = subTotal
     await userCart.save()

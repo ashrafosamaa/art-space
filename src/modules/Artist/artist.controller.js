@@ -4,6 +4,8 @@ import { allAddresses } from "./artist-utils/all-addresses.js";
 import Artist from "../../../DB/models/artist.model.js";
 import Product from "../../../DB/models/product.model.js";
 import Event from "../../../DB/models/event.model.js";
+import Auction from "../../../DB/models/auction.model.js";
+
 import cloudinaryConnection from "../../utils/cloudinary.js";
 import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
@@ -123,10 +125,6 @@ export const deleteArtist = async(req, res, next)=> {
 export const getAccountData = async (req, res, next)=> {
     // destruct data from artist
     const {_id} = req.authArtist
-    const {artistId} = req.params
-    if(_id != artistId){
-        return next (new Error("You cannot access this profile's data", { cause: 400 }));
-    }
     // get artist data
     const getArtist = await Artist.findById(_id).select("-password -createdAt -updatedAt -__v -folderId")
     if (!getArtist) {
@@ -143,12 +141,7 @@ export const getAccountData = async (req, res, next)=> {
 export const updateProfileData = async (req, res, next)=> {
     // destruct data from artist
     const {_id} = req.authArtist
-    const {artistId} = req.params
     const {artistName, phoneNumber} = req.body
-    // check who is login and who is updating
-    if(_id != artistId){
-        return next (new Error("You cannot access this profile's data", { cause: 400 }));
-    }
     // find artist
     const artist = await Artist.findById(_id).select("-password -folderId -createdAt -updatedAt -__v")
     // check artist
@@ -175,12 +168,7 @@ export const updateProfileData = async (req, res, next)=> {
 export const updatePassword = async (req, res, next)=> {
     // destruct data from artist
     const {_id} = req.authArtist
-    const {artistId} = req.params
     const {password, oldPassword} = req.body
-    // check who is login and who is updating
-    if(_id != artistId){
-        return next (new Error("You cannot update this profile's password", { cause: 400 }));
-    }
     // find artist
     const artist = await Artist.findById(_id)
     // check old password
@@ -213,10 +201,6 @@ export const updateProfilePicture = async (req, res, next)=> {
     // destruct data from artist
     const {_id} = req.authArtist
     const {oldPublicId} = req.body
-    const {artistId} = req.params
-    if(_id != artistId){
-        return next (new Error("You cannot update this profile's data", { cause: 400 }));
-    }
     // update artist data
     const artist = await Artist.findById(_id).select("-password -createdAt -updatedAt -__v")
     if(artist.profileImg.public_id != oldPublicId || !req.file){
@@ -242,16 +226,16 @@ export const updateProfilePicture = async (req, res, next)=> {
 export const deleteAccount = async (req, res, next)=> {
     // destruct data from artist
     const {_id} = req.authArtist
-    const {artistId} = req.params
-    if(_id != artistId){
-        return next (new Error("You cannot delete this profile", { cause: 400 }));
-    }
     // delete artist data
     const deleteArtist = await Artist.findById(_id)
     if (!deleteArtist) {
-            return next(new Error("Artist not found", { cause: 404 }));
+        return next(new Error("Artist not found", { cause: 404 }));
     }
-    const products = await Product.find({artistId})
+    const auction = await Auction.find({artistId: _id})
+    if(auction.length){
+        return next(new Error("Can not delete artist, there is an auction in progress", { cause: 403 }));
+    }
+    const products = await Product.find({artistId: _id})
     // delete folder
     if(deleteArtist.profileImg.public_id || products.length){
         const folderProfile = `${process.env.MAIN_FOLDER}/Artists/${deleteArtist.folderId}`
@@ -259,9 +243,9 @@ export const deleteAccount = async (req, res, next)=> {
         await cloudinaryConnection().api.delete_folder(folderProfile)
         await Product.deleteMany({artistId})
     }
-    const events = await Event.find({artistId})
+    const events = await Event.find({artistId: _id})
     if(events.length){
-        await Event.deleteMany({artistId})
+        await Event.deleteMany({artistId: _id})
     }
     // delete artist
     await deleteArtist.deleteOne()
@@ -275,10 +259,6 @@ export const deleteAccount = async (req, res, next)=> {
 export const addArtistAddress = async (req, res) => {
     // destruct data from artist
     const { _id } = req.authArtist
-    const {artistId} = req.params
-    if(_id != artistId){
-        return next (new Error("You cannot add address to this profile", { cause: 400 }));
-    }
     const artist = await Artist.findById(_id);
     // check if address already exists
     for (let i = 0; i < artist.addresses.length; i++) {
@@ -304,14 +284,9 @@ export const addArtistAddress = async (req, res) => {
 
 export const getProfileAddresses = async (req, res) => {
     // destruct data from artist
-    const { artistId } = req.params;
     const {_id} = req.authArtist
-    // check who is login and who is viewing
-    if(_id != artistId){
-        return next (new Error("You cannot view this profile's data", { cause: 400 }));
-    }
     // get artist data
-    const artist = await Artist.findById(artistId)
+    const artist = await Artist.findById(_id)
     if (!artist) {
         return next (new Error("Artist not found", { cause: 404 }));
     }

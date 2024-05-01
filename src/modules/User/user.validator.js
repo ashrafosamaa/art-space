@@ -16,6 +16,13 @@ export const IDValidator = {
 }
 
 
+export const noValidator = {
+    body: Joi.object({
+        zaza: Joi.string().length(2).optional()
+    })
+}
+
+
 export const searchValidator = {
     query: Joi.object({
         page: Joi.number().optional(),
@@ -39,10 +46,15 @@ export const updateUserValidator = {
 }
 
 
+export const updateByUserValidator = {
+    body: Joi.object({
+        userName : Joi.string().optional().min(3),
+        phoneNumber: Joi.string().optional().length(11).pattern(/^[0-9]+$/, "i"),
+    })
+}
+
+
 export const updatePasswordValidator = { 
-    params: Joi.object({
-        userId: Joi.string().length(24).hex().required()
-    }),
     body: Joi.object({
         oldPassword: Joi.string().required().min(8),
         password: Joi.string().required().min(8)
@@ -56,9 +68,6 @@ export const updatePasswordValidator = {
 
 
 export const updateProfilePictureValidator = {
-    params: Joi.object({
-        userId: Joi.string().length(24).hex().required()
-    }),
     body: Joi.object({
         oldPublicId: Joi.string().required()
     })
@@ -66,9 +75,6 @@ export const updateProfilePictureValidator = {
 
 
 export const addUserAddressValidator = {
-    params: Joi.object({
-        userId: Joi.string().length(24).hex().required()
-    }),
     body: Joi.object({
         alias: Joi.string().required(),
         street: Joi.string().required(),

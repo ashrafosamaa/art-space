@@ -33,11 +33,7 @@ export const addCategory = async (req, res, next)=> {
 
 export const getAllCategories = async (req, res, next)=> {
     // destruct data from req.query
-    const {page, size, sortBy} = req.query
-    const features = new APIFeatures(req.query, Category.find().select("-createdAt -updatedAt -__v"))
-    .pagination({page, size})
-    .sort(sortBy)
-    const category = await features.mongooseQuery
+    const category = await Category.find()
     if(!category.length) {
         return next(new Error('No categories found', { cause: 404 }))
     }
@@ -105,11 +101,9 @@ export const deleteCategory = async (req, res, next)=> {
 
 export const search = async (req, res, next)=> {
     // destruct data from req.query
-    const {page, size, sortBy, ...serach} = req.query
+    const {...serach} = req.query
     const features = new APIFeatures(req.query, Category.find().select("-createdAt -updatedAt -__v"))
-    .pagination({page, size})
     .searchCategories(serach)
-    .sort(sortBy)
     const category = await features.mongooseQuery
     if(!category.length) {
         return next(new Error('No category found', { cause: 404 }))

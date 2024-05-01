@@ -28,27 +28,27 @@ router.put('/update/:artistId', authAdmin([systemRoles.IT]), validationMiddlewar
 router.delete('/delete/:artistId', authAdmin([systemRoles.IT]), validationMiddleware(validator.IDValidator),
     expressAsyncHandler(artistController.deleteArtist))
 
-router.get('/profiledata/:artistId', authArtist(), validationMiddleware(validator.IDValidator),
+router.get('/profiledata', authArtist(), validationMiddleware(validator.noValidator),
     expressAsyncHandler(artistController.getAccountData))
 
-router.put('/updateprofile/:artistId', authArtist(), validationMiddleware(validator.updateArtistValidator),
+router.put('/updateprofile', authArtist(), validationMiddleware(validator.updateByArtistValidator),
     expressAsyncHandler(artistController.updateProfileData))
     
-router.patch('/updatepassword/:artistId', authArtist(), validationMiddleware(validator.updatePasswordValidator),
+router.patch('/updatepassword', authArtist(), validationMiddleware(validator.updatePasswordValidator),
     expressAsyncHandler(artistController.updatePassword))
 
-router.put('/updateprofilepicture/:artistId', authArtist(),
+router.put('/updateprofilepicture', authArtist(),
     multerMiddleHost({extensions: allowedExtensions.image
         }).single('profileImg'), validationMiddleware(validator.updateProfilePictureValidator),
 expressAsyncHandler(artistController.updateProfilePicture))
 
-router.delete('/deleteaccount/:artistId', authArtist(), validationMiddleware(validator.IDValidator),
+router.delete('/deleteaccount', authArtist(), validationMiddleware(validator.noValidator),
     expressAsyncHandler(artistController.deleteAccount))
 
-router.post('/add-address/:artistId', authArtist(), validationMiddleware(validator.addArtistAddressValidator),
+router.post('/add-address', authArtist(), validationMiddleware(validator.addArtistAddressValidator),
     expressAsyncHandler(artistController.addArtistAddress))
 
-router.get('/alladdresses/:artistId', authArtist(), validationMiddleware(validator.IDValidator),
+router.get('/alladdresses', authArtist(), validationMiddleware(validator.noValidator),
     expressAsyncHandler(artistController.getProfileAddresses))
 
 router.delete('/deleteaddress/:addressId', authArtist(), validationMiddleware(validator.addressIdValidator), 

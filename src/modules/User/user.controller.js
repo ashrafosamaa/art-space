@@ -2,6 +2,7 @@ import { APIFeatures } from "../../utils/api-features.js";
 import { allAddresses } from "./user-utils/all-addresses.js";
 
 import User from "../../../DB/models/user.model.js";
+
 import cloudinaryConnection from "../../utils/cloudinary.js";
 import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
@@ -112,10 +113,6 @@ export const deleteUser = async(req, res, next)=> {
 export const getAccountData = async (req, res, next)=> {
     // destruct data from user
     const {_id} = req.authUser
-    const {userId} = req.params
-    if(_id != userId){
-        return next (new Error("You cannot get this profile's data", { cause: 400 }))
-    }
     // get user data
     const getUser = await User.findById(_id).select("-password -createdAt -updatedAt -__v -folderId")
     if (!getUser) {
@@ -132,12 +129,7 @@ export const getAccountData = async (req, res, next)=> {
 export const updateProfileData = async (req, res, next)=> {
     // destruct data from user
     const {_id} = req.authUser
-    const {userId} = req.params
     const{userName, phoneNumber} = req.body
-    // check who is login and who is updating
-    if(_id != userId){
-        return next (new Error("You cannot update this profile's data", { cause: 400 }))
-    }
     // find user
     const user = await User.findById(_id).select("-password -folderId -createdAt -updatedAt -__v")
     // check user
@@ -166,12 +158,7 @@ export const updateProfileData = async (req, res, next)=> {
 export const updatePassword = async (req, res, next)=> {
     // destruct data from user
     const {_id} = req.authUser
-    const {userId} = req.params
     const {password, oldPassword} = req.body
-    // check who is login and who is updating
-    if(_id != userId){
-        return next (new Error("You cannot update this profile's password", { cause: 400 }))
-    }
     // find user
     const user = await User.findById(_id)
     // check old password
@@ -204,10 +191,6 @@ export const updateProfilePicture = async (req, res, next)=> {
     // destruct data from user
     const {_id} = req.authUser
     const {oldPublicId} = req.body
-    const {userId} = req.params
-    if(_id != userId){
-        return next (new Error("You cannot update this profile's profile picture", { cause: 400 }))
-    }
     // check file is uploaded
     if(!req.file){
         return next (new Error("Image is required", { cause: 400 }))
@@ -237,10 +220,6 @@ export const updateProfilePicture = async (req, res, next)=> {
 export const deleteAccount = async (req, res, next)=> {
     // destruct data from user
     const {_id} = req.authUser
-    const {userId} = req.params
-    if(_id != userId){
-        return next (new Error("You cannot delete this profile", { cause: 400 }))
-    }
     // delete user data
     const deleteUser = await User.findByIdAndDelete(_id)
     if (!deleteUser) {
@@ -261,10 +240,6 @@ export const deleteAccount = async (req, res, next)=> {
 export const addUserAddress = async (req, res) => {
     // destruct data from user
     const { _id } = req.authUser
-    const {userId} = req.params
-    if(_id != userId){
-        return next (new Error("You cannot add this address", { cause: 400 }))
-    }
     const user = await User.findById(_id);
     // check if address already exists
     for (let i = 0; i < user.addresses.length; i++) {
@@ -290,14 +265,9 @@ export const addUserAddress = async (req, res) => {
 
 export const getProfileAddresses = async (req, res) => {
     // destruct data from user
-    const { userId } = req.params;
     const {_id} = req.authUser
-    // check who is login and who is viewing
-    if(_id != userId){
-        return next (new Error("You cannot view this profile's addresses", { cause: 400 }))
-    }
     // get user data
-    const user = await User.findById(userId)
+    const user = await User.findById(_id)
     if (!user) {
         return next (new Error("User not found", { cause: 404 }))
     }

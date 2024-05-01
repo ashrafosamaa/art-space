@@ -33,11 +33,7 @@ export const addStyle = async (req, res, next)=> {
 
 export const getAllStyles = async (req, res, next)=> {
     // destruct data from req.query
-    const {page, size, sortBy} = req.query
-    const features = new APIFeatures(req.query, Style.find().select("-createdAt -updatedAt -__v"))
-    .pagination({page, size})
-    .sort(sortBy)
-    const styles = await features.mongooseQuery
+    const styles = await Style.find()
     if(!styles.length) {
         return next(new Error('No Styles found', { cause: 404 }))
     }
@@ -105,11 +101,9 @@ export const deleteStyle = async (req, res, next)=> {
 
 export const search = async (req, res, next)=> {
     // destruct data from req.query
-    const {page, size, sortBy, ...serach} = req.query
+    const {...serach} = req.query
     const features = new APIFeatures(req.query, Style.find().select("-createdAt -updatedAt -__v"))
-    .pagination({page, size})
     .searchCategories(serach)
-    .sort(sortBy)
     const styles = await features.mongooseQuery
     if(!styles.length) {
         return next(new Error('No Styles found', { cause: 404 }))

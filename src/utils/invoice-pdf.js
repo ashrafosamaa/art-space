@@ -11,7 +11,7 @@ async function createInvoice(invoice, pathVar) {
   generateFooter(doc);
 
   doc.end();
-  doc.pipe(fs.createWriteStream(path.resolve(`./Files/${pathVar}`)));
+  doc.pipe(fs.createWriteStream(path.resolve(`./Orders/${pathVar}`)));
 }
 
 function generateHeader(doc) {
@@ -70,7 +70,7 @@ async function generateInvoiceTable (doc, invoice) {
     invoiceTableTop,
     "Item",
     "Unit Cost",
-    "Quantity",
+    "Discount",
     "Line Total"
   );
   generateHr(doc, invoiceTableTop + 20);
@@ -83,9 +83,9 @@ async function generateInvoiceTable (doc, invoice) {
       doc,
       position,
       item.title, // product title
-      formatCurrency(item.price), // product price
-      1, // product quantity
-      formatCurrency(item.price ) // product final price
+      formatCurrency(item.basePrice), // product price
+      item.discount + "%", // product quantity
+      formatCurrency(item.appliedPrice ) // product final price
     );
 
     generateHr(doc, position + 20);
@@ -97,9 +97,9 @@ async function generateInvoiceTable (doc, invoice) {
     subtotalPosition,
     "",
     "",
-    "Discount",
+    "Subtotal",
     "",
-    invoice.discount + "%"
+    formatCurrency(invoice.subTotal)
   );
 
   const paidToDatePosition = subtotalPosition + 20;
@@ -108,7 +108,7 @@ async function generateInvoiceTable (doc, invoice) {
     paidToDatePosition,
     "",
     "",
-    "Paid Amount",
+    "Amount Required",
     "",
     formatCurrency(invoice.paidAmount) // orderPaidAmount
   );

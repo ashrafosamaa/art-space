@@ -15,4 +15,17 @@ const router = Router();
 router.post('/create', authUser(), validationMiddleware(validator.createOrderValidator),
     expressAsyncHandler(orderController.createOrder))
 
+router.post('/cart', authUser(), validationMiddleware(validator.convertCartToOrderValidator),
+    expressAsyncHandler(orderController.convertCartToOrder))
+
+router.get('/all-for-admins', authAdmin([systemRoles.TRACKER]), validationMiddleware(validator.getOrdersValidator),
+    expressAsyncHandler(orderController.getAllOrdersForAdmin))
+
+router.get('/mine', authUser(), validationMiddleware(validator.noValidator),
+    expressAsyncHandler(orderController.getMyOrders))
+
+router.get('/single/:orderId', authUser(), validationMiddleware(validator.IDValidator),
+    expressAsyncHandler(orderController.getOrderById))
+
+
 export default router

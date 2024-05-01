@@ -87,7 +87,7 @@ export const addProduct = async (req, res, next)=> {
 
 export const getAllProducts = async (req, res, next) => {
     const {page, size, sortBy} = req.query
-    const features = new APIFeatures(req.query, Product.find({ isEvent: false })
+    const features = new APIFeatures(req.query, Product.find({ isEvent: false, isAuction: false })
     .select("-createdAt -updatedAt -__v -basePrice -images -folderId"))
         .pagination({page, size})
         .sort(sortBy)

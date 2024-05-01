@@ -8,10 +8,8 @@ export const addSubjectValidator = {
 
 
 export const getAllSubjectsValidator = {
-    query: Joi.object({
-        page: Joi.number().optional(),
-        size: Joi.number().optional(),
-        sortBy: Joi.string().optional()
+    body: Joi.object({
+        zaza: Joi.string().length(2).optional()
     })
 }
 
@@ -35,9 +33,6 @@ export const updateSubjectValidator = {
 
 export const searchValidator = {
     query: Joi.object({
-        page: Joi.number().optional(),
-        size: Joi.number().optional(),
-        sortBy: Joi.string().optional(),
         title: Joi.string().optional(),
         slug: Joi.string().optional()
     })

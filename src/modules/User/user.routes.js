@@ -28,27 +28,27 @@ router.put('/update/:userId', authAdmin([systemRoles.IT]), validationMiddleware(
 router.delete('/delete/:userId', authAdmin([systemRoles.IT]), validationMiddleware(validator.IDValidator),
     expressAsyncHandler(userController.deleteUser))
 
-router.get('/profiledata/:userId', authUser(), validationMiddleware(validator.IDValidator),
+router.get('/profiledata', authUser(), validationMiddleware(validator.noValidator),
     expressAsyncHandler(userController.getAccountData))
 
-router.put('/updateprofile/:userId', authUser(), validationMiddleware(validator.updateUserValidator),
+router.put('/updateprofile', authUser(), validationMiddleware(validator.updateByUserValidator),
     expressAsyncHandler(userController.updateProfileData))
 
-router.patch('/updatepassword/:userId', authUser(), validationMiddleware(validator.updatePasswordValidator),
+router.patch('/updatepassword', authUser(), validationMiddleware(validator.updatePasswordValidator),
     expressAsyncHandler(userController.updatePassword))
 
-router.put('/updateprofilepicture/:userId', authUser(),
+router.put('/updateprofilepicture', authUser(),
     multerMiddleHost({extensions: allowedExtensions.image
         }).single('profileImg'), validationMiddleware(validator.updateProfilePictureValidator),
 expressAsyncHandler(userController.updateProfilePicture))
 
-router.delete('/deleteaccount/:userId', authUser(), validationMiddleware(validator.IDValidator),
+router.delete('/deleteaccount', authUser(), validationMiddleware(validator.noValidator),
     expressAsyncHandler(userController.deleteAccount))
 
-router.post('/add-address/:userId', authUser(), validationMiddleware(validator.addUserAddressValidator),
+router.post('/add-address', authUser(), validationMiddleware(validator.addUserAddressValidator),
     expressAsyncHandler(userController.addUserAddress))
 
-router.get('/alladdresses/:userId', authUser(), validationMiddleware(validator.IDValidator),
+router.get('/alladdresses', authUser(), validationMiddleware(validator.noValidator),
     expressAsyncHandler(userController.getProfileAddresses))
 
 router.delete('/deleteaddress/:addressId', authUser(), validationMiddleware(validator.addressIdValidator), 

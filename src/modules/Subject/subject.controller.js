@@ -33,11 +33,7 @@ export const addSubject = async (req, res, next)=> {
 
 export const getAllSubjects = async (req, res, next)=> {
     // destruct data from req.query
-    const {page, size, sortBy} = req.query
-    const features = new APIFeatures(req.query, Subject.find().select("-createdAt -updatedAt -__v"))
-    .pagination({page, size})
-    .sort(sortBy)
-    const subjects = await features.mongooseQuery
+    const subjects = await Subject.find()
     if(!subjects.length) {
         return next(new Error('No Subjects found', { cause: 404 }))
     }
@@ -105,11 +101,9 @@ export const deleteSubject = async (req, res, next)=> {
 
 export const search = async (req, res, next)=> {
     // destruct data from req.query
-    const {page, size, sortBy, ...serach} = req.query
+    const {...serach} = req.query
     const features = new APIFeatures(req.query, Subject.find().select("-createdAt -updatedAt -__v"))
-    .pagination({page, size})
     .searchCategories(serach)
-    .sort(sortBy)
     const subjects = await features.mongooseQuery
     if(!subjects.length) {
         return next(new Error('No Subjects found', { cause: 404 }))
