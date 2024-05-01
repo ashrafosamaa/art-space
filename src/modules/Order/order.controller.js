@@ -22,7 +22,7 @@ export const createOrder = async (req, res ,next) => {
     // product check
     const isProductAvailable = await Product.findById(productId)
     if(!isProductAvailable) return next (new Error ('Product not found', { cause: 404 }))
-    // if(isProductAvailable.isAvailable == false) return next (new Error ('Product is not available', { cause: 404 }))
+    if(isProductAvailable.isAvailable == false) return next (new Error ('Product is not available', { cause: 404 }))
     if(isProductAvailable.isAuction == true) return next (new Error ('Product is not available right now', { cause: 404 }))
     // set orderitems
     let orderItems = [{
@@ -312,4 +312,3 @@ export const updateOrderStatusSecond = async (req, res, next) => {
         order
     })
 }
-
