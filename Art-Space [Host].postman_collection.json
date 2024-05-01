@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "ccf7c476-813c-42c0-be40-b4161b83a594",
+		"_postman_id": "700424d2-a341-4939-aa1f-bfc1c3e7bdbc",
 		"name": "Art-Space [Host]",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30814973",
-		"_collection_link": "https://cloudy-space-135946-1.postman.co/workspace/art-sapce~bf80921f-ade2-496e-a8ff-b81635a2e230/collection/30814973-ccf7c476-813c-42c0-be40-b4161b83a594?action=share&source=collection_link&creator=30814973"
+		"_exporter_id": "30814973"
 	},
 	"item": [
 		{
@@ -150,7 +149,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userName\": \"mohammed11\",\r\n    \"password\": \"Mohammed@1234\"\r\n}",
+							"raw": "{\r\n    \"userName\": \"mohammed22\",\r\n    \"password\": \"Mohammed@1234\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -183,7 +182,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNDc2OTM4LCJleHAiOjE3MTE1NjMzMzh9.keNfGghDEZbODRimGV16ZLrRwSRzvxvYLp1BFHq1moI",
+								"value": "{{CEO}}",
 								"type": "text"
 							}
 						],
@@ -235,7 +234,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNDc2OTM4LCJleHAiOjE3MTE1NjMzMzh9.keNfGghDEZbODRimGV16ZLrRwSRzvxvYLp1BFHq1moI",
+								"value": "{{CEO}}",
 								"type": "text"
 							}
 						],
@@ -266,7 +265,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNDc2OTM4LCJleHAiOjE3MTE1NjMzMzh9.keNfGghDEZbODRimGV16ZLrRwSRzvxvYLp1BFHq1moI",
+								"value": "{{CEO}}",
 								"type": "text"
 							}
 						],
@@ -306,7 +305,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNDc2OTM4LCJleHAiOjE3MTE1NjMzMzh9.keNfGghDEZbODRimGV16ZLrRwSRzvxvYLp1BFHq1moI",
+								"value": "{{CEO}}",
 								"type": "text"
 							}
 						],
@@ -337,7 +336,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzExNDc2OTM4LCJleHAiOjE3MTE1NjMzMzh9.keNfGghDEZbODRimGV16ZLrRwSRzvxvYLp1BFHq1moI",
+								"value": "{{CEO}}",
 								"type": "text"
 							}
 						],
@@ -909,7 +908,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwOGEwZWEyMzU2YTI1Y2IxNWY0NSIsInVzZXJOYW1lIjoibW9oYW1tZWQyMiIsInJvbGUiOiJpdCIsImlhdCI6MTcxMTQ4MTk2NiwiZXhwIjoxNzExNTY4MzY2fQ.9WQB0dHNQ5PHwfZSQAbrSWnTqGUdSCML_BHOtsUKArg",
+								"value": "{{IT}}",
 								"type": "text"
 							}
 						],
@@ -954,7 +953,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwOGEwZWEyMzU2YTI1Y2IxNWY0NSIsInVzZXJOYW1lIjoibW9oYW1tZWQyMiIsInJvbGUiOiJpdCIsImlhdCI6MTcxMTQ4MTk2NiwiZXhwIjoxNzExNTY4MzY2fQ.9WQB0dHNQ5PHwfZSQAbrSWnTqGUdSCML_BHOtsUKArg",
+								"value": "{{IT}}",
 								"type": "text"
 							}
 						],
@@ -982,7 +981,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwOGEwZWEyMzU2YTI1Y2IxNWY0NSIsInVzZXJOYW1lIjoibW9oYW1tZWQyMiIsInJvbGUiOiJpdCIsImlhdCI6MTcxMTQ4MTk2NiwiZXhwIjoxNzExNTY4MzY2fQ.9WQB0dHNQ5PHwfZSQAbrSWnTqGUdSCML_BHOtsUKArg",
+								"value": "{{IT}}",
 								"type": "text"
 							}
 						],
@@ -1024,7 +1023,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwOGEwZWEyMzU2YTI1Y2IxNWY0NSIsInVzZXJOYW1lIjoibW9oYW1tZWQyMiIsInJvbGUiOiJpdCIsImlhdCI6MTcxMTQ4MTk2NiwiZXhwIjoxNzExNTY4MzY2fQ.9WQB0dHNQ5PHwfZSQAbrSWnTqGUdSCML_BHOtsUKArg",
+								"value": "{{IT}}",
 								"type": "text"
 							}
 						],
@@ -1061,7 +1060,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDVjNzYxZThmMjdkYTZmODNjOTM1NSIsInVzZXJOYW1lIjoib21hcjIyIiwicm9sZSI6Iml0IiwiaWF0IjoxNzExNjU0ODc3LCJleHAiOjE3MTk0MzA4Nzd9.rbjQIp_qevTyEhP6TRgEwqhEuaJEkMVBJwlgXZYS7z4",
+								"value": "{{IT}}",
 								"type": "text"
 							}
 						],
@@ -1089,12 +1088,12 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA1YjcwNjc5NTUwNzVmMzA2YWUxYiIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTE0NzUzODQsImV4cCI6MTcxMTU2MTc4NH0.pOadURXrDTLjH3Bz-ZlBV4pjNPr9tduIoZv16lYUZ1Y",
+								"value": "{{User}}",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "https://art-space-v1.onrender.com/user/profiledata/66005b7067955075f306ae1b",
+							"raw": "https://art-space-v1.onrender.com/user/profiledata",
 							"protocol": "https",
 							"host": [
 								"art-space-v1",
@@ -1103,8 +1102,7 @@
 							],
 							"path": [
 								"user",
-								"profiledata",
-								"66005b7067955075f306ae1b"
+								"profiledata"
 							]
 						}
 					},
@@ -1117,7 +1115,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZmU0ZWY5Y2VkYTE0NDNiZmZkOGMyMyIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTEyMTM2MzQsImV4cCI6MTcxMTMwMDAzNH0.3A87uEFHT7fXxAGigLwYcb5df4cOjFfl5NKeeVBviCE",
+								"value": "{{User}}",
 								"type": "text"
 							}
 						],
@@ -1131,7 +1129,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://art-space-v1.onrender.com/user/updateprofile/65fe4ef9ceda1443bffd8c23",
+							"raw": "https://art-space-v1.onrender.com/user/updateprofile",
 							"protocol": "https",
 							"host": [
 								"art-space-v1",
@@ -1140,8 +1138,7 @@
 							],
 							"path": [
 								"user",
-								"updateprofile",
-								"65fe4ef9ceda1443bffd8c23"
+								"updateprofile"
 							]
 						}
 					},
@@ -1154,7 +1151,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZmYxZjQ1YTk4NjBkZjZlYzg4NTJhNCIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTEyMTg1NDQsImV4cCI6MTcxMTMwNDk0NH0.WbujR3_OdYXrvlvFlfLS4IeSWUMcnsUYG6QsvTVd3_g",
+								"value": "{{User}}",
 								"type": "text"
 							}
 						],
@@ -1168,7 +1165,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://art-space-v1.onrender.com/user/updatepassword/65ff1f45a9860df6ec8852a4",
+							"raw": "https://art-space-v1.onrender.com/user/updatepassword",
 							"protocol": "https",
 							"host": [
 								"art-space-v1",
@@ -1177,8 +1174,7 @@
 							],
 							"path": [
 								"user",
-								"updatepassword",
-								"65ff1f45a9860df6ec8852a4"
+								"updatepassword"
 							]
 						}
 					},
@@ -1191,7 +1187,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA1YjcwNjc5NTUwNzVmMzA2YWUxYiIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTE0OTQwNTYsImV4cCI6MTcxMTU4MDQ1Nn0.r8ZgHf-6lcPoSltN3Fd-0yQkRBlManhtLbXvMJyBvZo",
+								"value": "{{User}}",
 								"type": "text"
 							}
 						],
@@ -1211,7 +1207,7 @@
 							]
 						},
 						"url": {
-							"raw": "https://art-space-v1.onrender.com/user/updateprofilepicture/66005b7067955075f306ae1b",
+							"raw": "https://art-space-v1.onrender.com/user/updateprofilepicture",
 							"protocol": "https",
 							"host": [
 								"art-space-v1",
@@ -1220,8 +1216,7 @@
 							],
 							"path": [
 								"user",
-								"updateprofilepicture",
-								"66005b7067955075f306ae1b"
+								"updateprofilepicture"
 							]
 						}
 					},
@@ -1234,12 +1229,12 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZmYxZjQ1YTk4NjBkZjZlYzg4NTJhNCIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTEyMTk2NTAsImV4cCI6MTcxMTMwNjA1MH0.VFjtKZcmGiJ03EJK79BnDMo1CICrKsvNoLq5JFlHDeY",
+								"value": "{{User}}",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "https://art-space-v1.onrender.com/user/deleteaccount/65ff1f45a9860df6ec8852a4",
+							"raw": "https://art-space-v1.onrender.com/user/deleteaccount",
 							"protocol": "https",
 							"host": [
 								"art-space-v1",
@@ -1248,8 +1243,7 @@
 							],
 							"path": [
 								"user",
-								"deleteaccount",
-								"65ff1f45a9860df6ec8852a4"
+								"deleteaccount"
 							]
 						}
 					},
@@ -1262,7 +1256,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZmYyNzVlM2Y1Y2Q1OTNlMTg2NzI1NyIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTEyMjA2MzksImV4cCI6MTcxMTMwNzAzOX0.yKzBEbeWoukvLSQhomej5FFkAiapi5pPI3cmr8Lzz0Y",
+								"value": "{{User}}",
 								"type": "text"
 							}
 						],
@@ -1276,7 +1270,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://art-space-v1.onrender.com/user/add-address/65ff275e3f5cd593e1867257",
+							"raw": "https://art-space-v1.onrender.com/user/add-address",
 							"protocol": "https",
 							"host": [
 								"art-space-v1",
@@ -1285,8 +1279,7 @@
 							],
 							"path": [
 								"user",
-								"add-address",
-								"65ff275e3f5cd593e1867257"
+								"add-address"
 							]
 						}
 					},
@@ -1299,12 +1292,12 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZmYxZjQ1YTk4NjBkZjZlYzg4NTJhNCIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTEyMTk2NTAsImV4cCI6MTcxMTMwNjA1MH0.VFjtKZcmGiJ03EJK79BnDMo1CICrKsvNoLq5JFlHDeY",
+								"value": "{{User}}",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "https://art-space-v1.onrender.com/user/alladdresses/65ff1f45a9860df6ec8852a4",
+							"raw": "https://art-space-v1.onrender.com/user/alladdresses",
 							"protocol": "https",
 							"host": [
 								"art-space-v1",
@@ -1313,8 +1306,7 @@
 							],
 							"path": [
 								"user",
-								"alladdresses",
-								"65ff1f45a9860df6ec8852a4"
+								"alladdresses"
 							]
 						}
 					},
@@ -1327,7 +1319,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZmYxZjQ1YTk4NjBkZjZlYzg4NTJhNCIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTEyMTk2NTAsImV4cCI6MTcxMTMwNjA1MH0.VFjtKZcmGiJ03EJK79BnDMo1CICrKsvNoLq5JFlHDeY",
+								"value": "{{User}}",
 								"type": "text"
 							}
 						],
@@ -1642,7 +1634,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwOGEwZWEyMzU2YTI1Y2IxNWY0NSIsInVzZXJOYW1lIjoibW9oYW1tZWQyMiIsInJvbGUiOiJpdCIsImlhdCI6MTcxMTQ4MTk2NiwiZXhwIjoxNzExNTY4MzY2fQ.9WQB0dHNQ5PHwfZSQAbrSWnTqGUdSCML_BHOtsUKArg",
+								"value": "{{IT}}",
 								"type": "text"
 							}
 						],
@@ -1687,7 +1679,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwOGEwZWEyMzU2YTI1Y2IxNWY0NSIsInVzZXJOYW1lIjoibW9oYW1tZWQyMiIsInJvbGUiOiJpdCIsImlhdCI6MTcxMTQ4MTk2NiwiZXhwIjoxNzExNTY4MzY2fQ.9WQB0dHNQ5PHwfZSQAbrSWnTqGUdSCML_BHOtsUKArg",
+								"value": "{{IT}}",
 								"type": "text"
 							}
 						],
@@ -1715,7 +1707,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwOGEwZWEyMzU2YTI1Y2IxNWY0NSIsInVzZXJOYW1lIjoibW9oYW1tZWQyMiIsInJvbGUiOiJpdCIsImlhdCI6MTcxMTQ4MTk2NiwiZXhwIjoxNzExNTY4MzY2fQ.9WQB0dHNQ5PHwfZSQAbrSWnTqGUdSCML_BHOtsUKArg",
+								"value": "{{IT}}",
 								"type": "text"
 							}
 						],
@@ -1769,7 +1761,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwOGEwZWEyMzU2YTI1Y2IxNWY0NSIsInVzZXJOYW1lIjoibW9oYW1tZWQyMiIsInJvbGUiOiJpdCIsImlhdCI6MTcxMTQ4MTk2NiwiZXhwIjoxNzExNTY4MzY2fQ.9WQB0dHNQ5PHwfZSQAbrSWnTqGUdSCML_BHOtsUKArg",
+								"value": "{{IT}}",
 								"type": "text"
 							}
 						],
@@ -1806,7 +1798,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDVjNzYxZThmMjdkYTZmODNjOTM1NSIsInVzZXJOYW1lIjoib21hcjIyIiwicm9sZSI6Iml0IiwiaWF0IjoxNzExNjU0ODc3LCJleHAiOjE3MTk0MzA4Nzd9.rbjQIp_qevTyEhP6TRgEwqhEuaJEkMVBJwlgXZYS7z4",
+								"value": "{{IT}}",
 								"type": "text"
 							}
 						],
@@ -1834,12 +1826,12 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MWZiNWJkMDUyYTNlOTA1N2NlZjRmYyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM0NDYzMjcsImV4cCI6MTcyMTIyMjMyN30.rt8Yu0VCoJaW1geQAKqwnfMsyK6KO_69tEkxRanvC7E",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "https://art-space-v1.onrender.com/artist/profiledata/6600607b9d09804f499b3b9c",
+							"raw": "https://art-space-v1.onrender.com/artist/profiledata",
 							"protocol": "https",
 							"host": [
 								"art-space-v1",
@@ -1848,8 +1840,7 @@
 							],
 							"path": [
 								"artist",
-								"profiledata",
-								"6600607b9d09804f499b3b9c"
+								"profiledata"
 							]
 						}
 					},
@@ -1926,7 +1917,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA2MDdiOWQwOTgwNGY0OTliM2I5YyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTEzMDIyNzksImV4cCI6MTcxMTM4ODY3OX0.YSkMvzNSQDTCQaIKTP9mpDHpLpb5156hBUdBxP_4AUU",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
@@ -1940,7 +1931,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://art-space-v1.onrender.com/artist/updateprofile/6600607b9d09804f499b3b9c",
+							"raw": "https://art-space-v1.onrender.com/artist/updateprofile",
 							"protocol": "https",
 							"host": [
 								"art-space-v1",
@@ -1949,8 +1940,7 @@
 							],
 							"path": [
 								"artist",
-								"updateprofile",
-								"6600607b9d09804f499b3b9c"
+								"updateprofile"
 							]
 						}
 					},
@@ -1963,7 +1953,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA2MDdiOWQwOTgwNGY0OTliM2I5YyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTEzMDIyNzksImV4cCI6MTcxMTM4ODY3OX0.YSkMvzNSQDTCQaIKTP9mpDHpLpb5156hBUdBxP_4AUU",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
@@ -1977,7 +1967,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://art-space-v1.onrender.com/artist/updatepassword/6600607b9d09804f499b3b9c",
+							"raw": "https://art-space-v1.onrender.com/artist/updatepassword",
 							"protocol": "https",
 							"host": [
 								"art-space-v1",
@@ -1986,8 +1976,7 @@
 							],
 							"path": [
 								"artist",
-								"updatepassword",
-								"6600607b9d09804f499b3b9c"
+								"updatepassword"
 							]
 						}
 					},
@@ -2000,7 +1989,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA2MDdiOWQwOTgwNGY0OTliM2I5YyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaFJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTEzMDQ2MDUsImV4cCI6MTcxMTM5MTAwNX0.qHxeJiHgMqnvj-Y3B16NRFyxSTVk2UnKnj5DQzrjZUw",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
@@ -2020,7 +2009,7 @@
 							]
 						},
 						"url": {
-							"raw": "https://art-space-v1.onrender.com/artist/updateprofilepicture/6600607b9d09804f499b3b9c",
+							"raw": "https://art-space-v1.onrender.com/artist/updateprofilepicture",
 							"protocol": "https",
 							"host": [
 								"art-space-v1",
@@ -2029,8 +2018,7 @@
 							],
 							"path": [
 								"artist",
-								"updateprofilepicture",
-								"6600607b9d09804f499b3b9c"
+								"updateprofilepicture"
 							]
 						}
 					},
@@ -2043,12 +2031,12 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MWZiNWJkMDUyYTNlOTA1N2NlZjRmYyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM0NDYzMjcsImV4cCI6MTcyMTIyMjMyN30.rt8Yu0VCoJaW1geQAKqwnfMsyK6KO_69tEkxRanvC7E",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "https://art-space-v1.onrender.com/artist/deleteaccount/661fb5bd052a3e9057cef4fc",
+							"raw": "https://art-space-v1.onrender.com/artist/deleteaccount",
 							"protocol": "https",
 							"host": [
 								"art-space-v1",
@@ -2057,8 +2045,7 @@
 							],
 							"path": [
 								"artist",
-								"deleteaccount",
-								"661fb5bd052a3e9057cef4fc"
+								"deleteaccount"
 							]
 						}
 					},
@@ -2071,7 +2058,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA2MDdiOWQwOTgwNGY0OTliM2I5YyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTEzMDIyNzksImV4cCI6MTcxMTM4ODY3OX0.YSkMvzNSQDTCQaIKTP9mpDHpLpb5156hBUdBxP_4AUU",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
@@ -2085,7 +2072,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://art-space-v1.onrender.com/artist/add-address/6600607b9d09804f499b3b9c",
+							"raw": "https://art-space-v1.onrender.com/artist/add-address",
 							"protocol": "https",
 							"host": [
 								"art-space-v1",
@@ -2094,8 +2081,7 @@
 							],
 							"path": [
 								"artist",
-								"add-address",
-								"6600607b9d09804f499b3b9c"
+								"add-address"
 							]
 						}
 					},
@@ -2108,12 +2094,12 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA2MDdiOWQwOTgwNGY0OTliM2I5YyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTEzMDIyNzksImV4cCI6MTcxMTM4ODY3OX0.YSkMvzNSQDTCQaIKTP9mpDHpLpb5156hBUdBxP_4AUU",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "https://art-space-v1.onrender.com/artist/alladdresses/6600607b9d09804f499b3b9c",
+							"raw": "https://art-space-v1.onrender.com/artist/alladdresses",
 							"protocol": "https",
 							"host": [
 								"art-space-v1",
@@ -2122,8 +2108,7 @@
 							],
 							"path": [
 								"artist",
-								"alladdresses",
-								"6600607b9d09804f499b3b9c"
+								"alladdresses"
 							]
 						}
 					},
@@ -2136,7 +2121,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA2MDdiOWQwOTgwNGY0OTliM2I5YyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTEzMDIyNzksImV4cCI6MTcxMTM4ODY3OX0.YSkMvzNSQDTCQaIKTP9mpDHpLpb5156hBUdBxP_4AUU",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
@@ -2194,7 +2179,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzEzMzA1MzAwLCJleHAiOjE3MjEwODEzMDB9.LO2IbtT3JzQz1VuaCyrBevv-Zze4fx-ikuaqk2Dz-IM",
+								"value": "{{CEO}}",
 								"type": "text"
 							}
 						],
@@ -2240,28 +2225,6 @@
 							],
 							"path": [
 								"categories"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "1",
-									"disabled": true
-								},
-								{
-									"key": "size",
-									"value": "1",
-									"disabled": true
-								},
-								{
-									"key": "sortBy",
-									"value": "title desc",
-									"disabled": true
-								},
-								{
-									"key": "sortBy",
-									"value": "title asc",
-									"disabled": true
-								}
 							]
 						}
 					},
@@ -2302,7 +2265,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzEzMzA1MzAwLCJleHAiOjE3MjEwODEzMDB9.LO2IbtT3JzQz1VuaCyrBevv-Zze4fx-ikuaqk2Dz-IM",
+								"value": "{{CEO}}",
 								"type": "text"
 							}
 						],
@@ -2348,7 +2311,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzEzMzA1MzAwLCJleHAiOjE3MjEwODEzMDB9.LO2IbtT3JzQz1VuaCyrBevv-Zze4fx-ikuaqk2Dz-IM",
+								"value": "{{CEO}}",
 								"type": "text"
 							}
 						],
@@ -2389,21 +2352,6 @@
 								"search"
 							],
 							"query": [
-								{
-									"key": "page",
-									"value": "",
-									"disabled": true
-								},
-								{
-									"key": "size",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "sortBy",
-									"value": "title asc",
-									"disabled": true
-								},
 								{
 									"key": "title",
 									"value": "s",
@@ -2520,7 +2468,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzEzMzA1MzAwLCJleHAiOjE3MjEwODEzMDB9.LO2IbtT3JzQz1VuaCyrBevv-Zze4fx-ikuaqk2Dz-IM",
+								"value": "{{CEO}}",
 								"type": "text"
 							}
 						],
@@ -2566,28 +2514,6 @@
 							],
 							"path": [
 								"styles"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "1",
-									"disabled": true
-								},
-								{
-									"key": "size",
-									"value": "1",
-									"disabled": true
-								},
-								{
-									"key": "sortBy",
-									"value": "title desc",
-									"disabled": true
-								},
-								{
-									"key": "sortBy",
-									"value": "title asc",
-									"disabled": true
-								}
 							]
 						}
 					},
@@ -2628,7 +2554,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzEzMzA1MzAwLCJleHAiOjE3MjEwODEzMDB9.LO2IbtT3JzQz1VuaCyrBevv-Zze4fx-ikuaqk2Dz-IM",
+								"value": "{{CEO}}",
 								"type": "text"
 							}
 						],
@@ -2674,7 +2600,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzEzMzA1MzAwLCJleHAiOjE3MjEwODEzMDB9.LO2IbtT3JzQz1VuaCyrBevv-Zze4fx-ikuaqk2Dz-IM",
+								"value": "{{CEO}}",
 								"type": "text"
 							}
 						],
@@ -2715,21 +2641,6 @@
 								"search"
 							],
 							"query": [
-								{
-									"key": "page",
-									"value": "1",
-									"disabled": true
-								},
-								{
-									"key": "size",
-									"value": "5",
-									"disabled": true
-								},
-								{
-									"key": "sortBy",
-									"value": "title asc",
-									"disabled": true
-								},
 								{
 									"key": "title",
 									"value": "t"
@@ -2845,7 +2756,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzEzMzA1MzAwLCJleHAiOjE3MjEwODEzMDB9.LO2IbtT3JzQz1VuaCyrBevv-Zze4fx-ikuaqk2Dz-IM",
+								"value": "{{CEO}}",
 								"type": "text"
 							}
 						],
@@ -2882,7 +2793,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://art-space-v1.onrender.com/subjects?size=3",
+							"raw": "https://art-space-v1.onrender.com/subjects",
 							"protocol": "https",
 							"host": [
 								"art-space-v1",
@@ -2891,27 +2802,6 @@
 							],
 							"path": [
 								"subjects"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "1",
-									"disabled": true
-								},
-								{
-									"key": "size",
-									"value": "3"
-								},
-								{
-									"key": "sortBy",
-									"value": "title desc",
-									"disabled": true
-								},
-								{
-									"key": "sortBy",
-									"value": "title asc",
-									"disabled": true
-								}
 							]
 						}
 					},
@@ -2952,7 +2842,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzEzMzA1MzAwLCJleHAiOjE3MjEwODEzMDB9.LO2IbtT3JzQz1VuaCyrBevv-Zze4fx-ikuaqk2Dz-IM",
+								"value": "{{CEO}}",
 								"type": "text"
 							}
 						],
@@ -2991,7 +2881,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDMwODEwNDQ2Y2U5MDcyYzgzZDk5YiIsInVzZXJOYW1lIjoiYXNocm9mMjIiLCJyb2xlIjoiY2VvIiwiaWF0IjoxNzEzMzA1MzAwLCJleHAiOjE3MjEwODEzMDB9.LO2IbtT3JzQz1VuaCyrBevv-Zze4fx-ikuaqk2Dz-IM",
+								"value": "{{CEO}}",
 								"type": "text"
 							}
 						],
@@ -3032,21 +2922,6 @@
 								"search"
 							],
 							"query": [
-								{
-									"key": "page",
-									"value": "1",
-									"disabled": true
-								},
-								{
-									"key": "size",
-									"value": "5",
-									"disabled": true
-								},
-								{
-									"key": "sortBy",
-									"value": "title asc",
-									"disabled": true
-								},
 								{
 									"key": "title",
 									"value": "t"
@@ -3134,7 +3009,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjNiNDk5MjkyZjE3NmZlNjliNWI0OCIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM2MTYwNjksImV4cCI6MTcyMTM5MjA2OX0.ZzmNkqTyDUBVjfkJFkiyIjLFq0cpoI3shS4MxA1KK-M",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
@@ -3143,7 +3018,7 @@
 							"formdata": [
 								{
 									"key": "title",
-									"value": "product 3",
+									"value": "product 10",
 									"type": "text"
 								},
 								{
@@ -3199,15 +3074,12 @@
 								{
 									"key": "Cover",
 									"type": "file",
-									"src": "/C:/Users/ashra/OneDrive/Pictures/Screenshots/Screenshot (103).png"
+									"src": "/C:/Users/ashra/OneDrive/Pictures/ashraf.jpeg"
 								},
 								{
 									"key": "Images",
 									"type": "file",
-									"src": [
-										"/C:/Users/ashra/OneDrive/Pictures/Screenshots/Screenshot (103).png",
-										"/C:/Users/ashra/OneDrive/Pictures/Screenshots/Screenshot (102).png"
-									]
+									"src": "/C:/Users/ashra/OneDrive/Pictures/ashraf.jpeg"
 								}
 							]
 						},
@@ -3336,7 +3208,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDVjNzYxZThmMjdkYTZmODNjOTM1NSIsInVzZXJOYW1lIjoib21hcjIyIiwicm9sZSI6Iml0IiwiaWF0IjoxNzExNjU0ODc3LCJleHAiOjE3MTk0MzA4Nzd9.rbjQIp_qevTyEhP6TRgEwqhEuaJEkMVBJwlgXZYS7z4",
+								"value": "{{IT}}",
 								"type": "text"
 							}
 						],
@@ -3376,7 +3248,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDVjNzYxZThmMjdkYTZmODNjOTM1NSIsInVzZXJOYW1lIjoib21hcjIyIiwicm9sZSI6Iml0IiwiaWF0IjoxNzExNjU0ODc3LCJleHAiOjE3MTk0MzA4Nzd9.rbjQIp_qevTyEhP6TRgEwqhEuaJEkMVBJwlgXZYS7z4",
+								"value": "{{IT}}",
 								"type": "text"
 							}
 						],
@@ -3407,7 +3279,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDViNDI5Y2ZhOWZjNWMyOWQ3NTQwZiIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTE2NDk4NjIsImV4cCI6MTcxOTQyNTg2Mn0.OP1R4wSSUhIl-wuSoCzHdHCI0dxdElKNio4Qyp-hNgs",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
@@ -3457,7 +3329,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDViNDI5Y2ZhOWZjNWMyOWQ3NTQwZiIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTE2NDk4NjIsImV4cCI6MTcxOTQyNTg2Mn0.OP1R4wSSUhIl-wuSoCzHdHCI0dxdElKNio4Qyp-hNgs",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
@@ -3497,7 +3369,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDViNDI5Y2ZhOWZjNWMyOWQ3NTQwZiIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTE2NDk4NjIsImV4cCI6MTcxOTQyNTg2Mn0.OP1R4wSSUhIl-wuSoCzHdHCI0dxdElKNio4Qyp-hNgs",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
@@ -3543,7 +3415,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDViNDI5Y2ZhOWZjNWMyOWQ3NTQwZiIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTE2NDk4NjIsImV4cCI6MTcxOTQyNTg2Mn0.OP1R4wSSUhIl-wuSoCzHdHCI0dxdElKNio4Qyp-hNgs",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
@@ -3589,7 +3461,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDViNDI5Y2ZhOWZjNWMyOWQ3NTQwZiIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTE2NDk4NjIsImV4cCI6MTcxOTQyNTg2Mn0.OP1R4wSSUhIl-wuSoCzHdHCI0dxdElKNio4Qyp-hNgs",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
@@ -3790,7 +3662,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjNiNDk5MjkyZjE3NmZlNjliNWI0OCIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM2MTYwNjksImV4cCI6MTcyMTM5MjA2OX0.ZzmNkqTyDUBVjfkJFkiyIjLFq0cpoI3shS4MxA1KK-M",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
@@ -3853,7 +3725,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA1YjcwNjc5NTUwNzVmMzA2YWUxYiIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hYWFhIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTM1MzQ5MTAsImV4cCI6MTcyMTMxMDkxMH0.7KkmRKhZK3UagwAdh6PkC_lzH42qxhLUZwgcvhS3C_k",
+								"value": "{{User}}",
 								"type": "text"
 							}
 						],
@@ -3881,7 +3753,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjEzZmFhYjkxZTEwMjM2MGE5NTMzNyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM0NTUwMzgsImV4cCI6MTcyMTIzMTAzOH0.PdUmYQidHI7Hhr1a2eYLZE24xWIXJiU-_d-A59aeAY0",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
@@ -3909,7 +3781,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjEzZmFhYjkxZTEwMjM2MGE5NTMzNyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM0NTUwMzgsImV4cCI6MTcyMTIzMTAzOH0.PdUmYQidHI7Hhr1a2eYLZE24xWIXJiU-_d-A59aeAY0",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
@@ -3936,7 +3808,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjNiNDk5MjkyZjE3NmZlNjliNWI0OCIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM2MTYwNjksImV4cCI6MTcyMTM5MjA2OX0.ZzmNkqTyDUBVjfkJFkiyIjLFq0cpoI3shS4MxA1KK-M",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
@@ -3973,7 +3845,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjEzZmFhYjkxZTEwMjM2MGE5NTMzNyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM0NTUwMzgsImV4cCI6MTcyMTIzMTAzOH0.PdUmYQidHI7Hhr1a2eYLZE24xWIXJiU-_d-A59aeAY0",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
@@ -4010,7 +3882,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjEzZmFhYjkxZTEwMjM2MGE5NTMzNyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM0NTUwMzgsImV4cCI6MTcyMTIzMTAzOH0.PdUmYQidHI7Hhr1a2eYLZE24xWIXJiU-_d-A59aeAY0",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
@@ -4047,7 +3919,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjEzZmFhYjkxZTEwMjM2MGE5NTMzNyIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM0NTUwMzgsImV4cCI6MTcyMTIzMTAzOH0.PdUmYQidHI7Hhr1a2eYLZE24xWIXJiU-_d-A59aeAY0",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
@@ -4074,7 +3946,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDZiN2ZmYThlZWViZDk2Yzg4MzM1YyIsInVzZXJOYW1lIjoibW9oYW1tZWQxMSIsInJvbGUiOiJpdCIsImlhdCI6MTcxMzU1MDkzMiwiZXhwIjoxNzIxMzI2OTMyfQ.8Vcz7QOV_40lJ9bip3v1aXU3KMl9-PYgnnpVCND9p8k",
+								"value": "{{IT}}",
 								"type": "text"
 							}
 						],
@@ -4102,7 +3974,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDZiN2ZmYThlZWViZDk2Yzg4MzM1YyIsInVzZXJOYW1lIjoibW9oYW1tZWQxMSIsInJvbGUiOiJpdCIsImlhdCI6MTcxMzU1MDkzMiwiZXhwIjoxNzIxMzI2OTMyfQ.8Vcz7QOV_40lJ9bip3v1aXU3KMl9-PYgnnpVCND9p8k",
+								"value": "{{IT}}",
 								"type": "text"
 							}
 						],
@@ -4139,7 +4011,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDZiN2ZmYThlZWViZDk2Yzg4MzM1YyIsInVzZXJOYW1lIjoibW9oYW1tZWQxMSIsInJvbGUiOiJpdCIsImlhdCI6MTcxMzU1MDkzMiwiZXhwIjoxNzIxMzI2OTMyfQ.8Vcz7QOV_40lJ9bip3v1aXU3KMl9-PYgnnpVCND9p8k",
+								"value": "{{IT}}",
 								"type": "text"
 							}
 						],
@@ -4250,7 +4122,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA1YjcwNjc5NTUwNzVmMzA2YWUxYiIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hYWFhIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTMzNTM1NTIsImV4cCI6MTcyMTEyOTU1Mn0.2uRNgHvn5tvYKn7cbZsyn5uRgTXOR6y_QAXlDRDg1Qc",
+								"value": "{{User}}",
 								"type": "text"
 							}
 						],
@@ -4285,7 +4157,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA1YjcwNjc5NTUwNzVmMzA2YWUxYiIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hYWFhIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTMzNTM1NTIsImV4cCI6MTcyMTEyOTU1Mn0.2uRNgHvn5tvYKn7cbZsyn5uRgTXOR6y_QAXlDRDg1Qc",
+								"value": "{{User}}",
 								"type": "text"
 							}
 						],
@@ -4318,7 +4190,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA1YjcwNjc5NTUwNzVmMzA2YWUxYiIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hYWFhIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTMzNTM1NTIsImV4cCI6MTcyMTEyOTU1Mn0.2uRNgHvn5tvYKn7cbZsyn5uRgTXOR6y_QAXlDRDg1Qc",
+								"value": "{{User}}",
 								"type": "text"
 							}
 						],
@@ -4353,7 +4225,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA1YjcwNjc5NTUwNzVmMzA2YWUxYiIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hYWFhIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTMzNTM1NTIsImV4cCI6MTcyMTEyOTU1Mn0.2uRNgHvn5tvYKn7cbZsyn5uRgTXOR6y_QAXlDRDg1Qc",
+								"value": "{{User}}",
 								"type": "text"
 							}
 						],
@@ -4394,7 +4266,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjNiNDk5MjkyZjE3NmZlNjliNWI0OCIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM2MTYwNjksImV4cCI6MTcyMTM5MjA2OX0.ZzmNkqTyDUBVjfkJFkiyIjLFq0cpoI3shS4MxA1KK-M",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
@@ -4430,7 +4302,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjNiNDk5MjkyZjE3NmZlNjliNWI0OCIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM2MTYwNjksImV4cCI6MTcyMTM5MjA2OX0.ZzmNkqTyDUBVjfkJFkiyIjLFq0cpoI3shS4MxA1KK-M",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
@@ -4463,7 +4335,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjNiNDk5MjkyZjE3NmZlNjliNWI0OCIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM2MTYwNjksImV4cCI6MTcyMTM5MjA2OX0.ZzmNkqTyDUBVjfkJFkiyIjLFq0cpoI3shS4MxA1KK-M",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
@@ -4518,7 +4390,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDZiN2ZmYThlZWViZDk2Yzg4MzM1YyIsInVzZXJOYW1lIjoibW9oYW1tZWQxMSIsInJvbGUiOiJpdCIsImlhdCI6MTcxMzY0NTAyNywiZXhwIjoxNzIxNDIxMDI3fQ.UQq3n_aLRXkU0O0VAhE0GzXYLFMNSum74m-MYel_mwY",
+								"value": "{{IT}}",
 								"type": "text"
 							}
 						],
@@ -4555,7 +4427,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDZiN2ZmYThlZWViZDk2Yzg4MzM1YyIsInVzZXJOYW1lIjoibW9oYW1tZWQxMSIsInJvbGUiOiJpdCIsImlhdCI6MTcxMzY0NTAyNywiZXhwIjoxNzIxNDIxMDI3fQ.UQq3n_aLRXkU0O0VAhE0GzXYLFMNSum74m-MYel_mwY",
+								"value": "{{IT}}",
 								"type": "text"
 							}
 						],
@@ -4583,7 +4455,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjNiNDk5MjkyZjE3NmZlNjliNWI0OCIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM2MTYwNjksImV4cCI6MTcyMTM5MjA2OX0.ZzmNkqTyDUBVjfkJFkiyIjLFq0cpoI3shS4MxA1KK-M",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
@@ -4620,7 +4492,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MjNiNDk5MjkyZjE3NmZlNjliNWI0OCIsImVtYWlsIjoiYXNocmFmb3NhbWE2NjdAZ21haWwuY29tIiwiYXJ0aXN0TmFtZSI6IkFzaHJhZiBPc2FtYSIsInJvbGUiOiJhcnRpc3QiLCJpYXQiOjE3MTM2MTYwNjksImV4cCI6MTcyMTM5MjA2OX0.ZzmNkqTyDUBVjfkJFkiyIjLFq0cpoI3shS4MxA1KK-M",
+								"value": "{{Artist}}",
 								"type": "text"
 							}
 						],
@@ -4648,7 +4520,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA1YjcwNjc5NTUwNzVmMzA2YWUxYiIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hYWFhIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTMzNTM1NTIsImV4cCI6MTcyMTEyOTU1Mn0.2uRNgHvn5tvYKn7cbZsyn5uRgTXOR6y_QAXlDRDg1Qc",
+								"value": "{{User}}",
 								"type": "text"
 							}
 						],
@@ -4676,7 +4548,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA1YjcwNjc5NTUwNzVmMzA2YWUxYiIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hYWFhIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTMzNTM1NTIsImV4cCI6MTcyMTEyOTU1Mn0.2uRNgHvn5tvYKn7cbZsyn5uRgTXOR6y_QAXlDRDg1Qc",
+								"value": "{{User}}",
 								"type": "text"
 							}
 						],
@@ -4704,7 +4576,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA1YjcwNjc5NTUwNzVmMzA2YWUxYiIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hYWFhIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTMzNTM1NTIsImV4cCI6MTcyMTEyOTU1Mn0.2uRNgHvn5tvYKn7cbZsyn5uRgTXOR6y_QAXlDRDg1Qc",
+								"value": "{{User}}",
 								"type": "text"
 							}
 						],
@@ -4732,7 +4604,7 @@
 						"header": [
 							{
 								"key": "accesstoken",
-								"value": "accesstoken_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDA1YjcwNjc5NTUwNzVmMzA2YWUxYiIsImVtYWlsIjoiYXNocmFmb3NhbWE2Njk5QGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiQXNocmFmIE9zYW1hYWFhIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MTMzNTM1NTIsImV4cCI6MTcyMTEyOTU1Mn0.2uRNgHvn5tvYKn7cbZsyn5uRgTXOR6y_QAXlDRDg1Qc",
+								"value": "{{User}}",
 								"type": "text"
 							}
 						],
