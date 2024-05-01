@@ -4635,6 +4635,189 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "create-order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "{{User}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"663249e4c0385ee01fb549e3\",\r\n    \"shippingAddressId\": \"66005b7067955075f306ae1c\",\r\n    \"paymentMethod\": \"Visa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://art-space-v1.onrender.com/orders/create",
+							"protocol": "https",
+							"host": [
+								"art-space-v1",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"orders",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "convert-cart-to-order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "{{User}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"shippingAddressId\": \"66005b7067955075f306ae1c\",\r\n    \"paymentMethod\": \"Cash\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://art-space-v1.onrender.com/orders/cart",
+							"protocol": "https",
+							"host": [
+								"art-space-v1",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"orders",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-order-by-id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "{{User}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://art-space-v1.onrender.com/orders/single/6630eaa07c37fa4c71586932",
+							"protocol": "https",
+							"host": [
+								"art-space-v1",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"orders",
+								"single",
+								"6630eaa07c37fa4c71586932"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-my-orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "{{User}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"6623b56e292f176fe69b5b66\",\r\n    \"shippingAddressId\": \"66005b7067955075f306ae1c\",\r\n    \"paymentMethod\": \"Visa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://art-space-v1.onrender.com/orders/mine",
+							"protocol": "https",
+							"host": [
+								"art-space-v1",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"orders",
+								"mine"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-orders [Tracker]",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "{{Tracker}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"6623b56e292f176fe69b5b66\",\r\n    \"shippingAddressId\": \"66005b7067955075f306ae1c\",\r\n    \"paymentMethod\": \"Visa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://art-space-v1.onrender.com/orders/all-for-admins",
+							"protocol": "https",
+							"host": [
+								"art-space-v1",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"orders",
+								"all-for-admins"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
