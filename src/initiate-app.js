@@ -18,7 +18,11 @@ export const initiateApp = (app, express)=> {
     app.use((req, res, next) => {
         if (req.originalUrl == "/auctions/webhook") {
             next()
-        } else {
+        }
+        else if (req.originalUrl == "/orders/webhook") {
+            next()
+        }
+        else {
             express.json()(req, res, next)
         }
     })

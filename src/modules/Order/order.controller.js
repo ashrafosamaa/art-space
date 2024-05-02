@@ -1,12 +1,14 @@
-import { APIFeatures } from "../../utils/api-features.js"
-import { generateOTP } from "../../utils/generate-unique-string.js"
 import {DateTime} from 'luxon'
+import { APIFeatures } from "../../utils/api-features.js"
+import { confirmPaymentIntent, createCheckOutSession, createPaymentIntent } from "../../payment-handlers/stripe.js"
+import { generateOTP } from "../../utils/generate-unique-string.js"
 
 import Order from "../../../DB/models/order.model.js"
 import Product from "../../../DB/models/product.model.js"
 import User from "../../../DB/models/user.model.js"
 import Cart from "../../../DB/models/cart.model.js"
 
+import Stripe from "stripe";
 import createInvoice from "../../utils/invoice-pdf.js"
 import sendEmailService from "../../servcies/send-email-service.js"
 
@@ -364,3 +366,78 @@ export const updateOrderStatusThird = async (req, res, next) => {
         statusCode: 200,
     })
 }
+
+export const stripePay = async (req, res, next)=> {
+    // destruct data from the user
+    const {_id} = req.authUser
+    const {orderId}= req.params;
+    // check that order is found
+    const order = await Order.findOne({_id: orderId, user: _id, orderStatus: 'Pending'});
+    if(!order) return next(new Error('Order not found', { cause: 404 }))
+    // check out data
+    const paymnetObj = {
+        customer_email: req.authUser.email,
+        metadata: {orderId: order._id.toString()},
+        success_url: `${req.protocol}://${req.headers.host}/sucess/${order._id.toString()}`,
+        cancel_url: `${req.protocol}://${req.headers.host}/cancel`,
+        line_items: order.orderItems.map(item=>{
+            return{
+                price_data:{
+                    currency: 'EGP',
+                    product_data:{
+                        name: item.title
+                    },
+                    unit_amount: item.appliedPrice * 100
+                },
+                quantity: 1,
+            }
+        })
+    }
+    // pay
+    const checkOutSession = await createCheckOutSession(paymnetObj)
+    const payUrl = checkOutSession.url
+    order.payUrl = payUrl
+    const paymentIntent = await createPaymentIntent({amount: order.totalPrice, currency: 'EGP'})
+    order.payment_intent = paymentIntent.id;
+    await order.save()
+    // send response
+    res.status(200).json({
+        msg: 'Click the link to pay for the order', 
+        statusCode: 200,
+        payUrl,
+    })
+}
+
+export const webhookOrder = async (req, res, next) => {
+    const sig = req.headers['stripe-signature']
+    let event;
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+    try {
+        event = stripe.webhooks.constructEvent(req.body, sig, process.env.END_POINT_SECRET_ORDER);
+    } catch (err) {
+        return res.status(400).send(`Webhook Error: ${err.message}`);
+    }
+    const { orderId } = event.data.object.metadata
+    // Handle the event
+    if(event.type == 'checkout.session.completed') {
+        // const checkoutSessionCompleted = event.data.object;
+        const confirmedOrder = await Order.findById(orderId)
+        await confirmPaymentIntent({paymentIntentId: confirmedOrder.payment_intent});
+
+        confirmedOrder.payUrl = null
+        confirmedOrder.orderStatus = "Paid"
+        confirmedOrder.paidAt = DateTime.now().toFormat('yyyy-MM-dd HH:mm:ss')
+        await confirmedOrder.save()
+
+        return res.status(200).json({
+            msg: "Order paid successfully",
+            statusCode: 200,
+        })
+    }else {
+        return res.status(400).json({
+            msg: "Something went wrong while paying, please try again.",
+            statusCode: 400,
+        })
+    }
+}
+

@@ -424,7 +424,7 @@ export const webhookAuction = async (req, res, next) => {
     let event;
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
     try {
-        event = stripe.webhooks.constructEvent(req.body, sig, process.env.END_POINT_SECRET);
+        event = stripe.webhooks.constructEvent(req.body, sig, process.env.END_POINT_SECRET_AUCTION);
     } catch (err) {
         return res.status(400).send(`Webhook Error: ${err.message}`);
     }

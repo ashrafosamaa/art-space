@@ -44,6 +44,9 @@ const orderSchema = new mongoose.Schema({
 
     refundRequest:{type: Boolean, default: false},
 
+    payUrl: String,
+    payment_intent: String,
+
 },{timestamps: true});
 
 

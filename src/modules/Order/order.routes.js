@@ -9,6 +9,7 @@ import * as orderController from './order.controller.js'
 import * as validator from "./order.validator.js"
 
 import expressAsyncHandler from "express-async-handler";
+import express from "express";
 
 const router = Router();
 
@@ -42,6 +43,10 @@ router.patch('/update-delivered/:orderId', authAdmin([systemRoles.TRACKER]), val
 router.patch('/update-cancelled-received/:orderId', authAdmin([systemRoles.TRACKER]), validationMiddleware(validator.IDValidator),
     expressAsyncHandler(orderController.updateOrderStatusThird))
 
+router.post('/pay-order/:orderId', authUser(), validationMiddleware(validator.IDValidator),
+    expressAsyncHandler(orderController.stripePay))
 
+router.post('/webhook', express.raw({type: 'application/json'}),
+    expressAsyncHandler(orderController.webhookOrder))
 
 export default router
