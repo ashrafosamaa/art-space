@@ -4825,9 +4825,6 @@
 				},
 				{
 					"name": "get-my-orders",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -4838,15 +4835,6 @@
 								"uuid": "59809dee-cedb-48cb-8910-08ea861be2f6"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"productId\": \"6623b56e292f176fe69b5b66\",\r\n    \"shippingAddressId\": \"66005b7067955075f306ae1c\",\r\n    \"paymentMethod\": \"Visa\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "https://art-space-v1.onrender.com/orders/mine",
 							"protocol": "https",
@@ -4921,9 +4909,6 @@
 				},
 				{
 					"name": "get-all-orders [Tracker]",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -4934,15 +4919,6 @@
 								"uuid": "3c6b4f58-ecb3-439b-b455-6475a8f1f45b"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"productId\": \"6623b56e292f176fe69b5b66\",\r\n    \"shippingAddressId\": \"66005b7067955075f306ae1c\",\r\n    \"paymentMethod\": \"Visa\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "https://art-space-v1.onrender.com/orders/all-for-admins",
 							"protocol": "https",
@@ -5046,6 +5022,62 @@
 							"path": [
 								"orders",
 								"update-cancelled-received",
+								"6633945d6d68ceb1b2e2836d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-order-by-stripe",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "{{User}}",
+								"uuid": "b98584f1-4503-4835-be07-cb4ebc7702ec"
+							}
+						],
+						"url": {
+							"raw": "https://art-space-v1.onrender.com/orders/pay-order/663394886d68ceb1b2e2837d",
+							"protocol": "https",
+							"host": [
+								"art-space-v1",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"orders",
+								"pay-order",
+								"663394886d68ceb1b2e2837d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refund-order [Tracker]",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accesstoken",
+								"value": "{{Tracker}}",
+								"uuid": "e93d484a-68a5-4155-a070-28e4c477585b"
+							}
+						],
+						"url": {
+							"raw": "https://art-space-v1.onrender.com/orders/refund-order/6633945d6d68ceb1b2e2836d",
+							"protocol": "https",
+							"host": [
+								"art-space-v1",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"orders",
+								"refund-order",
 								"6633945d6d68ceb1b2e2836d"
 							]
 						}

@@ -42,6 +42,8 @@ const orderSchema = new mongoose.Schema({
 
     receivedAt:{type: String},
 
+    refundedAt: {type: String},
+
     refundRequest:{type: Boolean, default: false},
 
     payUrl: String,

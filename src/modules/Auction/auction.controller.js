@@ -405,8 +405,8 @@ export const payAuction = async (req, res, next)=> {
     const paymentObj = {
         customer_email: req.authUser.email,
         metadata: {auctionOrderID: auctionOrder._id.toString()},
-        success_url: `${req.protocol}://${req.headers.host}/sucess`,
-        cancel_url: `${req.protocol}://${req.headers.host}/cancel`,
+        success_url: `${req.protocol}://${req.headers.host}/orders/sucess-payment/${auctionOrder._id.toString()}`,
+        cancel_url: `${req.protocol}://${req.headers.host}/orders/fail-payment/${auctionOrder._id.toString()}`,
     }
     const checkOutSession = await createCheckOutSessionForAuction(paymentObj)
     const payUrl = checkOutSession.url

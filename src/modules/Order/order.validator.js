@@ -27,7 +27,7 @@ export const getOrdersValidator = {
 
 
 export const noValidator = {
-    query: Joi.object({
+    body: Joi.object({
         zaza: Joi.string().length(2).optional()
     })
 }

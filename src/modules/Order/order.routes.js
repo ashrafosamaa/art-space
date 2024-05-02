@@ -46,7 +46,11 @@ router.patch('/update-cancelled-received/:orderId', authAdmin([systemRoles.TRACK
 router.post('/pay-order/:orderId', authUser(), validationMiddleware(validator.IDValidator),
     expressAsyncHandler(orderController.stripePay))
 
+router.put('/refund-order/:orderId', authAdmin([systemRoles.TRACKER]), validationMiddleware(validator.IDValidator),
+    expressAsyncHandler(orderController.refundOrder))
+
 router.post('/webhook', express.raw({type: 'application/json'}),
     expressAsyncHandler(orderController.webhookOrder))
+
 
 export default router

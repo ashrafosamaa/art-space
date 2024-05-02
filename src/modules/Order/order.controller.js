@@ -1,6 +1,6 @@
 import {DateTime} from 'luxon'
 import { APIFeatures } from "../../utils/api-features.js"
-import { confirmPaymentIntent, createCheckOutSession, createPaymentIntent } from "../../payment-handlers/stripe.js"
+import { confirmPaymentIntent, createCheckOutSession, createPaymentIntent, refundPaymentIntent } from "../../payment-handlers/stripe.js"
 import { generateOTP } from "../../utils/generate-unique-string.js"
 
 import Order from "../../../DB/models/order.model.js"
@@ -263,14 +263,27 @@ export const requestToRefundOrder = async (req, res, next)=> {
     const{orderId} = req.params
     const {_id} = req.authUser
     // check that order is found
-    const findOrder = await Order.findOne({_id: orderId, refundRequest: false, user: _id});
+    const findOrder = await Order.findOne({_id: orderId, refundRequest: false, user: _id})
     if(!findOrder) return next (new Error('Order not found or cannot be refunded', {cause: 404}))
     if(findOrder.orderStatus != 'Paid' && findOrder.orderStatus != 'Received') return next( new Error
-        ('Order cannot be refunded, you can cancel it', {cause: 404}));
+        ('Order cannot be refunded, you can cancel it', {cause: 404}))
+    // check time
+    if(findOrder.orderStatus == 'Paid'){
+        const now = DateTime.now()
+        const paidAt = DateTime.fromFormat(findOrder.paidAt, 'yyyy-MM-dd HH:mm:ss')
+        if(paidAt.plus({days: 14}) >= now) return next(new Error
+            ('Order cannot be refunded, because the paymnent was before 14 days or more', { cause: 404 }))
+    }
+    if(findOrder.orderStatus == 'Received'){
+        const now = DateTime.now()
+        const receivedAt = DateTime.fromFormat(findOrder.receivedAt, 'yyyy-MM-dd HH:mm:ss')
+        if(receivedAt.plus({days: 14}) <= now) return next(new Error
+            ('Order cannot be refunded, because you received it before 14 days or more', { cause: 404 }))
+    }
     // update order
-    findOrder.refundRequest = true;
+    findOrder.refundRequest = true
     // save order
-    await findOrder.save();
+    // await findOrder.save()
     // send response
     res.status(200).json({
         msg: 'Your request has been sent successfully',
@@ -378,8 +391,8 @@ export const stripePay = async (req, res, next)=> {
     const paymnetObj = {
         customer_email: req.authUser.email,
         metadata: {orderId: order._id.toString()},
-        success_url: `${req.protocol}://${req.headers.host}/sucess/${order._id.toString()}`,
-        cancel_url: `${req.protocol}://${req.headers.host}/cancel`,
+        success_url: `${req.protocol}://${req.headers.host}/orders/sucess-payment/${order._id.toString()}`,
+        cancel_url: `${req.protocol}://${req.headers.host}/orders/fail-payment/${order._id.toString()}`,
         line_items: order.orderItems.map(item=>{
             return{
                 price_data:{
@@ -441,3 +454,32 @@ export const webhookOrder = async (req, res, next) => {
     }
 }
 
+export const refundOrder = async (req, res, next) => {
+    // destruct data from the user
+    const{orderId} = req.params
+    // check that order is found
+    const findOrder = await Order.findOne({_id: orderId, orderStatus: 'Paid', refundRequest: true})
+    if(!findOrder) return next(new Error('Order not found or cannot be refunded', { cause: 404 }))
+    // refund the payment intent
+    const refund = await refundPaymentIntent({paymentIntentId: findOrder.payment_intent});
+    // update order
+    findOrder.orderStatus = 'Refunded';
+    findOrder.refundRequest = false;
+    findOrder.refundedAt = DateTime.now().toFormat('yyyy-MM-dd HH:mm:ss');
+    // update products in order to be available
+    findOrder.orderItems.forEach(async product => {
+        const updateProduct = await Product.findByIdAndUpdate(product.product, {isAvailable: true}, {new: true})
+        await updateProduct.save()
+    })
+    // save order
+    await findOrder.save();
+    // send response
+    res.status(200).json({
+        msg: 'Order refunded successfully',
+        statusCode: 200,
+    })
+}
+
+//  to do: 
+// 1) order => visa not paid within 3 days {cron job}
+// 2) acution winner buy the product
