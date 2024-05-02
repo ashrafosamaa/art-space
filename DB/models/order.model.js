@@ -34,13 +34,13 @@ const orderSchema = new mongoose.Schema({
     orderStatus:{type: String , enum:['Pending', 'Paid', 'Delivered', 'Placed', 'Cancelled', 'Refunded', 'Received'], 
     required: true , default: 'Pending'},
 
-    isDelivered:{type: Boolean, required: true, default: false},
     deliveredAt:{type: String},
 
-    isPaid:{type: Boolean, required: true, default: false},
     paidAt:{type: String},
 
     cancelledAt:{type: String},
+
+    receivedAt:{type: String},
 
     refundRequest:{type: Boolean, default: false},
 

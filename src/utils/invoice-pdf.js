@@ -50,12 +50,13 @@ function generateCustomerInformation(doc, invoice) {
     .font("Helvetica")
     .text("Customer Address:", 290, customerInformationTop + 15)
     .text(invoice.street + ", " + invoice.region, 400, customerInformationTop + 15)
-    .text(invoice.postalCode ?? "No Postal" + ", " + invoice.city + ", " + invoice.country, 380, customerInformationTop + 30)
+    .text((invoice.postalCode ?? "No Postal") + ", " + invoice.city + ", " + invoice.country, 400, customerInformationTop + 30)
 
     .text("Customer Phone:", 290, customerInformationTop + 47)
     .text(invoice.phone, 400, customerInformationTop + 47)
     
     .moveDown();
+
 
   generateHr(doc, 265);
 }

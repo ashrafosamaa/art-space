@@ -27,5 +27,21 @@ router.get('/mine', authUser(), validationMiddleware(validator.noValidator),
 router.get('/single/:orderId', authUser(), validationMiddleware(validator.IDValidator),
     expressAsyncHandler(orderController.getOrderById))
 
+router.patch('/refund-my/:orderId', authUser(), validationMiddleware(validator.IDValidator),
+    expressAsyncHandler(orderController.requestToRefundOrder))
+
+router.patch('/cancel-my/:orderId', authUser(), validationMiddleware(validator.IDValidator),
+    expressAsyncHandler(orderController.cancelMyOrder))
+
+router.patch('/update-paid/:orderId', authAdmin([systemRoles.TRACKER]), validationMiddleware(validator.IDValidator),
+    expressAsyncHandler(orderController.updateOrderStatusFirst))
+    
+router.patch('/update-delivered/:orderId', authAdmin([systemRoles.TRACKER]), validationMiddleware(validator.IDValidator),
+    expressAsyncHandler(orderController.updateOrderStatusSecond))
+    
+router.patch('/update-cancelled-received/:orderId', authAdmin([systemRoles.TRACKER]), validationMiddleware(validator.IDValidator),
+    expressAsyncHandler(orderController.updateOrderStatusThird))
+
+
 
 export default router
