@@ -63,8 +63,8 @@ export const signUp = async (req, res, next)=> {
             region,
             city,
             country,
-            postalCode,
-            phone
+            postalCode: postalCode ?? null,
+            phone: phone ?? null
         }]
     }
     // create new document in database

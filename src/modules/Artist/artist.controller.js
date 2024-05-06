@@ -271,7 +271,15 @@ export const addArtistAddress = async (req, res) => {
     }
     // add address
     await artist.updateOne({
-            $addToSet: {addresses: req.body},
+            $addToSet: {addresses: {
+                alias: req.body.alias,
+                street: req.body.street,
+                region: req.body.region,
+                city: req.body.city,
+                country: req.body.country,
+                postalCode: req.body.postalCode ?? null,
+                phone: req.body.phone ?? null
+            }},
         },
         {new: true}
     )
