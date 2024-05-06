@@ -38,3 +38,11 @@ export const IDValidator = {
         orderId: Joi.string().length(24).hex().required()
     })
 }
+
+
+export const auctionIdValidator = {
+    params: Joi.object({
+        auctionId: Joi.string().length(24).hex().required()
+    })
+}
+

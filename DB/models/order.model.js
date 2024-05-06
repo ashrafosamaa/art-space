@@ -26,7 +26,7 @@ const orderSchema = new mongoose.Schema({
         postalCode: String,
         phone: String,
     },
-    phoneNumber:[{type: String, required: true}],
+    phoneNumber:{type: String, required: true},
 
     totalPrice:{type: Number, required: true}, 
 

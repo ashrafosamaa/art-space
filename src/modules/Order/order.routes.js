@@ -49,6 +49,9 @@ router.post('/pay-order/:orderId', authUser(), validationMiddleware(validator.ID
 router.put('/refund-order/:orderId', authAdmin([systemRoles.TRACKER]), validationMiddleware(validator.IDValidator),
     expressAsyncHandler(orderController.refundOrder))
 
+router.post('/auction-by-admin/:auctionId', authAdmin([systemRoles.TRACKER]), validationMiddleware(validator.auctionIdValidator),
+    expressAsyncHandler(orderController.auctionToWinnerByAdmin))
+
 router.post('/webhook', express.raw({type: 'application/json'}),
     expressAsyncHandler(orderController.webhookOrder))
 

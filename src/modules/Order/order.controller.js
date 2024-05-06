@@ -3,10 +3,12 @@ import { APIFeatures } from "../../utils/api-features.js"
 import { confirmPaymentIntent, createCheckOutSession, createPaymentIntent, refundPaymentIntent } from "../../payment-handlers/stripe.js"
 import { generateOTP } from "../../utils/generate-unique-string.js"
 
-import Order from "../../../DB/models/order.model.js"
-import Product from "../../../DB/models/product.model.js"
 import User from "../../../DB/models/user.model.js"
 import Cart from "../../../DB/models/cart.model.js"
+import Order from "../../../DB/models/order.model.js"
+import Auction from '../../../DB/models/auction.model.js'
+import Product from "../../../DB/models/product.model.js"
+import AuctionOrder from '../../../DB/models/auction-payment.model.js'
 
 import Stripe from "stripe";
 import createInvoice from "../../utils/invoice-pdf.js"
@@ -40,7 +42,7 @@ export const createOrder = async (req, res ,next) => {
     let orderStatus;
     if(paymentMethod === 'Cash') orderStatus = 'Placed';
     // create order
-    const order = new Order({
+    const order = await Order.create({
         user: _id,
         orderItems,
         shippingAddressId,
@@ -54,12 +56,11 @@ export const createOrder = async (req, res ,next) => {
             region: isAddressValid.region,
             city: isAddressValid.city,
             country: isAddressValid.country,
-            postalCode: isAddressValid.postalCode,
-            phone: isAddressValid.phone,
+            postalCode: isAddressValid.postalCode ?? null,
+            phone: isAddressValid.phone ?? null,
         }
     })
     // save order
-    await order.save();
     req.savedDocument = { model: Order, _id: order._id }
     // update product stock
     isProductAvailable.isAvailable = false;
@@ -143,7 +144,7 @@ export const convertCartToOrder = async (req, res, next) => {
     let orderStatus;
     if(paymentMethod === 'Cash') orderStatus = 'Placed';
     // create order
-    const order = new Order({
+    const order = await Order.create({
         user: _id,
         orderItems,
         shippingAddressId,
@@ -157,12 +158,11 @@ export const convertCartToOrder = async (req, res, next) => {
             region: isAddressValid.region,
             city: isAddressValid.city,
             country: isAddressValid.country,
-            postalCode: isAddressValid.postalCode,
-            phone: isAddressValid.phone,
+            postalCode: isAddressValid.postalCode ?? null,
+            phone: isAddressValid.phone ?? null,
         }
     });
     // save order
-    await order.save();
     req.savedDocument = { model: Order, _id: order._id }
     // create invoice
     const orderCode = `${user.userName}-${generateOTP(3)}`
@@ -196,8 +196,8 @@ export const convertCartToOrder = async (req, res, next) => {
             const isProduct = await Product.findById(item.product)
             isProduct.isAvailable = false;
             await isProduct.save()
-            await Cart.findByIdAndDelete({_id: userCart._id});
         }
+        await Cart.findByIdAndDelete({_id: userCart._id});
     } catch (error) {
         await order.deleteOne();
         return next(new Error("An error occurred while sending email, plesae try again", { cause: 500 }))
@@ -268,12 +268,6 @@ export const requestToRefundOrder = async (req, res, next)=> {
     if(findOrder.orderStatus != 'Paid' && findOrder.orderStatus != 'Received') return next( new Error
         ('Order cannot be refunded, you can cancel it', {cause: 404}))
     // check time
-    if(findOrder.orderStatus == 'Paid'){
-        const now = DateTime.now()
-        const paidAt = DateTime.fromFormat(findOrder.paidAt, 'yyyy-MM-dd HH:mm:ss')
-        if(paidAt.plus({days: 14}) >= now) return next(new Error
-            ('Order cannot be refunded, because the paymnent was before 14 days or more', { cause: 404 }))
-    }
     if(findOrder.orderStatus == 'Received'){
         const now = DateTime.now()
         const receivedAt = DateTime.fromFormat(findOrder.receivedAt, 'yyyy-MM-dd HH:mm:ss')
@@ -480,6 +474,89 @@ export const refundOrder = async (req, res, next) => {
     })
 }
 
-//  to do: 
-// 1) order => visa not paid within 3 days {cron job}
-// 2) acution winner buy the product
+export const auctionToWinnerByAdmin = async (req, res, next) => {
+    // destruct data from the admin
+    const {auctionId} = req.params
+    // check that auction is found
+    const findAuction = await Auction.findById(auctionId)
+    if(!findAuction) return next(new Error('Auction not found', { cause: 404 }))
+    // check that auction is not ended
+    if(findAuction.status != 'closed') return next(new Error('Auction is still not ended', { cause: 404 }))
+    if(!findAuction.winnerId && findAuction.status == 'closed') return next(new Error('Auction has no winner', { cause: 404 }))
+    const auctionOrder = await AuctionOrder.findOne({auctionId, userId: findAuction.winnerId})
+    if(!auctionOrder) return next(new Error('Auction order not found', { cause: 404 }))
+    // create order
+    const user = await User.findById(findAuction.winnerId)
+    const userAddress = user.addresses.find(address => address._id == auctionOrder.shippingAddressId.toString())
+    if(!userAddress) return next (new Error ('Address not found in your profile', { cause: 404 }))
+    // set orderitems
+    const product = await Product.findById(findAuction.productId)
+    let orderItems = [{
+        title: product.title,
+        basePrice: findAuction.variablePrice,
+        discount: 0,
+        appliedPrice: findAuction.variablePrice,
+        product: findAuction.productId,
+    }]
+    const totalPrice = orderItems[0].appliedPrice
+    const order = await Order.create({
+        user: findAuction.winnerId,
+        orderItems,
+        shippingAddressId: auctionOrder.shippingAddressId,
+        phoneNumber: user.phoneNumber,
+        totalPrice,
+        paymentMethod: 'Cash',
+        orderStatus: 'Placed',
+        shippingAddress: {
+            alias: userAddress.alias,
+            street: userAddress.street,
+            region: userAddress.region,
+            city: userAddress.city,
+            country: userAddress.country,
+            postalCode: userAddress.postalCode ?? null,
+            phone: userAddress.phone ?? null,
+        }
+    })
+    // create invoice
+    const orderCode = `${user.userName}-${generateOTP(3)}`
+    // order invoice
+    const orderInvoice = {
+        name: user.userName,
+        postalCode: userAddress.postalCode,
+        street: userAddress.street,
+        region: userAddress.region,
+        city: userAddress.city,
+        country: userAddress.country,
+        orderCode,
+        date: DateTime.now().toFormat('yyyy-MM-dd HH:mm:ss'),
+        items: order.orderItems,
+        basePrice: order.totalPrice,
+        discount: 0,
+        paidAmount: order.totalPrice,
+        subTotal: order.totalPrice,
+        phone: userAddress.phone ?? user.phoneNumber
+    }
+    await createInvoice(orderInvoice, `${orderCode}.pdf`);
+    product.isAvailable = false;
+    await product.save();
+    // send email
+    try {
+        await sendEmailService({
+            to: user.email,
+            subject: 'Order Confirmation, Congratulation you win the auction',
+            message: '<h1>Check your Invoice Confirmation below</h1>',
+            attachments: [{path: `./Orders/${orderCode}.pdf`}]
+        }) 
+    } catch (error) {
+        await order.deleteOne();
+        product.isAvailable = true;
+        await product.save();
+        return next(new Error("An error occurred while sending email, plesae try again", { cause: 500 }))
+    }
+    // send response
+    res.status(201).json({
+        msg: 'Order created successfully', 
+        statusCode: 201,
+        order
+    })
+}

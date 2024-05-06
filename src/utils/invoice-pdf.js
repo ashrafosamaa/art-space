@@ -61,9 +61,11 @@ function generateCustomerInformation(doc, invoice) {
   generateHr(doc, 265);
 }
 
-async function generateInvoiceTable (doc, invoice) {
+async function generateInvoiceTable(doc, invoice) {
   let i;
   const invoiceTableTop = 300;
+  const itemHeight = 30;
+  const itemsPerPage = 12;
 
   doc.font("Helvetica-Bold");
   generateTableRow(
@@ -77,22 +79,45 @@ async function generateInvoiceTable (doc, invoice) {
   generateHr(doc, invoiceTableTop + 20);
   doc.font("Helvetica");
 
-  for (i = 0; i < invoice.items.length; i++) {
-    const item = invoice.items[i];
-    const position = invoiceTableTop + (i + 1) * 30;
-    generateTableRow(
-      doc,
-      position,
-      item.title, // product title
-      formatCurrency(item.basePrice), // product price
-      item.discount + "%", // product quantity
-      formatCurrency(item.appliedPrice ) // product final price
-    );
+  const totalPages = Math.ceil(invoice.items.length / itemsPerPage);
 
-    generateHr(doc, position + 20);
+  for (let page = 0; page < totalPages; page++) {
+    const start = page * itemsPerPage;
+    const end = Math.min(start + itemsPerPage, invoice.items.length);
+
+    for (i = start; i < end; i++) {
+      const item = invoice.items[i];
+      const position = invoiceTableTop + ((i - start) + 1) * itemHeight;
+
+      generateTableRow(
+        doc,
+        position,
+        item.title, // product title
+        formatCurrency(item.basePrice), // product price
+        item.discount + "%", // product quantity
+        formatCurrency(item.appliedPrice) // product final price
+      );
+
+      generateHr(doc, position + 20);
+    }
+
+    if (page < totalPages - 1) {
+      await doc.addPage();
+      doc.font("Helvetica-Bold");
+      generateTableRow(
+        doc,
+        invoiceTableTop,
+        "Item",
+        "Unit Cost",
+        "Discount",
+        "Line Total"
+      );
+      generateHr(doc, invoiceTableTop + 20);
+      doc.font("Helvetica");
+    }
   }
 
-  const subtotalPosition = invoiceTableTop + (i + 1) * 30;
+  const subtotalPosition = invoiceTableTop + ((i - 1) % itemsPerPage + 2) * itemHeight;
   generateTableRow(
     doc,
     subtotalPosition,

@@ -26,6 +26,16 @@ export const IdValidator = {
 }
 
 
+export const requestToJoinAuctionValidator = {
+    params: Joi.object({
+        auctionId: Joi.string().length(24).hex().required()
+    }),
+    body: Joi.object({
+        shippingAddressId: Joi.string().length(24).hex().required()
+    })
+}
+
+
 export const updateAuctionValidator = {
     params: Joi.object({
         auctionId: Joi.string().length(24).hex().required()

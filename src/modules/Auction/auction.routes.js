@@ -40,7 +40,7 @@ router.delete('/admin-delete/:auctionId' , authAdmin([systemRoles.IT]) , validat
 router.get('/user/:auctionId', authUser(), validationMiddleware(validator.IdValidator),
     expressAsyncHandler(auctionController.viewAuction))
 
-router.post('/request-user/:auctionId', authUser(), validationMiddleware(validator.IdValidator),
+router.post('/request-user/:auctionId', authUser(), validationMiddleware(validator.requestToJoinAuctionValidator),
     expressAsyncHandler(auctionController.requestToJoinAuction))
 
 router.post('/pay-stripe/:auctionId', authUser(), validationMiddleware(validator.IdValidator),

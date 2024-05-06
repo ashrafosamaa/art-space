@@ -5,6 +5,7 @@ import axios from 'axios';
 import Event from "../../DB/models/event.model.js"
 import Auction from "../../DB/models/auction.model.js"
 import Product from "../../DB/models/product.model.js"
+import Order from "../../DB/models/order.model.js";
 
 export function cronEveryQuarterHour(){
     scheduleJob('*/14 * * * *', async ()=> {
@@ -51,7 +52,7 @@ export function cronToChangeAuctionsToClosed(){
                 console.log(`Auction: ${auction._id} is closed`);
                 auction.status = 'closed'
                 const product = await Product.findById(auction.productId)
-                if(auction.userIds.length > 0) {
+                if(auction.heighstPriceId) { 
                     product.isAvailable = false
                     product.basePrice = auction.variablePrice
                     product.appliedPrice = auction.variablePrice
@@ -60,7 +61,7 @@ export function cronToChangeAuctionsToClosed(){
                     auction.winnerId = auction.heighstPriceId
                     await product.save()
                 }
-                if(auction.userIds.length == 0) {
+                else {
                     product.isAuction = false
                     product.basePrice = auction.oldBasePrice
                     product.discount = auction.oldDiscount
@@ -114,6 +115,29 @@ export function cronToChangeEventsToClosed(){
                 }
             }
             await event.save()
+        }
+    })
+}
+
+export function cronToCancelOrders(){
+    scheduleJob('0 0 0 * * *', async ()=> {
+        console.log('hi every day at 00:00:00 am check orders')
+        const orders = await Order.find({orderStatus: 'Pending'})
+        if(!orders.length) return console.log('No orders to cancel')
+        for (const order of orders) {
+            const createdAtStr = JSON.stringify(order.createdAt);
+            const splitCreatedAtstr = createdAtStr.split('.')[0] + '"'
+            const cleanSplitCreatedAtstr = splitCreatedAtstr.replace(/"/gi, '');
+            const orderCreatedAt = DateTime.fromISO(cleanSplitCreatedAtstr)
+        // cancel order after one day from adding it
+            if(orderCreatedAt.plus({days: 3}) <= DateTime.now()){ 
+                console.log(`Order: ${order._id} cancelled.`);
+                order.orderStatus = 'Cancelled'
+                for (const item of order.orderItems) {
+                    await Product.updateOne({ _id: item.product }, { isAvailable: true });
+                }
+            }
+            await order.save();
         }
     })
 }

@@ -19,6 +19,11 @@ const orderAuctionSchema = new mongoose.Schema({
 
     payUrl: String,
 
+    shippingAddressId: {
+        type: mongoose.Schema.ObjectId,
+        required: true
+    },
+
 },{timestamps: true});
 
 const AuctionOrder = mongoose.model('AuctionOrder', orderAuctionSchema);

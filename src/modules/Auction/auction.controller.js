@@ -3,6 +3,7 @@ import { createCheckOutSessionForAuction } from "../../payment-handlers/stripe.j
 import { getIO } from "../../utils/io-generation.js";
 
 
+import User from "../../../DB/models/user.model.js";
 import Auction from "../../../DB/models/auction.model.js";
 import Product from "../../../DB/models/product.model.js";
 import AuctionOrder from "../../../DB/models/auction-payment.model.js";
@@ -359,6 +360,7 @@ export const requestToJoinAuction = async (req, res, next)=> {
     // destruct data from user
     const { _id } = req.authUser
     const { auctionId } = req.params
+    const { shippingAddressId } = req.body
     // check auction is found
     const auction = await Auction.findById(auctionId)
     if (!auction) {
@@ -369,10 +371,15 @@ export const requestToJoinAuction = async (req, res, next)=> {
     // check user not make twice request for single auction
     const auctionOrder = await AuctionOrder.findOne({userId: _id, auctionId})
     if(auctionOrder) return next(new Error('You have already requested to join this auction', { cause: 403 }))
+    // address check
+    const user = await User.findById(_id)
+    const isAddressValid = user.addresses.find(address => address._id == shippingAddressId)
+    if(!isAddressValid) return next (new Error ('Address not found in your profile', { cause: 404 }))
     // create auction request payment
     const auctionPaymnet = await AuctionOrder.create({
         userId: _id,
-        auctionId
+        auctionId,
+        shippingAddressId
     })
     if(!auctionPaymnet) return next(new Error('Something went wrong, please try again.', { cause: 500 }))
     // update auction
@@ -381,11 +388,10 @@ export const requestToJoinAuction = async (req, res, next)=> {
         msg: "Request to join auction added successfully",
         statusCode: 201,
     })
-    // to do : send email to user after stripe payment link
-    // , pay 200 L.E by your credit card\
+    // to do :
     // . Check link below to pay.\
+    // , pay 200 L.E by your credit card\
     // . After payment you will be able to join the auction.\
-    // If you win the Auction you will get your 200 Pound back.
 }
 
 export const payAuction = async (req, res, next)=> {

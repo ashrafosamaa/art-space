@@ -125,6 +125,10 @@ export const getProductById = async (req, res, next)=> {
     if(!product){
         return next(new Error("Product not found", { cause: 404 }))
     }
+    product.category = await Category.findById(product.categoryId).select('title')
+    product.style = await Style.findById(product.styleId).select('title')
+    product.subject = await Subject.findById(product.subjectId).select('title')
+
     res.status(200).json({
         msg: "Product fetched successfully",
         statusCode: 200,
