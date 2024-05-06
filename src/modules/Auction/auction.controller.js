@@ -379,7 +379,16 @@ export const requestToJoinAuction = async (req, res, next)=> {
     const auctionPaymnet = await AuctionOrder.create({
         userId: _id,
         auctionId,
-        shippingAddressId
+        shippingAddressId,
+        shippingAddress: {
+            alias: isAddressValid.alias,
+            street: isAddressValid.street,
+            region: isAddressValid.region,
+            city: isAddressValid.city,
+            country: isAddressValid.country,
+            postalCode: isAddressValid.postalCode,
+            phone: isAddressValid.phone,
+        },
     })
     if(!auctionPaymnet) return next(new Error('Something went wrong, please try again.', { cause: 500 }))
     // update auction

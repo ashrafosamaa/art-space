@@ -23,6 +23,15 @@ const orderAuctionSchema = new mongoose.Schema({
         type: mongoose.Schema.ObjectId,
         required: true
     },
+    shippingAddress: {
+        alias: String,
+        street: String,
+        region: String,
+        city: String,
+        country: String,
+        postalCode: String,
+        phone: String,
+    },
 
 },{timestamps: true});
 

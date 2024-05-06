@@ -50,15 +50,7 @@ export const createOrder = async (req, res ,next) => {
         totalPrice,
         paymentMethod,
         orderStatus,
-        shippingAddress: {
-            alias: isAddressValid.alias,
-            street: isAddressValid.street,
-            region: isAddressValid.region,
-            city: isAddressValid.city,
-            country: isAddressValid.country,
-            postalCode: isAddressValid.postalCode ?? null,
-            phone: isAddressValid.phone ?? null,
-        }
+        shippingAddress: isAddressValid
     })
     // save order
     req.savedDocument = { model: Order, _id: order._id }
@@ -152,15 +144,7 @@ export const convertCartToOrder = async (req, res, next) => {
         totalPrice,
         paymentMethod,
         orderStatus,
-        shippingAddress: {
-            alias: isAddressValid.alias,
-            street: isAddressValid.street,
-            region: isAddressValid.region,
-            city: isAddressValid.city,
-            country: isAddressValid.country,
-            postalCode: isAddressValid.postalCode ?? null,
-            phone: isAddressValid.phone ?? null,
-        }
+        shippingAddress: isAddressValid
     });
     // save order
     req.savedDocument = { model: Order, _id: order._id }
@@ -485,12 +469,13 @@ export const auctionToWinnerByAdmin = async (req, res, next) => {
     if(!findAuction.winnerId && findAuction.status == 'closed') return next(new Error('Auction has no winner', { cause: 404 }))
     const auctionOrder = await AuctionOrder.findOne({auctionId, userId: findAuction.winnerId})
     if(!auctionOrder) return next(new Error('Auction order not found', { cause: 404 }))
+    // adddress of user
+    const userAddress = auctionOrder.shippingAddress
     // create order
     const user = await User.findById(findAuction.winnerId)
-    const userAddress = user.addresses.find(address => address._id == auctionOrder.shippingAddressId.toString())
-    if(!userAddress) return next (new Error ('Address not found in your profile', { cause: 404 }))
     // set orderitems
     const product = await Product.findById(findAuction.productId)
+    if(product.isAvailable == false) return next(new Error('Product is not available', { cause: 404 }))
     let orderItems = [{
         title: product.title,
         basePrice: findAuction.variablePrice,
@@ -507,15 +492,7 @@ export const auctionToWinnerByAdmin = async (req, res, next) => {
         totalPrice,
         paymentMethod: 'Cash',
         orderStatus: 'Placed',
-        shippingAddress: {
-            alias: userAddress.alias,
-            street: userAddress.street,
-            region: userAddress.region,
-            city: userAddress.city,
-            country: userAddress.country,
-            postalCode: userAddress.postalCode ?? null,
-            phone: userAddress.phone ?? null,
-        }
+        shippingAddress: userAddress
     })
     // create invoice
     const orderCode = `${user.userName}-${generateOTP(3)}`
