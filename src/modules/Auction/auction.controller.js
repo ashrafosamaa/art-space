@@ -130,7 +130,7 @@ export const updateMyAuction = async (req, res, next)=> {
         return next(new Error('Auction not found', { cause: 404 }))
     }
     // check that time is still not start
-    if(auction.status == 'open') {
+    if(auction.status == 'open' || auction.status == 'closed') {
         return next(new Error('Auction is already started, you can not update on it', { cause: 400 }))
     }
     let finalPrice
@@ -214,8 +214,12 @@ export const deleteMyAuction = async (req, res, next)=> {
     if (!auction) {
         return next(new Error('Auction not found', { cause: 404 }))
     }
-    // check that auction is start and if it satrt auction can not delete after compare beginDate with now
-    if(auction.status == 'open') return next(new Error('Auction is already started, you can not delete it', { cause: 403 }))
+    // check that auction is start
+    if(auction.status == 'open' || auction.status == 'not-started') {
+        if(auction.userIds.length > 0) {
+            return next(new Error('Can not delete auction, there is an auction in progress and it has users', { cause: 403 }))
+        }
+    }
     // update delete old product if there
     const oldProduct = await Product.findById(auction.productId)
     oldProduct.isAuction = false
@@ -241,7 +245,7 @@ export const updateAnAuctionByAdmin = async (req, res, next)=> {
         return next(new Error('Auction not found', { cause: 404 }))
     }
     // check that time is still not start
-    if(auction.status == 'open') {
+    if(auction.status == 'open' || auction.status == 'closed') {
         return next(new Error('Auction is already started, you can not update on it', { cause: 400 }))
     }
     // set prices
@@ -325,7 +329,11 @@ export const deleteAnAuctionByAdmin = async (req, res, next)=> {
         return next(new Error('Auction not found', { cause: 404 }))
     }
     // check that auction is start
-    if(auction.status == 'open') return next(new Error('Auction is already started, you can not delete it', { cause: 403 }))
+    if(auction.status == 'open' || auction.status == 'not-started') {
+        if(auction.userIds.length > 0) {
+            return next(new Error('Can not delete auction, there is an auction in progress and it has users', { cause: 403 }))
+        }
+    }
     // update delete old product if there
     const oldProduct = await Product.findById(auction.productId)
     oldProduct.isAuction = false

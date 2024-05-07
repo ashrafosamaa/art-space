@@ -11,7 +11,7 @@ async function createInvoice(invoice, pathVar) {
   generateFooter(doc);
 
   doc.end();
-  doc.pipe(fs.createWriteStream(path.resolve(`./Orders/${pathVar}`)));
+  doc.pipe(fs.createWriteStream(path.resolve(`./files/Orders/${pathVar}`)));
 }
 
 function generateHeader(doc) {

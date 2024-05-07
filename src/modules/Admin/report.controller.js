@@ -46,7 +46,7 @@ export const ordersReport = async (req, res, next) => {
             });
         });
         // Save the workbook to a file
-        const filePath = `./Reports/orders_report_${DateTime.now().toFormat('yyyyLL')}.xlsx`;
+        const filePath = `./files/Reports/orders_report_${DateTime.now().toFormat('yyyyLL')}.xlsx`;
         await workbook.xlsx.writeFile(filePath);
         return filePath;
     }
@@ -54,7 +54,12 @@ export const ordersReport = async (req, res, next) => {
     const startDate = DateTime.now().startOf('month').minus({ months: 1 });
     const endDate = DateTime.now().startOf('month').minus({ days: 1 });
     const orders = await Order.find(
-        
+        {
+            createdAt: {
+                $gte: startDate.toJSDate(),
+                $lte: endDate.toJSDate(),
+            },
+        }
     ).populate('user', 'userName')
     
     createExcelSheet(orders)

@@ -83,7 +83,7 @@ export const createOrder = async (req, res ,next) => {
             to: req.authUser.email,
             subject: 'Order Confirmation',
             message: '<h1>Check your Invoice Confirmation below</h1>',
-            attachments: [{path: `./Orders/${orderCode}.pdf`}]
+            attachments: [{path: `./files/Orders/${orderCode}.pdf`}]
         }) 
     } catch (error) {
         await order.deleteOne();
@@ -174,7 +174,7 @@ export const convertCartToOrder = async (req, res, next) => {
             to: req.authUser.email,
             subject: 'Order Confirmation',
             message: '<h1>Check your Invoice Confirmation below</h1>',
-            attachments: [{path: `./Orders/${orderCode}.pdf`}]
+            attachments: [{path: `./files/Orders/${orderCode}.pdf`}]
         })
         for (const item of orderItems) {
             const isProduct = await Product.findById(item.product)
@@ -261,7 +261,7 @@ export const requestToRefundOrder = async (req, res, next)=> {
     // update order
     findOrder.refundRequest = true
     // save order
-    // await findOrder.save()
+    await findOrder.save()
     // send response
     res.status(200).json({
         msg: 'Your request has been sent successfully',
@@ -522,7 +522,7 @@ export const auctionToWinnerByAdmin = async (req, res, next) => {
             to: user.email,
             subject: 'Order Confirmation, Congratulation you win the auction',
             message: '<h1>Check your Invoice Confirmation below</h1>',
-            attachments: [{path: `./Orders/${orderCode}.pdf`}]
+            attachments: [{path: `./files/Orders/${orderCode}.pdf`}]
         }) 
     } catch (error) {
         await order.deleteOne();

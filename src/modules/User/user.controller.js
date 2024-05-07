@@ -2,6 +2,7 @@ import { APIFeatures } from "../../utils/api-features.js";
 import { allAddresses } from "./user-utils/all-addresses.js";
 
 import User from "../../../DB/models/user.model.js";
+import Order from "../../../DB/models/order.model.js";
 
 import cloudinaryConnection from "../../utils/cloudinary.js";
 import bcrypt from "bcryptjs"
@@ -94,15 +95,25 @@ export const deleteUser = async(req, res, next)=> {
     // destruct data from user
     const {userId} = req.params
     // delete user data
-    const deleteUser = await User.findByIdAndDelete(userId)
+    const deleteUser = await User.findById(userId)
     if (!deleteUser) {
         return next (new Error("User not found", { cause: 404 }))
+    }
+    // check orders are done only
+    const orders = await Order.find({user: userId})
+    if(orders.length){
+        for(const order of orders){
+            if(order.orderStatus != "Received" || order.orderStatus != "Refunded" || order.orderStatus != "Cancelled"){
+                return next (new Error("You cannot delete this account because he has an order that is not received yet", { cause: 400 }))
+            }
+        }
     }
     if(deleteUser.profileImg.public_id){
         const folder = `${process.env.MAIN_FOLDER}/Users/${deleteUser.folderId}`
         await cloudinaryConnection().api.delete_resources_by_prefix(folder)
         await cloudinaryConnection().api.delete_folder(folder)
     }
+    await deleteUser.deleteOne()
     // send response
     res.status(200).json({
         msg: "User deleted successfully",
@@ -221,15 +232,25 @@ export const deleteAccount = async (req, res, next)=> {
     // destruct data from user
     const {_id} = req.authUser
     // delete user data
-    const deleteUser = await User.findByIdAndDelete(_id)
+    const deleteUser = await User.findById(_id)
     if (!deleteUser) {
         return next (new Error("User not found", { cause: 404 }))
+    }
+    // check orders are done only
+    const orders = await Order.find({user: _id})
+    if(orders.length){
+        for(const order of orders){
+            if(order.orderStatus != "Received" || order.orderStatus != "Refunded" || order.orderStatus != "Cancelled"){
+                return next (new Error("You cannot delete this account because you have an order that is not received yet", { cause: 400 }))
+            }
+        }
     }
     if(deleteUser.profileImg.public_id){
         const folder = `${process.env.MAIN_FOLDER}/Users/${deleteUser.folderId}`
         await cloudinaryConnection().api.delete_resources_by_prefix(folder)
         await cloudinaryConnection().api.delete_folder(folder)
     }
+    await deleteUser.deleteOne()
     // send response
     res.status(200).json({
         msg: "User deleted successfully",

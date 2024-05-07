@@ -15,7 +15,7 @@ const router = Router();
 
 router.get('/keep-alive', (req, res, next) => {
     res.send('Application is awake!');
-});
+})
 
 router.post('/', authAdmin(), multerMiddleHost({
     extensions: allowedExtensions.image

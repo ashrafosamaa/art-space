@@ -101,6 +101,20 @@ export const deleteArtist = async(req, res, next)=> {
     if (!deleteArtist) {
         return next(new Error("Artist not found", { cause: 404 }));
     }
+    const auctions = await Auction.find({artistId: artistId})
+    if(auctions.length){
+        for (const auction of auctions) {
+            if(auction.status == 'not-started' || auction.status == 'open'){
+                if(auction.userIds.length > 0){
+                    return next(new Error("Can not delete artist, there is an auction in progress and it has users", { cause: 403 }));
+                }
+            }
+        }
+    }
+    const events = await Event.find({artistId})
+    if(events.length){
+        await Event.deleteMany({artistId})
+    }
     const products = await Product.find({artistId})
     // delete folder
     if(deleteArtist.profileImg.public_id || products.length){
@@ -108,10 +122,6 @@ export const deleteArtist = async(req, res, next)=> {
         await cloudinaryConnection().api.delete_resources_by_prefix(folderProfile)
         await cloudinaryConnection().api.delete_folder(folderProfile)
         await Product.deleteMany({artistId})
-    }
-    const events = await Event.find({artistId})
-    if(events.length){
-        await Event.deleteMany({artistId})
     }
     // delete artist
     await deleteArtist.deleteOne()
@@ -231,9 +241,19 @@ export const deleteAccount = async (req, res, next)=> {
     if (!deleteArtist) {
         return next(new Error("Artist not found", { cause: 404 }));
     }
-    const auction = await Auction.find({artistId: _id})
-    if(auction.length){
-        return next(new Error("Can not delete artist, there is an auction in progress", { cause: 403 }));
+    const auctions = await Auction.find({artistId: _id})
+    if(auctions.length){
+        for (const auction of auctions) {
+            if(auction.status == 'not-started' || auction.status == 'open'){
+                if(auction.userIds.length > 0){
+                    return next(new Error("Can not delete artist, there is an auction in progress and it has users", { cause: 403 }));
+                }
+            }
+        }
+    }
+    const events = await Event.find({artistId: _id})
+    if(events.length){
+        await Event.deleteMany({artistId: _id})
     }
     const products = await Product.find({artistId: _id})
     // delete folder
@@ -241,11 +261,7 @@ export const deleteAccount = async (req, res, next)=> {
         const folderProfile = `${process.env.MAIN_FOLDER}/Artists/${deleteArtist.folderId}`
         await cloudinaryConnection().api.delete_resources_by_prefix(folderProfile)
         await cloudinaryConnection().api.delete_folder(folderProfile)
-        await Product.deleteMany({artistId})
-    }
-    const events = await Event.find({artistId: _id})
-    if(events.length){
-        await Event.deleteMany({artistId: _id})
+        await Product.deleteMany({artistId: _id})
     }
     // delete artist
     await deleteArtist.deleteOne()
