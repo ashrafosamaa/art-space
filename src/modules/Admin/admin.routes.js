@@ -6,6 +6,7 @@ import { allowedExtensions } from "../../utils/allowed-extensions.js";
 import { validationMiddleware } from "../../middlewares/validation.middleware.js";
 
 import * as adminController from './admin.controller.js'
+import * as reportController from './report.controller.js'
 import * as validator from "./admin.validator.js"
 
 import expressAsyncHandler from "express-async-handler";
@@ -61,6 +62,8 @@ router.delete('/delete-profile', authAdmin([systemRoles.IT, systemRoles.TRACKER]
     validationMiddleware(validator.noValidator),
     expressAsyncHandler(adminController.deleteProfile))
 
+router.get('/generate-orders-report', authAdmin(),
+    expressAsyncHandler(reportController.ordersReport))
 
 export default router
 

@@ -15,7 +15,7 @@ export function cronEveryQuarterHour(){
         })
         .catch(error => {
             console.error('Error sending keep-alive request:', error.message);
-        });    
+        })
     })
 }
 
